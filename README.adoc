@@ -1,0 +1,21 @@
+= Solid Mechanics I: Examples   
+:author: Dr. Sam Macharia 
+:email: Dr.SamMacharia@gmail.com 
+:title-page-background-image: image:tension.png[fit=none, pdfwidth=55%,position=top left]
+:doctype: book
+:toc:
+:icons: font 
+:stem: latexmath
+
+== Introduction 
+
+latexmath:[Stress (\Gamma) = \frac{P (load)}{A (area)}]
+
+
+[NOTE]
+.What will be total extension of the bar?
+====
+Determine the stress in each section of the bar shown in the figure 1 below when subjected to an axial tensile load of 20kN. The central section is 30 mm square cross-section; the other portions are of circular section, their diameters being indicated. What will be the total extension of the bar? For the bar material E = 210 stem:[GN/m^2]
+====
+
+
