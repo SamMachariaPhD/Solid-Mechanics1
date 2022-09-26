@@ -11,22 +11,24 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 :source-highlighter: rouge // not used 
 :source-highlighter: highlight.js
 :stem: latexmath 
+:numbered:
 :eqnums: all
+:imagesdir: solid-mechanics-figs
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
 
 
 == Introduction 
 
+=== Simple Stress and Strain
+
+Your answers should be in SI units and in the form stem:[p.qrs \times 10^t]. Where stem:[p,q,r,s] is a number between stem:[0,9] and stem:[t] is a signed integer.
+
+==== A bar with various cross-sections 
 [NOTE]
-.What is the stress in each section and the total extension of the bar?
 ====
-A circular sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1, F_2]. 
+A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. Square cross-section stem:[C_{s2} = 40 mm^2], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
 
-stem:[F_1 = F_2 = 20kN]
-
-stem:[C_{s1} = 20 mm^2], stem:[C_{s2} = 30 mm^2], stem:[C_{s3} = 15 mm^2]
-
-stem:[L_{1} = 250 mm], stem:[L_{2} = 100 mm], stem:[L_{3} = 400 mm]
+What is *the stress* in each section and *the total extension* of the sectional bar?
 
 [#img-sectionalBar] 
 .Sectional bar.
@@ -34,10 +36,37 @@ stem:[L_{1} = 250 mm], stem:[L_{2} = 100 mm], stem:[L_{3} = 400 mm]
 image::sectionalBar.png[sectionalBar,width=100%,float="left",align="left"]
 ====
 
+==== A bored circular cross-section 
 [NOTE]
-.Determine the modulus of elasticity for the bar material.
 ====
-* A 25 mm diameter bar is subjected to an axial tensile load of 100 kN. Under the action of this load a 200 mm gauge length is found to extend 0.19*10^-3 mm. Determine the modulus of elasticity for the bar material. 
-* If, in order to reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is 240 MN/m^2? The load can be assumed to remain constant at 100 kN. 
-* What will be the change in the outside diameter of the bar under the limiting stress quoted above? (E = 210 GN/m^2 and v = 0.3)
+* A stem:[25 mm] diameter bar is subjected to an axial tensile load of stem:[100 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.19 \times 10^-3 mm]. Determine the modulus of elasticity for the bar material. 
+* To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[240 MN/m^2]? The load can be assumed to remain constant at stem:[100 kN]. 
+* What will be the change in the outside diameter of the bar under the limiting stress quoted above? (stem:[E = 210 GN/m^2] and stem:[v = 0.3])
+====
+
+==== A stressed coupling 
+[NOTE]
+====
+The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50 kN]. If the bolt is of stem:[15 mm] diameter calculate:
+
+[%hardbreaks]
+(a) the shear stress in the bolt;
+(b) the direct stress in the plate;
+(c) the direct stress in the forked end of the coupling.
+
+[#img-coupling] 
+.Coupling plate.
+[link=https://siliconwit.com/solid-mechanics] 
+image::coupling.png[coupling,width=100%,float="left",align="left"]
+====
+
+==== Extension of tapered bar 
+[NOTE]
+====
+Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load stem:[W].
+
+[#img-taperedBar] 
+.Tapered bar.
+[link=https://siliconwit.com/solid-mechanics] 
+image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 ====
