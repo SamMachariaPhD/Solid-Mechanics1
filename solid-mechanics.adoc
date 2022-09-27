@@ -1,5 +1,7 @@
 = Solid Mechanics I: Examples   
 Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.ly/ContactDrSam>; Home <https://SiliconWit.com/>
+:description: Engineering, Computing, Science, and Philosophy 
+:docinfo: shared-head
 :title-page-background-image: image:tension.png[fit=none, 
 :doctype: book
 :toc:
@@ -21,7 +23,7 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 
 === Simple Stress and Strain
 
-Your answers should be in SI units and in the form stem:[p.qrs \times 10^t]. Where stem:[p,q,r,s] is a number between stem:[0,9] and stem:[t] is a signed integer.
+Your answers should be in SI units and the form stem:[p.qrs \times 10^t]. Where stem:[p,q,r,s] is a number between stem:[0,9] and stem:[t] is a signed integer.
 
 ==== A bar with various cross-sections 
 [NOTE]
