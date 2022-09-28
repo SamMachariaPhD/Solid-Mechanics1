@@ -41,15 +41,21 @@ image::sectionalBar.png[sectionalBar,width=100%,float="left",align="left"]
 ==== A bored circular cross-section 
 [NOTE]
 ====
-* A stem:[25 mm] diameter bar is subjected to an axial tensile load of stem:[100 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.19 \times 10^-3 mm]. Determine the modulus of elasticity for the bar material. 
-* To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[240 MN/m^2]? The load can be assumed to remain constant at stem:[100 kN]. 
+* A stem:[30 mm] diameter bar is subjected to an axial tensile load of stem:[115 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.15 \times 10^{-3} mm]. Determine the modulus of elasticity for the bar material. 
+* To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[245 MN/m^2]? The load can be assumed to remain constant at stem:[115 kN]. 
 * What will be the change in the outside diameter of the bar under the limiting stress quoted above? (stem:[E = 210 GN/m^2] and stem:[v = 0.3])
 ====
 
 ==== A stressed coupling 
 [NOTE]
 ====
-The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50 kN]. If the bolt is of stem:[15 mm] diameter calculate:
+The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50 kN]. If the bolt is of stem:[14.5 mm] diameter calculate:
+
+[%hardbreaks]
+stem:[F = F_1 = F_2 = 50 kN]
+stem:[F_3 = F_4 = 25 kN]
+stem:[W_1 = 55 mm]
+stem:[T_1 = T_2 = T_3 = 7 mm]
 
 [%hardbreaks]
 (a) the shear stress in the bolt;
