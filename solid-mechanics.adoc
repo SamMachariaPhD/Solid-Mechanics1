@@ -38,6 +38,20 @@ What is *the stress* in each section and *the total extension* of the sectional 
 image::sectionalBar.png[sectionalBar,width=100%,float="left",align="left"]
 ====
 
+====
+[%hardbreaks]
+stem:[\sigma = \frac{F}{A}]
+stem:[\sigma_{s1} = \frac{F}{\pi \times \big( \frac{D}{2} \big)^2}]
+stem:[\sigma_{s1} = \frac{25 \times 10^3}{\pi \times \big( \frac{25 \times 10^{-3}}{2} \big)^2}]
+
+[%hardbreaks]
+stem:[\sigma_{s2} = \frac{F}{L^2}]
+stem:[\sigma_{s2} = \frac{25 \times 10^3}{40 \times 10^{-6}}]
+
+[%hardbreaks]
+stem:[\sigma_{s3} = \frac{25 \times 10^3}{\pi \times \big( \frac{20 \times 10^{-3}}{2} \big)^2}]
+====
+
 ==== A bored circular cross-section 
 [NOTE]
 ====
