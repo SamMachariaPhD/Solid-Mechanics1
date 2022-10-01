@@ -457,9 +457,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a>
+<li><a href="#_simple_stress_and_strain">1. Simple Stress and Strain</a>
 <ul class="sectlevel2">
-<li><a href="#_simple_stress_and_strain">1.1. Simple Stress and Strain</a></li>
+<li><a href="#_theory">1.1. Theory</a></li>
+<li><a href="#_examples">1.2. Examples</a></li>
+</ul>
+</li>
+<li><a href="#_compound_bars">2. Compound Bars</a>
+<ul class="sectlevel2">
+<li><a href="#_theory_2">2.1. Theory</a></li>
+<li><a href="#_examples_2">2.2. Examples</a></li>
 </ul>
 </li>
 </ul>
@@ -467,15 +474,120 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_introduction">1. Introduction</h2>
+<h2 id="_simple_stress_and_strain">1. Simple Stress and Strain</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_simple_stress_and_strain">1.1. Simple Stress and Strain</h3>
+<h3 id="_theory">1.1. Theory</h3>
 <div class="paragraph">
-<p>Your answers should be in SI units and the form <span class="image"><img src="solid-mechanics-figs/stem-3d8117ec463eb523728d2a32aef5d0e6.svg" alt="stem 3d8117ec463eb523728d2a32aef5d0e6" width="65" height="12"></span>. Where <span class="image"><img src="solid-mechanics-figs/stem-7c444485ee94f641cd5a22f5b1b0400b.svg" alt="stem 7c444485ee94f641cd5a22f5b1b0400b" width="52" height="8"></span> is a number between <span class="image"><img src="solid-mechanics-figs/stem-7125fddb5b5c651c4214a46d7ad5737a.svg" alt="stem 7125fddb5b5c651c4214a46d7ad5737a" width="22" height="10"></span> and <span class="image"><img src="solid-mechanics-figs/stem-4f4f4e395762a3af4575de74c019ebb5.svg" alt="stem 4f4f4e395762a3af4575de74c019ebb5" width="5" height="8"></span> is a signed integer.</p>
+<p>This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply.</p>
 </div>
 <div class="sect3">
-<h4 id="_a_bar_with_various_cross_sections">1.1.1. A bar with various cross-sections</h4>
+<h4 id="_loading">1.1.1. Loading</h4>
+<div class="paragraph">
+<p>Components of engineering structures or mechanisms experience various forces. For example, the cylindrical bar below is used in a lifting mechanism and so it is subjected to <strong>tension</strong> force along the axis.</p>
+</div>
+<div class="paragraph">
+<p>A member of a mechanism may experience loading in one of the following ways.</p>
+</div>
+<div class="paragraph">
+<p>(a) Static, dead, or non-fluctuating loads e.g. force due to gravity<br>
+(b) Live loads e.g. train on the railway<br>
+(c) Impact or shock loads e.g. hammering<br>
+(d) Fatigue, fluctuating, or altering loads e.g. repeated loaded swivel, crack propagation</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_direct_or_normal_stress_sigma">1.1.2. Direct or Normal Stress (<span class="image"><img src="solid-mechanics-figs/stem-8cda31ed38c6d59d14ebefa440099572.png" alt="stem 8cda31ed38c6d59d14ebefa440099572" width="9" height="6"></span>)</h4>
+<div class="paragraph">
+<p>This is when a uniform-structured member or a bar is subjected to <mark><strong>uniform</strong> tension or compression</mark>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-ac903a6bfed09f870de3b80c6227dc72.png" alt="$$\sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}$$" width="141" height="30">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_direct_or_normal_strain_epsilon">1.1.3. Direct or Normal Strain (<span class="image"><img src="solid-mechanics-figs/stem-7ccca27b5ccc533a2dd72dc6fa28ed84.png" alt="stem 7ccca27b5ccc533a2dd72dc6fa28ed84" width="7" height="6"></span>)</h4>
+<div class="paragraph">
+<p>This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-453f474f9581c959c8047ab56788712d.png" alt="$$\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}$$" width="215" height="38">
+</div>
+</div>
+<div class="paragraph">
+<p>Strain may be expressed as a percentage, <span class="image"><img src="solid-mechanics-figs/stem-4844a3e4412c18a30b4be29173823257.png" alt="stem 4844a3e4412c18a30b4be29173823257" width="86" height="18"></span>.
+Tensile stress and strain are considered positive, while compressive ones are considered negative.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_elastic_materials_hookes_law_f_ke">1.1.4. Elastic Materials (Hooke&#8217;s Law <span class="image"><img src="solid-mechanics-figs/stem-70c4c93805acba0184bf5214cfb63260.png" alt="stem 70c4c93805acba0184bf5214cfb63260" width="40" height="9"></span>)</h4>
+<div class="paragraph">
+<p>A member is said to be elastic or obey Hooke&#8217;s law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-804431e0c9ffbb659dd6b2b58d3594b6.png" alt="$$\frac{\sigma}{\epsilon} = constant$$" width="82" height="24">
+</div>
+</div>
+<div class="paragraph">
+<p>Common classification of materials:</p>
+</div>
+<div class="paragraph">
+<p>Homogeneous material&#8201;&#8212;&#8201;uniform structure without any flaws or discontinuities e.g. steel<br>
+Inhomogeneous material&#8201;&#8212;&#8201;the structure varies from point to point e.g. concrete, some cast iron<br>
+Isotropic&#8201;&#8212;&#8201;uniform properties throughout in all directions<br>
+Anisotropic&#8201;&#8212;&#8201;varying properties<br>
+Othotropic&#8201;&#8212;&#8201;different properties in different planes e.g. wood, some composites</p>
+</div>
+<div class="paragraph">
+<p>Here, we assume homogeneous materials with isotropic properties.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_modulus_of_elasticity_youngs_modulus_e">1.1.5. Modulus of Elasticity (Young&#8217;s Modulus <span class="image"><img src="solid-mechanics-figs/stem-84df98c65d88c6adf15d4645ffa25e47.png" alt="stem 84df98c65d88c6adf15d4645ffa25e47" width="10" height="8"></span>)</h4>
+<div class="paragraph">
+<p>The constant derived above, within which Hooke&#8217;s law applies, is referred to as the <em>modulus of elasticity</em> or the <em>Young&#8217;s modulus</em>, <strong>E</strong>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-629fdeb3017cab1242781981f70ebb54.png" alt="$$\frac{\sigma}{\epsilon} = E$$" width="37" height="24">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-88782fc7c8dfc4436eb7d15abfd887db.png" alt="$$E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}$$" width="114" height="27">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_examples">1.2. Examples</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Make sure you understand the concept. Draw sketches where necessary. Make sure you <mark>derive your equations</mark> correctly, then substitute the values.</p>
+</li>
+<li>
+<p>Your answers should be in SI units and scientific notation. Use the following form <mark><span class="image"><img src="solid-mechanics-figs/stem-3d8117ec463eb523728d2a32aef5d0e6.png" alt="stem 3d8117ec463eb523728d2a32aef5d0e6" width="65" height="12"></span> <code>units</code></mark>. Where <span class="image"><img src="solid-mechanics-figs/stem-7c444485ee94f641cd5a22f5b1b0400b.png" alt="stem 7c444485ee94f641cd5a22f5b1b0400b" width="52" height="8"></span> is a number between <span class="image"><img src="solid-mechanics-figs/stem-221be2a28ca6d15bef99bb7cc3d9676f.png" alt="stem 221be2a28ca6d15bef99bb7cc3d9676f" width="28" height="9"></span>, <span class="image"><img src="solid-mechanics-figs/stem-4f4f4e395762a3af4575de74c019ebb5.png" alt="stem 4f4f4e395762a3af4575de74c019ebb5" width="5" height="8"></span> is a signed integer, and <code>units</code> is the relevant SI units.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_a_bar_with_various_cross_sections">1.2.1. A bar with various cross-sections</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -484,7 +596,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A sectional bar of <span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.svg" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-59fb5042d465d8370d18b7cf76becba7.svg" alt="stem 59fb5042d465d8370d18b7cf76becba7" width="95" height="12"></span>. The circular section <span class="image"><img src="solid-mechanics-figs/stem-76c152e03325f00f61d4e3df8b8a460a.svg" alt="stem 76c152e03325f00f61d4e3df8b8a460a" width="19" height="11"></span> has a diameter of <span class="image"><img src="solid-mechanics-figs/stem-4810985eab670c2d74fa654e96876c77.svg" alt="stem 4810985eab670c2d74fa654e96876c77" width="36" height="9"></span>. Square cross-section <span class="image"><img src="solid-mechanics-figs/stem-921cd0d16dc883f285658f8ec1c1304c.svg" alt="stem 921cd0d16dc883f285658f8ec1c1304c" width="78" height="13"></span>, and circular section <span class="image"><img src="solid-mechanics-figs/stem-e5fb024d54aa6515c0793b553e71a61b.svg" alt="stem e5fb024d54aa6515c0793b553e71a61b" width="72" height="11"></span> in diameter. <span class="image"><img src="solid-mechanics-figs/stem-b9349a3d95784b8a031c8002bc8f257e.svg" alt="stem b9349a3d95784b8a031c8002bc8f257e" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-d8f599cddd9d84ba34765e283e7ae1ee.svg" alt="stem d8f599cddd9d84ba34765e283e7ae1ee" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-05b3f8453654a6e824f4f0ab2c629257.svg" alt="stem 05b3f8453654a6e824f4f0ab2c629257" width="74" height="11"></span></p>
+<p>A sectional bar of <span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.png" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-59fb5042d465d8370d18b7cf76becba7.png" alt="stem 59fb5042d465d8370d18b7cf76becba7" width="95" height="12"></span>. The circular section <span class="image"><img src="solid-mechanics-figs/stem-76c152e03325f00f61d4e3df8b8a460a.png" alt="stem 76c152e03325f00f61d4e3df8b8a460a" width="19" height="11"></span> has a diameter of <span class="image"><img src="solid-mechanics-figs/stem-4810985eab670c2d74fa654e96876c77.png" alt="stem 4810985eab670c2d74fa654e96876c77" width="36" height="9"></span>. Square cross-section <span class="image"><img src="solid-mechanics-figs/stem-921cd0d16dc883f285658f8ec1c1304c.png" alt="stem 921cd0d16dc883f285658f8ec1c1304c" width="78" height="13"></span>, and circular section <span class="image"><img src="solid-mechanics-figs/stem-e5fb024d54aa6515c0793b553e71a61b.png" alt="stem e5fb024d54aa6515c0793b553e71a61b" width="72" height="11"></span> in diameter. <span class="image"><img src="solid-mechanics-figs/stem-b9349a3d95784b8a031c8002bc8f257e.png" alt="stem b9349a3d95784b8a031c8002bc8f257e" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-d8f599cddd9d84ba34765e283e7ae1ee.png" alt="stem d8f599cddd9d84ba34765e283e7ae1ee" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-05b3f8453654a6e824f4f0ab2c629257.png" alt="stem 05b3f8453654a6e824f4f0ab2c629257" width="74" height="11"></span></p>
 </div>
 <div class="paragraph">
 <p>What is <strong>the stress</strong> in each section and <strong>the total extension</strong> of the sectional bar?</p>
@@ -502,22 +614,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><span class="image"><img src="solid-mechanics-figs/stem-e52280395b52ddcdd10710905d8de0c6.svg" alt="stem e52280395b52ddcdd10710905d8de0c6" width="35" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-ea03cc802deef3a138dbce227ca689e9.svg" alt="stem ea03cc802deef3a138dbce227ca689e9" width="80" height="30"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-3b0b755c11f3521716f32080976a32bb.svg" alt="stem 3b0b755c11f3521716f32080976a32bb" width="117" height="37"></span></p>
+<p><span class="image"><img src="solid-mechanics-figs/stem-e52280395b52ddcdd10710905d8de0c6.png" alt="stem e52280395b52ddcdd10710905d8de0c6" width="35" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-ea03cc802deef3a138dbce227ca689e9.png" alt="stem ea03cc802deef3a138dbce227ca689e9" width="80" height="30"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-3b0b755c11f3521716f32080976a32bb.png" alt="stem 3b0b755c11f3521716f32080976a32bb" width="117" height="37"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="solid-mechanics-figs/stem-e18d175832d91bf952b1387df1a45014.svg" alt="stem e18d175832d91bf952b1387df1a45014" width="49" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-336c055b874d4845d6e50c42efbd5ec0.svg" alt="stem 336c055b874d4845d6e50c42efbd5ec0" width="85" height="22"></span></p>
+<p><span class="image"><img src="solid-mechanics-figs/stem-e18d175832d91bf952b1387df1a45014.png" alt="stem e18d175832d91bf952b1387df1a45014" width="49" height="20"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-336c055b874d4845d6e50c42efbd5ec0.png" alt="stem 336c055b874d4845d6e50c42efbd5ec0" width="85" height="22"></span></p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="solid-mechanics-figs/stem-fbf02069a3ccd0f438f58b1b4323116b.svg" alt="stem fbf02069a3ccd0f438f58b1b4323116b" width="118" height="37"></span></p>
+<p><span class="image"><img src="solid-mechanics-figs/stem-fbf02069a3ccd0f438f58b1b4323116b.png" alt="stem fbf02069a3ccd0f438f58b1b4323116b" width="118" height="37"></span></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_a_bored_circular_cross_section">1.1.2. A bored circular cross-section</h4>
+<h4 id="_a_bored_circular_cross_section">1.2.2. A bored circular cross-section</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -528,13 +640,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>A <span class="image"><img src="solid-mechanics-figs/stem-b91cfc75ad3cc6a1b62bf118d5e7fcbe.svg" alt="stem b91cfc75ad3cc6a1b62bf118d5e7fcbe" width="36" height="9"></span> diameter bar is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.svg" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>. Under the action of this load a <span class="image"><img src="solid-mechanics-figs/stem-54b37d7d7e230b953fa99fb7e75fde13.svg" alt="stem 54b37d7d7e230b953fa99fb7e75fde13" width="44" height="9"></span> gauge length is found to extend <span class="image"><img src="solid-mechanics-figs/stem-cffc713cfdd501b68d9568dc0d1c33cc.svg" alt="stem cffc713cfdd501b68d9568dc0d1c33cc" width="90" height="10"></span>. Determine the modulus of elasticity for the bar material.</p>
+<p>A <span class="image"><img src="solid-mechanics-figs/stem-b91cfc75ad3cc6a1b62bf118d5e7fcbe.png" alt="stem b91cfc75ad3cc6a1b62bf118d5e7fcbe" width="36" height="9"></span> diameter bar is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.png" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>. Under the action of this load a <span class="image"><img src="solid-mechanics-figs/stem-54b37d7d7e230b953fa99fb7e75fde13.png" alt="stem 54b37d7d7e230b953fa99fb7e75fde13" width="44" height="9"></span> gauge length is found to extend <span class="image"><img src="solid-mechanics-figs/stem-cffc713cfdd501b68d9568dc0d1c33cc.png" alt="stem cffc713cfdd501b68d9568dc0d1c33cc" width="90" height="10"></span>. Determine the modulus of elasticity for the bar material.</p>
 </li>
 <li>
-<p>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is <span class="image"><img src="solid-mechanics-figs/stem-6d16fd26522f1ea6da277addf741f0ce.svg" alt="stem 6d16fd26522f1ea6da277addf741f0ce" width="74" height="11"></span>? The load can be assumed to remain constant at <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.svg" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>.</p>
+<p>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is <span class="image"><img src="solid-mechanics-figs/stem-6d16fd26522f1ea6da277addf741f0ce.png" alt="stem 6d16fd26522f1ea6da277addf741f0ce" width="74" height="11"></span>? The load can be assumed to remain constant at <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.png" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>.</p>
 </li>
 <li>
-<p>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (<span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.svg" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> and <span class="image"><img src="solid-mechanics-figs/stem-0282f5dd4f52901083b8db23b80b4664.svg" alt="stem 0282f5dd4f52901083b8db23b80b4664" width="41" height="9"></span>)</p>
+<p>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (<span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.png" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> and <span class="image"><img src="solid-mechanics-figs/stem-0282f5dd4f52901083b8db23b80b4664.png" alt="stem 0282f5dd4f52901083b8db23b80b4664" width="41" height="9"></span>)</p>
 </li>
 </ul>
 </div>
@@ -544,7 +656,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_a_stressed_coupling">1.1.3. A stressed coupling</h4>
+<h4 id="_a_stressed_coupling">1.2.3. A stressed coupling</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -553,13 +665,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of <span class="image"><img src="solid-mechanics-figs/stem-bcbbdfad1f95a3ad6c928e282da0f198.svg" alt="stem bcbbdfad1f95a3ad6c928e282da0f198" width="34" height="9"></span>. If the bolt is of <span class="image"><img src="solid-mechanics-figs/stem-8699e9feeb2244045365900524173527.svg" alt="stem 8699e9feeb2244045365900524173527" width="47" height="9"></span> diameter calculate:</p>
+<p>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of <span class="image"><img src="solid-mechanics-figs/stem-bcbbdfad1f95a3ad6c928e282da0f198.png" alt="stem bcbbdfad1f95a3ad6c928e282da0f198" width="34" height="9"></span>. If the bolt is of <span class="image"><img src="solid-mechanics-figs/stem-8699e9feeb2244045365900524173527.png" alt="stem 8699e9feeb2244045365900524173527" width="47" height="9"></span> diameter calculate:</p>
 </div>
 <div class="paragraph">
-<p><span class="image"><img src="solid-mechanics-figs/stem-882b4a62d739f9b1ff05a76769ba80c3.svg" alt="stem 882b4a62d739f9b1ff05a76769ba80c3" width="121" height="12"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-4da5b8e4bdf9bfe8e1d84e289aa10b2b.svg" alt="stem 4da5b8e4bdf9bfe8e1d84e289aa10b2b" width="97" height="12"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-2d86fd9d7999694adb91ac88536d25dd.svg" alt="stem 2d86fd9d7999694adb91ac88536d25dd" width="70" height="11"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-a9c1ba0cee72f6fa9715e492f0d0f361.svg" alt="stem a9c1ba0cee72f6fa9715e492f0d0f361" width="119" height="11"></span></p>
+<p><span class="image"><img src="solid-mechanics-figs/stem-882b4a62d739f9b1ff05a76769ba80c3.png" alt="stem 882b4a62d739f9b1ff05a76769ba80c3" width="121" height="12"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-4da5b8e4bdf9bfe8e1d84e289aa10b2b.png" alt="stem 4da5b8e4bdf9bfe8e1d84e289aa10b2b" width="97" height="12"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-2d86fd9d7999694adb91ac88536d25dd.png" alt="stem 2d86fd9d7999694adb91ac88536d25dd" width="70" height="11"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-a9c1ba0cee72f6fa9715e492f0d0f361.png" alt="stem a9c1ba0cee72f6fa9715e492f0d0f361" width="119" height="11"></span></p>
 </div>
 <div class="paragraph">
 <p>(a) the shear stress in the bolt;<br>
@@ -578,7 +690,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_extension_of_tapered_bar">1.1.4. Extension of tapered bar</h4>
+<h4 id="_extension_of_tapered_bar">1.2.4. Extension of tapered bar</h4>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -587,7 +699,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load <span class="image"><img src="solid-mechanics-figs/stem-84c95f91a742c9ceb460a83f9b5090bf.svg" alt="stem 84c95f91a742c9ceb460a83f9b5090bf" width="13" height="8"></span>.</p>
+<p>Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load <span class="image"><img src="solid-mechanics-figs/stem-84c95f91a742c9ceb460a83f9b5090bf.png" alt="stem 84c95f91a742c9ceb460a83f9b5090bf" width="13" height="8"></span>.</p>
 </div>
 <div id="img-taperedBar" class="imageblock left text-left">
 <div class="content">
@@ -603,10 +715,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_compound_bars">2. Compound Bars</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_theory_2">2.1. Theory</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_examples_2">2.2. Examples</h3>
+
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-30 22:20:45 +0300
+Last updated 2022-10-01 23:28:49 +0300
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>

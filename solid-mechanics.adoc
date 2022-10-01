@@ -19,11 +19,85 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
 
 
-== Introduction 
+== Simple Stress and Strain
 
-=== Simple Stress and Strain
+=== Theory 
 
-Your answers should be in SI units and the form stem:[p.qrs \times 10^t]. Where stem:[p,q,r,s] is a number between stem:[0,9] and stem:[t] is a signed integer.
+This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply. 
+
+==== Loading
+
+Components of engineering structures or mechanisms experience various forces. For example, the cylindrical bar below is used in a lifting mechanism and so it is subjected to *tension* force along the axis. 
+
+A member of a mechanism may experience loading in one of the following ways. 
+
+[%hardbreaks]
+(a) Static, dead, or non-fluctuating loads e.g. force due to gravity
+(b) Live loads e.g. train on the railway 
+(c) Impact or shock loads e.g. hammering 
+(d) Fatigue, fluctuating, or altering loads e.g. repeated loaded swivel, crack propagation 
+
+==== Direct or Normal Stress (stem:[\sigma])
+
+This is when a uniform-structured member or a bar is subjected to #*uniform* tension or compression#. 
+
+[stem]
+++++
+\sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}
+++++
+
+==== Direct or Normal Strain (stem:[\epsilon])
+
+This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression. 
+
+[stem]
+++++
+\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}
+++++
+
+Strain may be expressed as a percentage, stem:[\epsilon = \frac{\Delta L}{L} \times 100 \%].
+Tensile stress and strain are considered positive, while compressive ones are considered negative. 
+
+==== Elastic Materials (Hooke's Law stem:[F = ke])
+
+A member is said to be elastic or obey Hooke's law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain. 
+
+[stem]
+++++
+\frac{\sigma}{\epsilon} = constant
+++++
+
+Common classification of materials:
+[%hardbreaks]
+Homogeneous material -- uniform structure without any flaws or discontinuities e.g. steel
+Inhomogeneous material -- the structure varies from point to point e.g. concrete, some cast iron 
+Isotropic -- uniform properties throughout in all directions 
+Anisotropic -- varying properties 
+Othotropic -- different properties in different planes e.g. wood, some composites  
+
+Here, we assume homogeneous materials with isotropic properties. 
+
+==== Modulus of Elasticity (Young's Modulus stem:[E])
+
+The constant derived above, within which Hooke's law applies, is referred to as the _modulus of elasticity_ or the _Young's modulus_, *E*.
+
+[stem]
+++++
+\frac{\sigma}{\epsilon} = E
+++++
+
+[stem]
+++++
+E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}
+++++
+
+=== Examples
+
+[IMPORTANT]
+====
+* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. 
+* Your answers should be in SI units and scientific notation. Use the following form #stem:[p.qrs \times 10^t] `units`#. Where stem:[p,q,r,s] is a number between stem:[0-9], stem:[t] is a signed integer, and `units` is the relevant SI units.
+==== 
 
 ==== A bar with various cross-sections 
 [NOTE]
@@ -92,3 +166,10 @@ Derive an expression for the total extension of the tapered bar of the circular 
 [link=https://siliconwit.com/solid-mechanics] 
 image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 ====
+
+== Compound Bars
+
+=== Theory 
+
+=== Examples 
+
