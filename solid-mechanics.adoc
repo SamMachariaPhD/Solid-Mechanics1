@@ -23,7 +23,7 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 
 === Theory 
 
-This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply. 
+TIP: This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply. 
 
 ==== Loading
 
@@ -77,7 +77,7 @@ Othotropic -- different properties in different planes e.g. wood, some composite
 
 Here, we assume homogeneous materials with isotropic properties. 
 
-==== Modulus of Elasticity (Young's Modulus stem:[E])
+==== Modulus of Elasticity (Young's Modulus, stem:[E])
 
 The constant derived above, within which Hooke's law applies, is referred to as the _modulus of elasticity_ or the _Young's modulus_, *E*.
 
@@ -102,7 +102,7 @@ E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}
 ==== A bar with various cross-sections 
 [NOTE]
 ====
-A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. Square cross-section stem:[C_{s2} = 40 mm^2], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
+A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. Square cross-section of dimension stem:[C_{s2} = 40 mm], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
 
 What is *the stress* in each section and *the total extension* of the sectional bar?
 
@@ -120,7 +120,7 @@ stem:[\sigma_{s1} = \frac{25 \times 10^3}{\pi \times \big( \frac{25 \times 10^{-
 
 [%hardbreaks]
 stem:[\sigma_{s2} = \frac{F}{L^2}]
-stem:[\sigma_{s2} = \frac{25 \times 10^3}{40 \times 10^{-6}}]
+stem:[\sigma_{s2} = \frac{25 \times 10^3}{40 \times 40 \times 10^{-6}}]
 
 [%hardbreaks]
 stem:[\sigma_{s3} = \frac{25 \times 10^3}{\pi \times \big( \frac{20 \times 10^{-3}}{2} \big)^2}]
