@@ -17,7 +17,8 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 :eqnums: all
 :imagesdir: solid-mechanics-figs
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
-
+// asciidoctor --backend html5 -a data-uri my_input_file.adoc //embede images directly to the html document 
+// asciidoctor -r asciidoctor-mathematical -a mathematical-format=png --backend html5 -a data-uri solid-mechanics.adoc // png and embede png as part of html is better 
 
 == Simple Stress and Strain
 
@@ -41,19 +42,25 @@ A member of a mechanism may experience loading in one of the following ways.
 
 This is when a uniform-structured member or a bar is subjected to #*uniform* tension or compression#. 
 
+[TIP]
+====
 [stem]
 ++++
 \sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}
 ++++
+====
 
 ==== Direct or Normal Strain (stem:[\epsilon])
 
 This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression. 
 
+[TIP]
+====
 [stem]
 ++++
 \epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}
 ++++
+====
 
 Strain may be expressed as a percentage, stem:[\epsilon = \frac{\Delta L}{L} \times 100 \%].
 Tensile stress and strain are considered positive, while compressive ones are considered negative. 
@@ -62,10 +69,13 @@ Tensile stress and strain are considered positive, while compressive ones are co
 
 A member is said to be elastic or obey Hooke's law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain. 
 
+[TIP]
+====
 [stem]
 ++++
 \frac{\sigma}{\epsilon} = constant
 ++++
+====
 
 Common classification of materials:
 [%hardbreaks]
@@ -81,6 +91,8 @@ Here, we assume homogeneous materials with isotropic properties.
 
 The constant derived above, within which Hooke's law applies, is referred to as the _modulus of elasticity_ or the _Young's modulus_, *E*.
 
+[TIP]
+====
 [stem]
 ++++
 \frac{\sigma}{\epsilon} = E
@@ -90,13 +102,14 @@ The constant derived above, within which Hooke's law applies, is referred to as 
 ++++
 E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}
 ++++
+====
 
 === Examples
 
 [IMPORTANT]
 ====
-* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. 
-* Your answers should be in SI units and scientific notation. Use the following form #stem:[p.qrs \times 10^t] `units`#. Where stem:[p,q,r,s] is a number between stem:[0-9], stem:[t] is a signed integer, and `units` is the relevant SI units.
+* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. This is useful in preparing the general algorithm and reducing approximations. 
+* Your answers should be in SI units and scientific notation. Use the following form #stem:[p.qrs \times 10^t] `units`#. Where stem:[p,q,r,s] is a number between stem:[0-9], stem:[t] is a signed integer, and `units` is the relevant SI units. This is useful in establishing a quick objective meaning of size/scale. 
 ==== 
 
 ==== A bar with various cross-sections 
@@ -167,9 +180,127 @@ Derive an expression for the total extension of the tapered bar of the circular 
 image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 ====
 
+==== Load-extension graph 
+[NOTE]
+====
+During a tensile test on a specimen the following results were obtained:
+
+[format=csv, grid=all]
+|===
+Load (kN), 15, 30, 40, 50, 55, 60, 65
+Extension (mm), 0.05, 0.094, 0.127, 0.157, 1.778, 2.79, 3.81
+Load (kN), 70, 75, 80, 82, 80, , 70
+Extension (mm), 5.08, 7.62, 12.7, 16.0, 19.05, , 22.9
+|===
+
+[%hardbreaks]
+Diameter of gauge length = 19mm
+Gauge length = l00mm
+Diameter at fracture = 16.49mm 
+Gauge length at fracture = 121mm
+
+Plot the complete load extension graph and the straight line portion to an enlarged scale. Hence determine:
+
+[%hardbreaks]
+(a) the modulus of elasticity;
+(b) the percentage elongation;
+(c) the percentage reduction in area;
+(d) the nominal stress at fracture;
+(e) the actual stress at fracture;
+(f) the tensile strength.
+====
+
+==== Stress due to bending 
+[NOTE]
+====
+Figure 1.24 shows a special spanner used to tighten screwedcomponents. A torque is applied at the tommybar and is transmitted to the pins which engage into holes located into the end of a screwed component.
+
+[%hardbreaks]
+(a) Using the data given in Fig. 1.24calculate:
+(i) the diameter D of the shank if the shear stress is not to exceed 50N/mm2,
+(ii) the stress due to bending in the tommy-bar,
+(iii) the shear stress in the pins.
+(b) Why is the tommy-bar a preferred method of applying the torque?
+====
+
 == Compound Bars
 
 === Theory 
 
 === Examples 
 
+==== A concrete column with stell reinforcement 
+[NOTE]
+====
+At short,reinforced cement concrete column 600 mm x 600 mm has eight steel rods of 25 mm as reinforcement. Find the stresses in steel and concrete,and the elastic shortening of the column if E =200,000N/mm2 for steel and 10,000N/mm2 for concrete.Load on column = 3000 kN and length = 3 m.
+====
+
+==== Encased composite bar 
+[NOTE]
+====
+A steel rod, 60 mm 4 and 1m long, is encased by a cast iron (CI) sleeve 8 mm thick and of
+internal diameter 60 mm. The assembly is subjected to a load of 40 kN. Find the stresses in the two materials and the elongation of the assembly. E for steel = 200 GPa and E for cast iron = 100 GPa.
+====
+
+==== Tension and compression in a composite section 
+[NOTE]
+====
+The assembly shown in Fig. 3.18 consists of an aluminium tube through which a brass bolt has been passed between rigid plates. After the bolt has been tight-fitted initially, the nut is
+given quarter of a turn. The bolt is single-threaded with 2 mm pitch. Find the stress in the bolt and the tube. What is the tensile force that must be applied to the assembly so that the stress in the tube is zero? E for aluminium = 70 GPa and E for brass = 100GPa.
+====
+
+== Stress Due to Change in Temperature 
+
+=== Theory 
+
+==== Bars of Single Material 
+
+==== Composite Bars 
+
+=== Examples 
+
+==== A bar between rigid supports 
+[NOTE]
+====
+A steel bar 2 m long is fixed between two supports.If the temperature of the bar is raised by 18"C, find the stress in the bar if the supports are rigid.
+====
+
+==== Rigid and yielding supports 
+[NOTE]
+====
+A steel rod, 20 mm Q and 1.5 m long, is constrained between supportsA and B as shown in Fig. 3.29. The material is stress-free at 27 "C. Determine the stress in the material when the
+temperature increases to 50 "C (a) if the supports are unyielding and (b) if the support at B yields by 0.1 mm. E for steel = 200 GPa and afor steel = 12 x 10-6/"C.
+====
+
+==== Composite rod 
+[NOTE]
+====
+A copper rod, 12mm Q and 400mm long, fits into an aluminium tube of external diameter 20mm and thickness 4 mm of equal length. If the assembly is held together by a rigid plate at the end and is stress-free at 20"C,find the stresses in the two materials when it is heated to 60"C.For copper, E = 120GPa and a=18x 10-6/"C. For aluminium, E =70GPa and a =23x C.
+====
+
+==== Tapering bar 
+[NOTE]
+====
+A brass bar tapers from a diameter of 180mm at one end to one of 90 mm at the other over a length of 900 mm. The bar is stress-free at a temperature of 27 "C. If the temperature drops to 0 "C, find the maximum normal stress on the bar if the ends are attached to rigid
+supports. E = 100GPa and a=18 x 10-6/"C.
+====
+
+==== Tightening nuts 
+[NOTE]
+====
+A 25 mm diameter steel rod passes concentrically through a bronze tube 400 mm long, 50 mm external diameterand40mm internal diameter. The endsof the steelrod are threaded and provided with nuts and washerswhichare adjusted initiallysothat thereisno end play at
+20°C.
+
+[%hardbreaks]
+(a) Assuming that there is no change in the thickness of the washers, find the stress
+produced in the steel and bronze when one of the nuts is tightened by giving it onetenth of a turn, the pitch of the thread being 2.5 mm.
+(b) If the temperature of the steel and bronze is then raised to 50°Cfind the changes that will occur in the stresses in both materials.
+The coefficient of linear expansion per "Cis 11 x for bronze.
+E for steel = 200 GN/m2.E for bronze = 100 GN/m2.
+====
+
+==== Composite bar, shear stress 
+[NOTE]
+====
+A composite bar is constructed from a steelrod of 25 mm diameter surrounded by a copper tube of 50 mm outside diameter and 25 mm inside diameter. The rod and tube are joined by two 20 mm diameter pins as shown in Fig. 2.6. Find the shear stress set up in the pins if,after pinning, the temperature is raised by 50°C.
+====
