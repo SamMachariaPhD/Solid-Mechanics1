@@ -1,9 +1,12 @@
-= Solid Mechanics I: Examples   
+= Solid Mechanics: Theory and Examples   
 Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.ly/ContactDrSam>; Home <https://SiliconWit.com/>
 :description: Engineering, Computing, Science, and Philosophy 
-:docinfo: shared-head
+:keywords: Mechanics of Solids, Mechanics of Materials, Strength of Materials, 
+:docinfo1: 
+:nofooter:
 :title-page-background-image: image:tension.png[fit=none, 
 :doctype: book
+:backend: docbook
 :toc:
 :icons: font 
 :favicon: favicon.png
@@ -19,6 +22,13 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.l
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
 // asciidoctor --backend html5 -a data-uri my_input_file.adoc //embede images directly to the html document 
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=png --backend html5 -a data-uri solid-mechanics.adoc // png and embede png as part of html is better 
+
+// :backend: docbook 
+// asciidoctor -b docbook my-document.adoc
+// sudo apt-get install xmlto fop 
+// xmlto --skip-validation --with-fop pdf doc.xml
+
+Mechanics of solids may also go by the names mechanics of materials or strength of materials.
 
 == Simple Stress and Strain
 
@@ -207,14 +217,14 @@ G = \frac{\tau}{\gamma} = \text{constant}
 
 [IMPORTANT]
 ====
-* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. This is useful in preparing the general algorithm and reducing approximations. 
+* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. This is useful in preparing a general algorithm and reducing approximation errors. 
 * Your answers should be in SI units and scientific notation. Use the following form #stem:[p.qrs \times 10^t] `units`#. Where stem:[p,q,r,s] is a number between stem:[0-9], stem:[t] is a signed integer, and `units` is the relevant SI units. This is useful in establishing a quick objective meaning of size/scale. 
 ==== 
 
 ==== A bar with various cross-sections 
 [NOTE]
 ====
-A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. Square cross-section of dimension stem:[C_{s2} = 40 mm], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
+A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. A square cross-section of dimension stem:[C_{s2} = 40 mm], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
 
 What is *the stress* in each section and *the total extension* of the sectional bar?
 
@@ -222,28 +232,30 @@ What is *the stress* in each section and *the total extension* of the sectional 
 .Sectional bar.
 [link=https://siliconwit.com/solid-mechanics] 
 image::sectionalBar.png[sectionalBar,width=100%,float="left",align="left"]
+// <<EJ-Hearn>>
 ====
 
 ====
 [%hardbreaks]
 icon:key[set=fi] _stress in each section_
 stem:[\sigma = \frac{F}{A}]
-stem:[\sigma_{s1} = \frac{F}{\pi \times \big( \frac{D}{2} \big)^2}]
-stem:[\sigma_{s1} = \frac{25 \times 10^3}{\pi \times \big( \frac{25 \times 10^{-3}}{2} \big)^2}]
+stem:[\sigma_{s1} = \frac{F}{\pi \times \big( \frac{D_1}{2} \big)^2}]
+// stem:[\sigma_{s1} = \frac{25 \times 10^3}{\pi \times \big( \frac{25 \times 10^{-3}}{2} \big)^2}]
 
 [%hardbreaks]
-stem:[\sigma_{s2} = \frac{F}{L^2}]
-stem:[\sigma_{s2} = \frac{25 \times 10^3}{40 \times 40 \times 10^{-6}}]
+stem:[\sigma_{s2} = \frac{F}{L_2^2}]
+// stem:[\sigma_{s2} = \frac{25 \times 10^3}{40 \times 40 \times 10^{-6}}]
 
 [%hardbreaks]
-stem:[\sigma_{s3} = \frac{F}{\pi \times \big( \frac{D}{2} \big)^2}]
-stem:[\sigma_{s3} = \frac{25 \times 10^3}{\pi \times \big( \frac{20 \times 10^{-3}}{2} \big)^2}]
+stem:[\sigma_{s3} = \frac{F}{\pi \times \big( \frac{D_3}{2} \big)^2}]
+// stem:[\sigma_{s3} = \frac{25 \times 10^3}{\pi \times \big( \frac{20 \times 10^{-3}}{2} \big)^2}]
 
 [%hardbreaks]
-icon:key[set=fi] _total extension_
+icon:key[set=fi] _total extension (stem:[\Delta L])_
 stem:[\epsilon = \frac{\sigma}{E}]
 stem:[\epsilon = \frac{\Delta L}{L}]
-stem:[\Delta L_{s1} = \frac{\sigma}{E} \times L]
+stem:[\Delta L = \Delta L_{s1} + \Delta L_{s2} + \Delta L_{s3}]
+stem:[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]
 ====
 
 ==== A bored circular cross-section 
@@ -252,6 +264,7 @@ stem:[\Delta L_{s1} = \frac{\sigma}{E} \times L]
 * A stem:[30 mm] diameter bar is subjected to an axial tensile load of stem:[115 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.15 \times 10^{-3} mm]. Determine the modulus of elasticity for the bar material. 
 * To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[245 MN/m^2]? The load can be assumed to remain constant at stem:[115 kN]. 
 * What will be the change in the outside diameter of the bar under the limiting stress quoted above? (stem:[E = 210 GN/m^2] and stem:[v = 0.3])
+// <<EJ-Hearn>>
 ====
 
 ====
@@ -298,6 +311,7 @@ stem:[T_1 = T_2 = T_3 = 7 mm]
 .Coupling plate.
 [link=https://siliconwit.com/solid-mechanics] 
 image::coupling.png[coupling,width=100%,float="left",align="left"]
+// <<EJ-Hearn>>
 ====
 
 ====
@@ -325,6 +339,11 @@ Derive an expression for the total extension of the tapered bar of the circular 
 .Tapered bar.
 [link=https://siliconwit.com/solid-mechanics] 
 image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
+// <<EJ-Hearn>>
+====
+
+====
+
 ====
 
 // ==== Elongation under self-weight 
@@ -363,6 +382,7 @@ Plot the complete load extension graph and the straight line portion to an enlar
 (d) the nominal stress at fracture;
 (e) the actual stress at fracture;
 (f) the tensile strength.
+// <<EJ-Hearn>>
 ====
 
 // ==== Stress due to bending (icon:flag[set=fi] #ASSIGNMENT#)
@@ -380,14 +400,46 @@ Plot the complete load extension graph and the straight line portion to an enlar
 
 == Compound Bars
 
-// === Theory 
+=== Theory 
+
+* A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy *equilibrium condition*, stem:[F_{s} + F_{c} = F_{total}]. 
+* These different materials are constrained to deform together such that they satisfy *compatibility condition*, stem:[\epsilon_{material1} = \epsilon_{material2}].
+* *Modular ratio*, stem:[m], is given by stem:[\frac{E_{material1}}{E_{material2}}].
 
 === Examples 
 
 ==== A concrete column with steel reinforcement 
 [NOTE]
 ====
-A reinforced cement concrete column stem:[625\ mm \times 625\ mm] has eight steel rods of stem:[30\ mm] as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if stem:[E =\ 200,000\ N/mm^2] for steel and stem:[10,000\ N/mm^2] for concrete. Load on column stem:[=\ 3000\ kN] and length stem:[=\ 4\ m].
+A reinforced cement concrete column of dimension stem:[625\ mm \times 625\ mm] has eight steel rods of diameter stem:[30\ mm] as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if stem:[E =\ 200,000\ N/mm^2] for steel and stem:[10,000\ N/mm^2] for concrete. Load on column stem:[=\ 3000\ kN] and length stem:[=\ 4\ m].
+// <<RSubramanian>>
+====
+
+====
+[%hardbreaks]
+icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and concrete (stem:[\sigma_{c}])_
+icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{c} = F]
+icon:check[set=fi] Compatibility condition: stem:[\epsilon_{s} = \epsilon_{c}]
+stem:[\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}]
+stem:[\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}]
+stem:[F_s = F_c \times \frac{A_sE_s}{A_cE_c}]
+stem:[F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}]
+stem:[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}]
+stem:[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}]
+stem:[F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}]
+stem:[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}]
+stem:[A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2]
+stem:[A_c = (dimension \times dimension) - 2\pi D^2]
+stem:[\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}]
+
+[%hardbreaks]
+icon:key[set=fi] _elastic shortening (stem:[\Delta L])_
+stem:[\epsilon_s = \frac{\Delta L_s}{L_s}]
+stem:[\epsilon_s = \frac{\sigma_s}{E_s}]
+stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
+stem:[\Delta L_c = L_c \times \frac{\sigma_c}{E_c}]
+stem:[L_s = L_c = L] and stem:[\epsilon_{s} = \epsilon_{c}]
+stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}] (compression)
 ====
 
 ==== Encased composite bar 
@@ -395,6 +447,35 @@ A reinforced cement concrete column stem:[625\ mm \times 625\ mm] has eight stee
 ====
 A steel rod of diameter stem:[65\ mm] and length stem:[1\ m] is encased by a cast iron (CI) sleeve stem:[9\ mm] thick and of
 internal diameter stem:[65\ mm]. The assembly is subjected to a load of stem:[45\ kN]. Find the stresses in the two materials and the elongation of the assembly. stem:[E] for steel stem:[=\ 200\ GPa] and stem:[E] for cast iron stem:[=\ 100\ GPa].
+// <<RSubramanian>>
+====
+
+====
+[%hardbreaks]
+icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and cast iron (stem:[\sigma_{I}])_
+icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{I} = F]
+icon:check[set=fi] Compatibility condition: stem:[\epsilon_{s} = \epsilon_{I}]
+stem:[\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}]
+stem:[\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}]
+stem:[F_s = F_I \times \frac{A_sE_s}{A_IE_I}]
+stem:[F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}]
+stem:[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}]
+stem:[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}]
+stem:[F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}]
+stem:[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}]
+stem:[A_s = \pi \big(\frac{d}{2} \big)^2]
+stem:[A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)]
+stem:[D = d + 2 \times thickness]
+stem:[\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}]
+
+[%hardbreaks]
+icon:key[set=fi] _elongation of the assembly (stem:[\Delta L])_
+stem:[\epsilon_s = \frac{\Delta L_s}{L_s}]
+stem:[\epsilon_s = \frac{\sigma_s}{E_s}]
+stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
+stem:[\Delta L_I = L_I \times \frac{\sigma_I}{E_I}]
+stem:[L_s = L_I = L] and stem:[\epsilon_{s} = \epsilon_{I}]
+stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] (extension)
 ====
 
 // ==== Tension and compression in a composite section 
@@ -482,3 +563,16 @@ internal diameter stem:[65\ mm]. The assembly is subjected to a load of stem:[45
 // Coefficient of expansion for steel = 11.5 × 10–6 /°C
 // Coefficient of expansion for copper = 17 × 10–6 /°C
 // ====
+
+
+
+
+// <<EJ-Hearn>>
+// [bibliography]
+// == References
+
+// * [[[EJ-Hearn]]] E.J. Hearn. _Mechanics Of Materials: An Introduction to the Mechanics of Elastic and Plastic Deformation of Solids and Structural Materials_ Oxford University Press, 2010. ISBN 0080523994, 9780080523996 https://www.google.com/books?id=7eKu5Kh0dHcC[books.google]
+
+// * [[[RSKhurmi]]] RS Khurmi | N Khurmi. _A Textbook of Strength of Materials_ S. Chand Publishing, 2019. ISBN 935283397X, 9789352833979 https://www.google.com/books?id=FqEbEAAAQBAJ[books.google]
+
+// * [[[RSubramanian]]] R. Subramanian. _Strength Of Materials_ Elsevier, 1997. ISBN 0198061102, 9780198061106 https://www.google.com/books?id=7lCnSQAACAAJ[books.google]

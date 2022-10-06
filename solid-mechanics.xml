@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xl="http://www.w3.org/1999/xlink" version="5.0" xml:lang="en">
+<info>
+<title>Solid Mechanics</title>
+<subtitle>Theory and Examples</subtitle>
+<date>2022-10-06</date>
+<authorgroup>
+<author>
+<personname>
+<firstname>Dr.</firstname>
+<othername>Sam</othername>
+<surname>Macharia</surname>
+</personname>
+<email>https://orcid.org/0000-0002-7326-7502</email>
+</author>
+<author>
+<personname>
+<firstname>Contact</firstname>
+</personname>
+<email>https://bit.ly/ContactDrSam</email>
+</author>
+<author>
+<personname>
+<firstname>Home</firstname>
+</personname>
+<email>https://SiliconWit.com/</email>
+</author>
+</authorgroup>
+</info>
+<preface>
+<title></title>
+<simpara>Mechanics of solids may also go by the names mechanics of materials or strength of materials.</simpara>
+</preface>
+<chapter xml:id="_simple_stress_and_strain">
+<title>Simple Stress and Strain</title>
+<section xml:id="_theory">
+<title>Theory</title>
+<tip>
+<simpara>This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply.</simpara>
+</tip>
+<section xml:id="_loading">
+<title>Loading</title>
+<simpara>Components of engineering structures or mechanisms experience various forces. For example, the cylindrical bar below is used in a lifting mechanism and so it is subjected to <emphasis role="strong">tension</emphasis> force along the axis.</simpara>
+<simpara>A member of a mechanism may experience loading in one of the following ways.</simpara>
+<simpara>(a) Static, dead, or non-fluctuating loads e.g. force due to gravity<?asciidoc-br?>
+(b) Live loads e.g. train on the railway<?asciidoc-br?>
+(c) Impact or shock loads e.g. hammering<?asciidoc-br?>
+(d) Fatigue, fluctuating, or altering loads e.g. repeated loaded swivel, crack propagation</simpara>
+</section>
+<section xml:id="_direct_or_normal_stress">
+<title>Direct or Normal Stress (<inlineequation><alt><![CDATA[\sigma]]></alt><mathphrase><![CDATA[\sigma]]></mathphrase></inlineequation>)</title>
+<simpara>This is when a uniform-structured member or a bar is subjected to <emphasis role="marked"><emphasis role="strong">uniform</emphasis> tension or compression</emphasis>.</simpara>
+<tip>
+<informalequation>
+<alt><![CDATA[\sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}]]></alt>
+<mathphrase><![CDATA[\sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}]]></mathphrase>
+</informalequation>
+</tip>
+</section>
+<section xml:id="_direct_or_normal_strain">
+<title>Direct or Normal Strain (<inlineequation><alt><![CDATA[\epsilon]]></alt><mathphrase><![CDATA[\epsilon]]></mathphrase></inlineequation>)</title>
+<simpara>This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression.</simpara>
+<tip>
+<informalequation>
+<alt><![CDATA[\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}]]></alt>
+<mathphrase><![CDATA[\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}]]></mathphrase>
+</informalequation>
+</tip>
+<simpara>Strain may be expressed as a percentage, <inlineequation><alt><![CDATA[\epsilon = \frac{\Delta L}{L} \times 100 \%]]></alt><mathphrase><![CDATA[\epsilon = \frac{\Delta L}{L} \times 100 \%]]></mathphrase></inlineequation>.
+Tensile stress and strain are considered positive, while compressive ones are considered negative.</simpara>
+</section>
+<section xml:id="_elastic_materials_hookes_law">
+<title>Elastic Materials (Hooke&#8217;s Law, <inlineequation><alt><![CDATA[F = ke]]></alt><mathphrase><![CDATA[F = ke]]></mathphrase></inlineequation>)</title>
+<simpara>A member is said to be elastic or obey Hooke&#8217;s law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain.</simpara>
+<tip>
+<informalequation>
+<alt><![CDATA[\frac{\sigma}{\epsilon} = constant]]></alt>
+<mathphrase><![CDATA[\frac{\sigma}{\epsilon} = constant]]></mathphrase>
+</informalequation>
+</tip>
+<simpara>Common classification of materials:</simpara>
+<simpara>Homogeneous material&#8201;&#8212;&#8201;uniform structure without any flaws or discontinuities e.g. steel<?asciidoc-br?>
+Inhomogeneous material&#8201;&#8212;&#8201;the structure varies from point to point e.g. concrete, some cast iron<?asciidoc-br?>
+Isotropic&#8201;&#8212;&#8201;uniform properties throughout in all directions<?asciidoc-br?>
+Anisotropic&#8201;&#8212;&#8201;varying properties<?asciidoc-br?>
+Othotropic&#8201;&#8212;&#8201;different properties in different planes e.g. wood, some composites</simpara>
+<simpara>Here, we assume homogeneous materials with isotropic properties.</simpara>
+</section>
+<section xml:id="_modulus_of_elasticity_youngs_modulus">
+<title>Modulus of Elasticity (Young&#8217;s Modulus, <inlineequation><alt><![CDATA[E]]></alt><mathphrase><![CDATA[E]]></mathphrase></inlineequation>)</title>
+<simpara>The constant derived above, within which Hooke&#8217;s law applies, is referred to as the <emphasis>modulus of elasticity</emphasis> or the <emphasis>Young&#8217;s modulus</emphasis>, <emphasis role="strong">E</emphasis>.</simpara>
+<tip>
+<informalequation>
+<alt><![CDATA[\frac{\sigma}{\epsilon} = E]]></alt>
+<mathphrase><![CDATA[\frac{\sigma}{\epsilon} = E]]></mathphrase>
+</informalequation>
+<informalequation>
+<alt><![CDATA[E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}]]></alt>
+<mathphrase><![CDATA[E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}]]></mathphrase>
+</informalequation>
+</tip>
+<simpara>The modulus of elasticity is assumed to be the same, both in tension or in compression. Since its value is large for most engineering materials, <inlineequation><alt><![CDATA[~ \times 10^9 N/m^2]]></alt><mathphrase><![CDATA[~ \times 10^9 N/m^2]]></mathphrase></inlineequation>, the strain will be small, <inlineequation><alt><![CDATA[~ 0.3\%]]></alt><mathphrase><![CDATA[~ 0.3\%]]></mathphrase></inlineequation>. Usually, the deformations are typically small with respect to the original dimension.</simpara>
+</section>
+<section xml:id="_tensile_test">
+<title>Tensile Test</title>
+<simpara>The modulus of elasticity is determined by carrying out a standard test as shown in the figure below. In this test, a circular bar of a uniform cross-section is subjected to a gradually increasing tensile load until failure occurs. The <emphasis role="marked">change in the <emphasis role="strong">gauge length</emphasis></emphasis> is recorded as the loading operation continues.</simpara>
+<figure xml:id="img-tensileTest">
+<title>Tensile test.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="solid-mechanics-figs/tensileTest.png" contentwidth="100%" align="left"/>
+</imageobject>
+<textobject><phrase>tensileTest</phrase></textobject>
+</mediaobject>
+</figure>
+<simpara><emphasis role="marked">Origin to point <emphasis role="strong">A</emphasis>:</emphasis> <emphasis>Hooke&#8217;s law</emphasis> is obeyed. Stress is proportional to strain.<?asciidoc-br?>
+<emphasis role="marked">At point <emphasis role="strong">A</emphasis>:</emphasis> <emphasis>limit of proportionality</emphasis><?asciidoc-br?>
+<emphasis role="marked">Between points <emphasis role="strong">A</emphasis> and <emphasis role="strong">B</emphasis>:</emphasis> the material may still be elastic but Hooke&#8217;s law is not obeyed.<?asciidoc-br?>
+<emphasis role="marked">At point <emphasis role="strong">B</emphasis>:</emphasis> <emphasis>elastic limit</emphasis><?asciidoc-br?>
+In most practical cases, points <emphasis role="strong">A</emphasis> and <emphasis role="strong">B</emphasis> are coincident.<?asciidoc-br?>
+<emphasis role="marked">Beyond point <emphasis role="strong">B</emphasis>:</emphasis> <emphasis>plastic deformation</emphasis><?asciidoc-br?>
+Strains are not totally recoverable and permanent deformations are recorded when load is removed.<?asciidoc-br?>
+<emphasis role="marked">At point <emphasis role="strong">C</emphasis>:</emphasis> <emphasis>upper yield point</emphasis><?asciidoc-br?>
+<emphasis role="marked">At point <emphasis role="strong">D</emphasis>:</emphasis> <emphasis>lower yield point</emphasis><?asciidoc-br?>
+A rapid increase in strain occurs without a corresponding increase in stress.<?asciidoc-br?>
+<emphasis role="marked">Between points <emphasis role="strong">E</emphasis> and <emphasis role="strong">F</emphasis>:</emphasis> <emphasis>necking</emphasis> occurs<?asciidoc-br?>
+The stress reaches the maximum value, the <emphasis>ultimate tensile strength</emphasis>.<?asciidoc-br?>
+<emphasis role="marked">At point <emphasis role="strong">F</emphasis>:</emphasis> the specimen breaks</simpara>
+<itemizedlist>
+<listitem>
+<simpara>The <emphasis role="strong">ductility</emphasis> is the capacity of a material to allow large plastic deformations.</simpara>
+</listitem>
+<listitem>
+<simpara>For some materials, say, non-ferrous and high-carbon steel, the difference between points C and D cannot be detected. In such cases, a <emphasis role="strong">proof stress</emphasis> is used to show the onset of plastic strain.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_poissons_ratio">
+<title>Poisson&#8217;s Ratio (<inlineequation><alt><![CDATA[v]]></alt><mathphrase><![CDATA[v]]></mathphrase></inlineequation>)</title>
+<simpara>When a bar is subjected to a tension load, it experiences an increase in length, <inlineequation><alt><![CDATA[\Delta L]]></alt><mathphrase><![CDATA[\Delta L]]></mathphrase></inlineequation>, giving a longitudinal strain in the bar, <inlineequation><alt><![CDATA[\epsilon_{Long}]]></alt><mathphrase><![CDATA[\epsilon_{Long}]]></mathphrase></inlineequation>.</simpara>
+<informalequation>
+<alt><![CDATA[\epsilon_{Long} = \frac{\Delta L}{L}]]></alt>
+<mathphrase><![CDATA[\epsilon_{Long} = \frac{\Delta L}{L}]]></mathphrase>
+</informalequation>
+<simpara>The breath, <inlineequation><alt><![CDATA[b]]></alt><mathphrase><![CDATA[b]]></mathphrase></inlineequation>, and the depth, <inlineequation><alt><![CDATA[d]]></alt><mathphrase><![CDATA[d]]></mathphrase></inlineequation>, of the bar will also reduce, thereby altering the lateral dimensions of the bar. The lateral strain, <inlineequation><alt><![CDATA[\epsilon_{Lat}]]></alt><mathphrase><![CDATA[\epsilon_{Lat}]]></mathphrase></inlineequation>, can be given by the following equation.</simpara>
+<tip>
+<informalequation>
+<alt><![CDATA[\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}]]></alt>
+<mathphrase><![CDATA[\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}]]></mathphrase>
+</informalequation>
+<informalequation>
+<alt><![CDATA[v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}]]></alt>
+<mathphrase><![CDATA[v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}]]></mathphrase>
+</informalequation>
+<informalequation>
+<alt><![CDATA[\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}]]></alt>
+<mathphrase><![CDATA[\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}]]></mathphrase>
+</informalequation>
+<informalequation>
+<alt><![CDATA[\epsilon_{Lat} = v \times \frac{\sigma}{E}]]></alt>
+<mathphrase><![CDATA[\epsilon_{Lat} = v \times \frac{\sigma}{E}]]></mathphrase>
+</informalequation>
+</tip>
+</section>
+<section xml:id="_modulus_of_rigidity">
+<title>Modulus of Rigidity (<inlineequation><alt><![CDATA[G]]></alt><mathphrase><![CDATA[G]]></mathphrase></inlineequation>)</title>
+<section xml:id="_shear_stress">
+<title>Shear Stress (<inlineequation><alt><![CDATA[\tau]]></alt><mathphrase><![CDATA[\tau]]></mathphrase></inlineequation>)</title>
+<tip>
+<informalequation>
+<alt><![CDATA[\tau (\text{shear stress}) = \frac{F (\text{shear load})}{A (\text{area resisting shear})}]]></alt>
+<mathphrase><![CDATA[\tau (\text{shear stress}) = \frac{F (\text{shear load})}{A (\text{area resisting shear})}]]></mathphrase>
+</informalequation>
+<informalequation>
+<alt><![CDATA[\tau (\text{in double shear stress}) = \frac{F}{2 \times A }]]></alt>
+<mathphrase><![CDATA[\tau (\text{in double shear stress}) = \frac{F}{2 \times A }]]></mathphrase>
+</informalequation>
+</tip>
+</section>
+<section xml:id="_shear_strain">
+<title>Shear Strain (<inlineequation><alt><![CDATA[\gamma]]></alt><mathphrase><![CDATA[\gamma]]></mathphrase></inlineequation>)</title>
+<informalequation>
+<alt><![CDATA[\gamma = \frac{\Delta L}{L}]]></alt>
+<mathphrase><![CDATA[\gamma = \frac{\Delta L}{L}]]></mathphrase>
+</informalequation>
+<itemizedlist>
+<listitem>
+<simpara>The <emphasis role="strong">modulus of rigidity</emphasis>, <inlineequation><alt><![CDATA[G]]></alt><mathphrase><![CDATA[G]]></mathphrase></inlineequation>, or <emphasis role="strong">shear modulus</emphasis> is comparable to modulus of elasticity and it is calculated as follows.</simpara>
+</listitem>
+</itemizedlist>
+<tip>
+<informalequation>
+<alt><![CDATA[G = \frac{\tau}{\gamma} = \text{constant}]]></alt>
+<mathphrase><![CDATA[G = \frac{\tau}{\gamma} = \text{constant}]]></mathphrase>
+</informalequation>
+</tip>
+</section>
+</section>
+</section>
+<section xml:id="_examples">
+<title>Examples</title>
+<important>
+<itemizedlist>
+<listitem>
+<simpara>Make sure you understand the concept. Draw sketches where necessary. Make sure you <emphasis role="marked">derive your equations</emphasis> correctly, then substitute the values. This is useful in preparing the general algorithm and reducing approximations.</simpara>
+</listitem>
+<listitem>
+<simpara>Your answers should be in SI units and scientific notation. Use the following form <emphasis role="marked"><inlineequation><alt><![CDATA[p.qrs \times 10^t]]></alt><mathphrase><![CDATA[p.qrs \times 10^t]]></mathphrase></inlineequation> <literal>units</literal></emphasis>. Where <inlineequation><alt><![CDATA[p,q,r,s]]></alt><mathphrase><![CDATA[p,q,r,s]]></mathphrase></inlineequation> is a number between <inlineequation><alt><![CDATA[0-9]]></alt><mathphrase><![CDATA[0-9]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[t]]></alt><mathphrase><![CDATA[t]]></mathphrase></inlineequation> is a signed integer, and <literal>units</literal> is the relevant SI units. This is useful in establishing a quick objective meaning of size/scale.</simpara>
+</listitem>
+</itemizedlist>
+</important>
+<section xml:id="_a_bar_with_various_cross_sections">
+<title>A bar with various cross-sections</title>
+<note>
+<simpara>A sectional bar of <inlineequation><alt><![CDATA[E = 210 GN/m^2]]></alt><mathphrase><![CDATA[E = 210 GN/m^2]]></mathphrase></inlineequation> is subjected to an axial tensile load of <inlineequation><alt><![CDATA[F_1 = F_2 = 25kN]]></alt><mathphrase><![CDATA[F_1 = F_2 = 25kN]]></mathphrase></inlineequation>. The circular section <inlineequation><alt><![CDATA[C_{s1}]]></alt><mathphrase><![CDATA[C_{s1}]]></mathphrase></inlineequation> has a diameter of <inlineequation><alt><![CDATA[25 mm]]></alt><mathphrase><![CDATA[25 mm]]></mathphrase></inlineequation>. A square cross-section of dimension <inlineequation><alt><![CDATA[C_{s2} = 40 mm]]></alt><mathphrase><![CDATA[C_{s2} = 40 mm]]></mathphrase></inlineequation>, and circular section <inlineequation><alt><![CDATA[C_{s3} = 20 mm]]></alt><mathphrase><![CDATA[C_{s3} = 20 mm]]></mathphrase></inlineequation> in diameter. <inlineequation><alt><![CDATA[L_{1} = 200 mm]]></alt><mathphrase><![CDATA[L_{1} = 200 mm]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[L_{2} = 110 mm]]></alt><mathphrase><![CDATA[L_{2} = 110 mm]]></mathphrase></inlineequation>, <inlineequation><alt><![CDATA[L_{3} = 450 mm]]></alt><mathphrase><![CDATA[L_{3} = 450 mm]]></mathphrase></inlineequation></simpara>
+<simpara>What is <emphasis role="strong">the stress</emphasis> in each section and <emphasis role="strong">the total extension</emphasis> of the sectional bar?</simpara>
+<figure xml:id="img-sectionalBar">
+<title>Sectional bar.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="solid-mechanics-figs/sectionalBar.png" contentwidth="100%" align="left"/>
+</imageobject>
+<textobject><phrase>sectionalBar</phrase></textobject>
+</mediaobject>
+</figure>
+</note>
+<informalexample>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>stress in each section</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma = \frac{F}{A}]]></alt><mathphrase><![CDATA[\sigma = \frac{F}{A}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma_{s1} = \frac{F}{\pi \times \big( \frac{D_1}{2} \big)^2}]]></alt><mathphrase><![CDATA[\sigma_{s1} = \frac{F}{\pi \times \big( \frac{D_1}{2} \big)^2}]]></mathphrase></inlineequation></simpara>
+<simpara><inlineequation><alt><![CDATA[\sigma_{s2} = \frac{F}{L_2^2}]]></alt><mathphrase><![CDATA[\sigma_{s2} = \frac{F}{L_2^2}]]></mathphrase></inlineequation></simpara>
+<simpara><inlineequation><alt><![CDATA[\sigma_{s3} = \frac{F}{\pi \times \big( \frac{D_3}{2} \big)^2}]]></alt><mathphrase><![CDATA[\sigma_{s3} = \frac{F}{\pi \times \big( \frac{D_3}{2} \big)^2}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>total extension (<inlineequation><alt><![CDATA[\Delta L]]></alt><mathphrase><![CDATA[\Delta L]]></mathphrase></inlineequation>)</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon = \frac{\sigma}{E}]]></alt><mathphrase><![CDATA[\epsilon = \frac{\sigma}{E}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon = \frac{\Delta L}{L}]]></alt><mathphrase><![CDATA[\epsilon = \frac{\Delta L}{L}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L = \Delta L_{s1} + \Delta L_{s2} + \Delta L_{s3}]]></alt><mathphrase><![CDATA[\Delta L = \Delta L_{s1} + \Delta L_{s2} + \Delta L_{s3}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]]></alt><mathphrase><![CDATA[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]]></mathphrase></inlineequation></simpara>
+</informalexample>
+</section>
+<section xml:id="_a_bored_circular_cross_section">
+<title>A bored circular cross-section</title>
+<note>
+<itemizedlist>
+<listitem>
+<simpara>A <inlineequation><alt><![CDATA[30 mm]]></alt><mathphrase><![CDATA[30 mm]]></mathphrase></inlineequation> diameter bar is subjected to an axial tensile load of <inlineequation><alt><![CDATA[115 kN]]></alt><mathphrase><![CDATA[115 kN]]></mathphrase></inlineequation>. Under the action of this load a <inlineequation><alt><![CDATA[200 mm]]></alt><mathphrase><![CDATA[200 mm]]></mathphrase></inlineequation> gauge length is found to extend <inlineequation><alt><![CDATA[0.15 \times 10^{-3} mm]]></alt><mathphrase><![CDATA[0.15 \times 10^{-3} mm]]></mathphrase></inlineequation>. Determine the modulus of elasticity for the bar material.</simpara>
+</listitem>
+<listitem>
+<simpara>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is <inlineequation><alt><![CDATA[245 MN/m^2]]></alt><mathphrase><![CDATA[245 MN/m^2]]></mathphrase></inlineequation>? The load can be assumed to remain constant at <inlineequation><alt><![CDATA[115 kN]]></alt><mathphrase><![CDATA[115 kN]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+<listitem>
+<simpara>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (<inlineequation><alt><![CDATA[E = 210 GN/m^2]]></alt><mathphrase><![CDATA[E = 210 GN/m^2]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[v = 0.3]]></alt><mathphrase><![CDATA[v = 0.3]]></mathphrase></inlineequation>)</simpara>
+</listitem>
+</itemizedlist>
+</note>
+<informalexample>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>modulus of elasticity</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{\sigma}{\epsilon} = E]]></alt><mathphrase><![CDATA[\frac{\sigma}{\epsilon} = E]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon = \frac{\Delta L}{L}]]></alt><mathphrase><![CDATA[\epsilon = \frac{\Delta L}{L}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[E = \sigma \frac{L}{\Delta L}]]></alt><mathphrase><![CDATA[E = \sigma \frac{L}{\Delta L}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[E = \frac{F}{A} \times \frac{L}{\Delta L}]]></alt><mathphrase><![CDATA[E = \frac{F}{A} \times \frac{L}{\Delta L}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[E = \frac{F}{\pi \times \big(\frac{D}{2}\big)^2} \times \frac{L}{\Delta L}]]></alt><mathphrase><![CDATA[E = \frac{F}{\pi \times \big(\frac{D}{2}\big)^2} \times \frac{L}{\Delta L}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>maximum diameter of bore</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma = \frac{F}{A}]]></alt><mathphrase><![CDATA[\sigma = \frac{F}{A}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A = \pi \times \big( \frac{D}{2} \big)^2 - \pi \times \big( \frac{d}{2} \big)^2]]></alt><mathphrase><![CDATA[A = \pi \times \big( \frac{D}{2} \big)^2 - \pi \times \big( \frac{d}{2} \big)^2]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A = \frac{\pi}{4} \times (D^2 - d^2)]]></alt><mathphrase><![CDATA[A = \frac{\pi}{4} \times (D^2 - d^2)]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[(D^2 - d^2) = \frac{F}{\sigma} \times \frac{4}{\pi}]]></alt><mathphrase><![CDATA[(D^2 - d^2) = \frac{F}{\sigma} \times \frac{4}{\pi}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[d = \sqrt{D^2 - \big( \frac{F}{\sigma} \times \frac{4}{\pi} \big)}]]></alt><mathphrase><![CDATA[d = \sqrt{D^2 - \big( \frac{F}{\sigma} \times \frac{4}{\pi} \big)}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>change in the outside diameter</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon = v \times \frac{\sigma}{E}]]></alt><mathphrase><![CDATA[\epsilon = v \times \frac{\sigma}{E}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{\Delta d}{d} = v \times \frac{\sigma}{E}]]></alt><mathphrase><![CDATA[\frac{\Delta d}{d} = v \times \frac{\sigma}{E}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta d = v \times \frac{\sigma}{E} \times d]]></alt><mathphrase><![CDATA[\Delta d = v \times \frac{\sigma}{E} \times d]]></mathphrase></inlineequation></simpara>
+</informalexample>
+</section>
+<section xml:id="_a_stressed_coupling">
+<title>A stressed coupling</title>
+<note>
+<simpara>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of <inlineequation><alt><![CDATA[50 kN]]></alt><mathphrase><![CDATA[50 kN]]></mathphrase></inlineequation>. If the bolt is of <inlineequation><alt><![CDATA[14.5 mm]]></alt><mathphrase><![CDATA[14.5 mm]]></mathphrase></inlineequation> diameter calculate:</simpara>
+<simpara><inlineequation><alt><![CDATA[F = F_1 = F_2 = 50 kN]]></alt><mathphrase><![CDATA[F = F_1 = F_2 = 50 kN]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_3 = F_4 = 25 kN]]></alt><mathphrase><![CDATA[F_3 = F_4 = 25 kN]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[W_1 = 55 mm]]></alt><mathphrase><![CDATA[W_1 = 55 mm]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[T_1 = T_2 = T_3 = 7 mm]]></alt><mathphrase><![CDATA[T_1 = T_2 = T_3 = 7 mm]]></mathphrase></inlineequation></simpara>
+<simpara>(a) the shear stress in the bolt;<?asciidoc-br?>
+(b) the direct stress in the plate;<?asciidoc-br?>
+(c) the direct stress in the forked end of the coupling.</simpara>
+<figure xml:id="img-coupling">
+<title>Coupling plate.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="solid-mechanics-figs/coupling.png" contentwidth="100%" align="left"/>
+</imageobject>
+<textobject><phrase>coupling</phrase></textobject>
+</mediaobject>
+</figure>
+</note>
+<informalexample>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>shear stress in the bolt</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\tau = \frac{\F}{A}]]></alt><mathphrase><![CDATA[\tau = \frac{\F}{A}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\tau = \frac{\F}{2 \times A}]]></alt><mathphrase><![CDATA[\tau = \frac{\F}{2 \times A}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\tau = \frac{4 \times \F}{2 \times \pi D^2}]]></alt><mathphrase><![CDATA[\tau = \frac{4 \times \F}{2 \times \pi D^2}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>direct stress in the plate</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma = \frac{\F}{A}]]></alt><mathphrase><![CDATA[\sigma = \frac{\F}{A}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>direct stress in the forked end</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma = \frac{\F}{A}]]></alt><mathphrase><![CDATA[\sigma = \frac{\F}{A}]]></mathphrase></inlineequation></simpara>
+</informalexample>
+</section>
+<section xml:id="_extension_of_tapered_bar">
+<title>Extension of tapered bar</title>
+<note>
+<simpara>Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load <inlineequation><alt><![CDATA[W]]></alt><mathphrase><![CDATA[W]]></mathphrase></inlineequation>.</simpara>
+<figure xml:id="img-taperedBar">
+<title>Tapered bar.</title>
+<mediaobject>
+<imageobject>
+<imagedata fileref="solid-mechanics-figs/taperedBar.png" contentwidth="100%" align="left"/>
+</imageobject>
+<textobject><phrase>taperedBar</phrase></textobject>
+</mediaobject>
+</figure>
+</note>
+</section>
+<section xml:id="_load_extension_graph_flag_assignment">
+<title>Load-extension graph (<inlinemediaobject>
+<imageobject>
+<imagedata fileref="./images/icons/flag.png"/>
+</imageobject>
+<textobject><phrase>flag</phrase></textobject>
+</inlinemediaobject> <emphasis role="marked">ASSIGNMENT</emphasis>)</title>
+<warning>
+<simpara>During a tensile test on a specimen the following results were obtained:</simpara>
+<informaltable frame="all" rowsep="1" colsep="1">
+<tgroup cols="8">
+<colspec colname="col_1" colwidth="12.5*"/>
+<colspec colname="col_2" colwidth="12.5*"/>
+<colspec colname="col_3" colwidth="12.5*"/>
+<colspec colname="col_4" colwidth="12.5*"/>
+<colspec colname="col_5" colwidth="12.5*"/>
+<colspec colname="col_6" colwidth="12.5*"/>
+<colspec colname="col_7" colwidth="12.5*"/>
+<colspec colname="col_8" colwidth="12.5*"/>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Load (kN)</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>15</simpara></entry>
+<entry align="left" valign="top"><simpara>30</simpara></entry>
+<entry align="left" valign="top"><simpara>40</simpara></entry>
+<entry align="left" valign="top"><simpara>50</simpara></entry>
+<entry align="left" valign="top"><simpara>55</simpara></entry>
+<entry align="left" valign="top"><simpara>60</simpara></entry>
+<entry align="left" valign="top"><simpara>65</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Extension (mm)</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>0.05</simpara></entry>
+<entry align="left" valign="top"><simpara>0.094</simpara></entry>
+<entry align="left" valign="top"><simpara>0.127</simpara></entry>
+<entry align="left" valign="top"><simpara>0.157</simpara></entry>
+<entry align="left" valign="top"><simpara>1.778</simpara></entry>
+<entry align="left" valign="top"><simpara>2.79</simpara></entry>
+<entry align="left" valign="top"><simpara>3.81</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Load (kN)</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>70</simpara></entry>
+<entry align="left" valign="top"><simpara>75</simpara></entry>
+<entry align="left" valign="top"><simpara>80</simpara></entry>
+<entry align="left" valign="top"><simpara>82</simpara></entry>
+<entry align="left" valign="top"><simpara>80</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>70</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara><emphasis role="strong">Extension (mm)</emphasis></simpara></entry>
+<entry align="left" valign="top"><simpara>5.08</simpara></entry>
+<entry align="left" valign="top"><simpara>7.62</simpara></entry>
+<entry align="left" valign="top"><simpara>12.7</simpara></entry>
+<entry align="left" valign="top"><simpara>16.0</simpara></entry>
+<entry align="left" valign="top"><simpara>19.05</simpara></entry>
+<entry align="left" valign="top"></entry>
+<entry align="left" valign="top"><simpara>22.9</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+<simpara>Diameter of gauge length = 19 mm<?asciidoc-br?>
+Gauge length = 100mm<?asciidoc-br?>
+Diameter at fracture = 16.49 mm<?asciidoc-br?>
+Gauge length at fracture = 121 mm</simpara>
+<simpara>Plot the complete load extension graph and the straight line portion to an enlarged scale. Hence determine:</simpara>
+<simpara>(a) the modulus of elasticity;<?asciidoc-br?>
+(b) the percentage elongation;<?asciidoc-br?>
+(c) the percentage reduction in the area;<?asciidoc-br?>
+(d) the nominal stress at fracture;<?asciidoc-br?>
+(e) the actual stress at fracture;<?asciidoc-br?>
+(f) the tensile strength.</simpara>
+</warning>
+</section>
+</section>
+</chapter>
+<chapter xml:id="_compound_bars">
+<title>Compound Bars</title>
+<section xml:id="_theory_2">
+<title>Theory</title>
+<itemizedlist>
+<listitem>
+<simpara>A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy <emphasis role="strong">equilibrium condition</emphasis>, <inlineequation><alt><![CDATA[F_{s} + F_{c} = F_{total}]]></alt><mathphrase><![CDATA[F_{s} + F_{c} = F_{total}]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+<listitem>
+<simpara>These different materials are constrained to deform together such that they satisfy <emphasis role="strong">compatibility condition</emphasis>, <inlineequation><alt><![CDATA[\epsilon_{material1} = \epsilon_{material2}]]></alt><mathphrase><![CDATA[\epsilon_{material1} = \epsilon_{material2}]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+<listitem>
+<simpara><emphasis role="strong">Modular ratio</emphasis>, <inlineequation><alt><![CDATA[m]]></alt><mathphrase><![CDATA[m]]></mathphrase></inlineequation>, is given by <inlineequation><alt><![CDATA[\frac{E_{material1}}{E_{material2}}]]></alt><mathphrase><![CDATA[\frac{E_{material1}}{E_{material2}}]]></mathphrase></inlineequation>.</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section xml:id="_examples_2">
+<title>Examples</title>
+<section xml:id="_a_concrete_column_with_steel_reinforcement">
+<title>A concrete column with steel reinforcement</title>
+<note>
+<simpara>A reinforced cement concrete column of dimension <inlineequation><alt><![CDATA[625\ mm \times 625\ mm]]></alt><mathphrase><![CDATA[625\ mm \times 625\ mm]]></mathphrase></inlineequation> has eight steel rods of diameter <inlineequation><alt><![CDATA[30\ mm]]></alt><mathphrase><![CDATA[30\ mm]]></mathphrase></inlineequation> as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if <inlineequation><alt><![CDATA[E =\ 200,000\ N/mm^2]]></alt><mathphrase><![CDATA[E =\ 200,000\ N/mm^2]]></mathphrase></inlineequation> for steel and <inlineequation><alt><![CDATA[10,000\ N/mm^2]]></alt><mathphrase><![CDATA[10,000\ N/mm^2]]></mathphrase></inlineequation> for concrete. Load on column <inlineequation><alt><![CDATA[=\ 3000\ kN]]></alt><mathphrase><![CDATA[=\ 3000\ kN]]></mathphrase></inlineequation> and length <inlineequation><alt><![CDATA[=\ 4\ m]]></alt><mathphrase><![CDATA[=\ 4\ m]]></mathphrase></inlineequation>.</simpara>
+</note>
+<informalexample>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>stresses in steel (<inlineequation><alt><![CDATA[\sigma_{s}]]></alt><mathphrase><![CDATA[\sigma_{s}]]></mathphrase></inlineequation>) and concrete (<inlineequation><alt><![CDATA[\sigma_{c}]]></alt><mathphrase><![CDATA[\sigma_{c}]]></mathphrase></inlineequation>)</emphasis><?asciidoc-br?>
+<inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/check.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>check</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> Equilibrium condition: <inlineequation><alt><![CDATA[F_{s} + F_{c} = F]]></alt><mathphrase><![CDATA[F_{s} + F_{c} = F]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/check.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>check</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> Compatibility condition: <inlineequation><alt><![CDATA[\epsilon_{s} = \epsilon_{c}]]></alt><mathphrase><![CDATA[\epsilon_{s} = \epsilon_{c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}]]></alt><mathphrase><![CDATA[\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}]]></alt><mathphrase><![CDATA[\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = F_c \times \frac{A_sE_s}{A_cE_c}]]></alt><mathphrase><![CDATA[F_s = F_c \times \frac{A_sE_s}{A_cE_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}]]></alt><mathphrase><![CDATA[F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}]]></alt><mathphrase><![CDATA[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}]]></alt><mathphrase><![CDATA[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}]]></alt><mathphrase><![CDATA[F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}]]></alt><mathphrase><![CDATA[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2]]></alt><mathphrase><![CDATA[A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A_c = (dimension \times dimension) - 2\pi D^2]]></alt><mathphrase><![CDATA[A_c = (dimension \times dimension) - 2\pi D^2]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}]]></alt><mathphrase><![CDATA[\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>elastic shortening (<inlineequation><alt><![CDATA[\Delta L]]></alt><mathphrase><![CDATA[\Delta L]]></mathphrase></inlineequation>)</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon_s = \frac{\Delta L_s}{L_s}]]></alt><mathphrase><![CDATA[\epsilon_s = \frac{\Delta L_s}{L_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon_s = \frac{\sigma_s}{E_s}]]></alt><mathphrase><![CDATA[\epsilon_s = \frac{\sigma_s}{E_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]]></alt><mathphrase><![CDATA[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L_c = L_c \times \frac{\sigma_c}{E_c}]]></alt><mathphrase><![CDATA[\Delta L_c = L_c \times \frac{\sigma_c}{E_c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[L_s = L_c = L]]></alt><mathphrase><![CDATA[L_s = L_c = L]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\epsilon_{s} = \epsilon_{c}]]></alt><mathphrase><![CDATA[\epsilon_{s} = \epsilon_{c}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}]]></alt><mathphrase><![CDATA[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}]]></mathphrase></inlineequation> (compression)</simpara>
+</informalexample>
+</section>
+<section xml:id="_encased_composite_bar">
+<title>Encased composite bar</title>
+<note>
+<simpara>A steel rod of diameter <inlineequation><alt><![CDATA[65\ mm]]></alt><mathphrase><![CDATA[65\ mm]]></mathphrase></inlineequation> and length <inlineequation><alt><![CDATA[1\ m]]></alt><mathphrase><![CDATA[1\ m]]></mathphrase></inlineequation> is encased by a cast iron (CI) sleeve <inlineequation><alt><![CDATA[9\ mm]]></alt><mathphrase><![CDATA[9\ mm]]></mathphrase></inlineequation> thick and of
+internal diameter <inlineequation><alt><![CDATA[65\ mm]]></alt><mathphrase><![CDATA[65\ mm]]></mathphrase></inlineequation>. The assembly is subjected to a load of <inlineequation><alt><![CDATA[45\ kN]]></alt><mathphrase><![CDATA[45\ kN]]></mathphrase></inlineequation>. Find the stresses in the two materials and the elongation of the assembly. <inlineequation><alt><![CDATA[E]]></alt><mathphrase><![CDATA[E]]></mathphrase></inlineequation> for steel <inlineequation><alt><![CDATA[=\ 200\ GPa]]></alt><mathphrase><![CDATA[=\ 200\ GPa]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[E]]></alt><mathphrase><![CDATA[E]]></mathphrase></inlineequation> for cast iron <inlineequation><alt><![CDATA[=\ 100\ GPa]]></alt><mathphrase><![CDATA[=\ 100\ GPa]]></mathphrase></inlineequation>.</simpara>
+</note>
+<informalexample>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>stresses in steel (<inlineequation><alt><![CDATA[\sigma_{s}]]></alt><mathphrase><![CDATA[\sigma_{s}]]></mathphrase></inlineequation>) and cast iron (<inlineequation><alt><![CDATA[\sigma_{I}]]></alt><mathphrase><![CDATA[\sigma_{I}]]></mathphrase></inlineequation>)</emphasis><?asciidoc-br?>
+<inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/check.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>check</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> Equilibrium condition: <inlineequation><alt><![CDATA[F_{s} + F_{I} = F]]></alt><mathphrase><![CDATA[F_{s} + F_{I} = F]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/check.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>check</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> Compatibility condition: <inlineequation><alt><![CDATA[\epsilon_{s} = \epsilon_{I}]]></alt><mathphrase><![CDATA[\epsilon_{s} = \epsilon_{I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}]]></alt><mathphrase><![CDATA[\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}]]></alt><mathphrase><![CDATA[\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = F_I \times \frac{A_sE_s}{A_IE_I}]]></alt><mathphrase><![CDATA[F_s = F_I \times \frac{A_sE_s}{A_IE_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}]]></alt><mathphrase><![CDATA[F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}]]></alt><mathphrase><![CDATA[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}]]></alt><mathphrase><![CDATA[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}]]></alt><mathphrase><![CDATA[F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}]]></alt><mathphrase><![CDATA[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A_s = \pi \big(\frac{d}{2} \big)^2]]></alt><mathphrase><![CDATA[A_s = \pi \big(\frac{d}{2} \big)^2]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)]]></alt><mathphrase><![CDATA[A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[D = d + 2 \times thickness]]></alt><mathphrase><![CDATA[D = d + 2 \times thickness]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}]]></alt><mathphrase><![CDATA[\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}]]></mathphrase></inlineequation></simpara>
+<simpara><inlinemediaobject><?asciidoc-br?>
+<imageobject><?asciidoc-br?>
+<imagedata fileref="./images/icons/key.png"/><?asciidoc-br?>
+</imageobject><?asciidoc-br?>
+<textobject><phrase>key</phrase></textobject><?asciidoc-br?>
+</inlinemediaobject> <emphasis>elongation of the assembly (<inlineequation><alt><![CDATA[\Delta L]]></alt><mathphrase><![CDATA[\Delta L]]></mathphrase></inlineequation>)</emphasis><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon_s = \frac{\Delta L_s}{L_s}]]></alt><mathphrase><![CDATA[\epsilon_s = \frac{\Delta L_s}{L_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\epsilon_s = \frac{\sigma_s}{E_s}]]></alt><mathphrase><![CDATA[\epsilon_s = \frac{\sigma_s}{E_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]]></alt><mathphrase><![CDATA[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L_I = L_I \times \frac{\sigma_I}{E_I}]]></alt><mathphrase><![CDATA[\Delta L_I = L_I \times \frac{\sigma_I}{E_I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[L_s = L_I = L]]></alt><mathphrase><![CDATA[L_s = L_I = L]]></mathphrase></inlineequation> and <inlineequation><alt><![CDATA[\epsilon_{s} = \epsilon_{I}]]></alt><mathphrase><![CDATA[\epsilon_{s} = \epsilon_{I}]]></mathphrase></inlineequation><?asciidoc-br?>
+<inlineequation><alt><![CDATA[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}]]></alt><mathphrase><![CDATA[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}]]></mathphrase></inlineequation> (extension)</simpara>
+</informalexample>
+</section>
+</section>
+</chapter>
+</book>
