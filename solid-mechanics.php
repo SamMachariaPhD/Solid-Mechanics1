@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1309,8 +1310,8 @@ internal diameter <span class="image"><img src="data:image/png;base64,iVBORw0KGg
 <!-- <div id="commentics"></div> -->
 
 <?php
-$cmtx_identifier = '1';
-$cmtx_reference  = 'Comments';
+$cmtx_identifier = 'solid-mechanics';
+$cmtx_reference  = 'solid-mechanics';
 $cmtx_folder     = '/comments/';
 require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
 ?>

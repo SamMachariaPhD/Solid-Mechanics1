@@ -1,5 +1,5 @@
 = Solid Mechanics: Theory and Examples   
-Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Contact <https://bit.ly/ContactDrSam>; Home <https://SiliconWit.com/>
+Dr. Sam Macharia  <https://SiliconWit.com>
 :description: Engineering, Computing, Science, and Philosophy 
 :keywords: Mechanics of Solids, Mechanics of Materials, Strength of Materials, 
 :docinfo1: 
@@ -576,3 +576,8 @@ stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] 
 // * [[[RSKhurmi]]] RS Khurmi | N Khurmi. _A Textbook of Strength of Materials_ S. Chand Publishing, 2019. ISBN 935283397X, 9789352833979 https://www.google.com/books?id=FqEbEAAAQBAJ[books.google]
 
 // * [[[RSubramanian]]] R. Subramanian. _Strength Of Materials_ Elsevier, 1997. ISBN 0198061102, 9780198061106 https://www.google.com/books?id=7lCnSQAACAAJ[books.google]
+
+
+++++
+include::startComments.html[]
+++++
