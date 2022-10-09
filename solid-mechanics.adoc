@@ -1,13 +1,13 @@
 = Solid Mechanics: Theory and Examples   
-Dr. Sam Macharia  <https://SiliconWit.com>
+Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Home <https://SiliconWit.com>
 :description: Engineering, Computing, Science, and Philosophy 
 :keywords: Mechanics of Solids, Mechanics of Materials, Strength of Materials, 
 :docinfo1: 
 :nofooter:
-:title-page-background-image: image:tension.png[fit=none, 
+:title-page-background-image: image:tension.png[fit=none, pdfwidth=55%,position=bottom left]
 :doctype: book
 :backend: docbook
-:toc:
+:toc: left 
 :icons: font 
 :favicon: favicon.png
 :stem: asciimath
@@ -19,6 +19,7 @@ Dr. Sam Macharia  <https://SiliconWit.com>
 :numbered:
 :eqnums: all
 :imagesdir: solid-mechanics-figs
+:experimental:
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
 // asciidoctor --backend html5 -a data-uri my_input_file.adoc //embede images directly to the html document 
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=png --backend html5 -a data-uri solid-mechanics.adoc // png and embede png as part of html is better 
@@ -28,15 +29,22 @@ Dr. Sam Macharia  <https://SiliconWit.com>
 // sudo apt-get install xmlto fop 
 // xmlto --skip-validation --with-fop pdf doc.xml
 
+// https://fontawesome.com/v4/icons/ 
+
+// asciidoctor -r asciidoctor-mathematical -a mathematical-format=png -r asciidoctor-multipage -b multipage_html5 -D test/out solid-mechanics.adoc // https://github.com/owenh000/asciidoctor-multipage 
+
+
+// ++++
+// include::subscribe.html[]
+// ++++
+
 Mechanics of solids may also go by the names mechanics of materials or strength of materials.
 
 == Simple Stress and Strain
 
-=== Theory 
-
 TIP: This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply. 
 
-==== Loading
+=== Loading
 
 Components of engineering structures or mechanisms experience various forces. For example, the cylindrical bar below is used in a lifting mechanism and so it is subjected to *tension* force along the axis. 
 
@@ -48,7 +56,7 @@ A member of a mechanism may experience loading in one of the following ways.
 (c) Impact or shock loads e.g. hammering 
 (d) Fatigue, fluctuating, or altering loads e.g. repeated loaded swivel, crack propagation 
 
-==== Direct or Normal Stress (stem:[\sigma])
+=== Direct or Normal Stress (stem:[\sigma])
 
 This is when a uniform-structured member or a bar is subjected to #*uniform* tension or compression#. 
 
@@ -60,7 +68,7 @@ This is when a uniform-structured member or a bar is subjected to #*uniform* ten
 ++++
 ====
 
-==== Direct or Normal Strain (stem:[\epsilon])
+=== Direct or Normal Strain (stem:[\epsilon])
 
 This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression. 
 
@@ -75,7 +83,7 @@ This is a dimensionless measure of a change in length of a member, after it has 
 Strain may be expressed as a percentage, stem:[\epsilon = \frac{\Delta L}{L} \times 100 \%].
 Tensile stress and strain are considered positive, while compressive ones are considered negative. 
 
-==== Elastic Materials (Hooke's Law, stem:[F = ke])
+=== Elastic Materials (Hooke's Law, stem:[F = ke])
 
 A member is said to be elastic or obey Hooke's law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain. 
 
@@ -97,7 +105,7 @@ Othotropic -- different properties in different planes e.g. wood, some composite
 
 Here, we assume homogeneous materials with isotropic properties. 
 
-==== Modulus of Elasticity (Young's Modulus, stem:[E])
+=== Modulus of Elasticity (Young's Modulus, stem:[E])
 
 The constant derived above, within which Hooke's law applies, is referred to as the _modulus of elasticity_ or the _Young's modulus_, *E*.
 
@@ -116,7 +124,7 @@ E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}
 
 The modulus of elasticity is assumed to be the same, both in tension or in compression. Since its value is large for most engineering materials, stem:[~ \times 10^9 N/m^2], the strain will be small, stem:[~ 0.3\%]. Usually, the deformations are typically small with respect to the original dimension. 
 
-==== Tensile Test 
+=== Tensile Test 
 
 The modulus of elasticity is determined by carrying out a standard test as shown in the figure below. In this test, a circular bar of a uniform cross-section is subjected to a gradually increasing tensile load until failure occurs. The #change in the *gauge length*# is recorded as the loading operation continues. 
 
@@ -144,7 +152,7 @@ The stress reaches the maximum value, the _ultimate tensile strength_.
 * The *ductility* is the capacity of a material to allow large plastic deformations.
 * For some materials, say, non-ferrous and high-carbon steel, the difference between points C and D cannot be detected. In such cases, a *proof stress* is used to show the onset of plastic strain.  
 
-==== Poisson's Ratio (stem:[v])
+=== Poisson's Ratio (stem:[v])
 
 When a bar is subjected to a tension load, it experiences an increase in length, stem:[\Delta L], giving a longitudinal strain in the bar, stem:[\epsilon_{Long}].
 
@@ -178,9 +186,9 @@ v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\D
 ++++
 ====
 
-==== Modulus of Rigidity (stem:[G])
+=== Modulus of Rigidity (stem:[G])
 
-===== Shear Stress (stem:[\tau])
+==== Shear Stress (stem:[\tau])
 
 [TIP]
 ====
@@ -195,7 +203,7 @@ v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\D
 ++++
 ====
 
-===== Shear Strain (stem:[\gamma])
+==== Shear Strain (stem:[\gamma])
 
 [stem]
 ++++
@@ -212,16 +220,13 @@ G = \frac{\tau}{\gamma} = \text{constant}
 ++++
 ====
 
-
-=== Examples
-
 [IMPORTANT]
 ====
-* Make sure you understand the concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. This is useful in preparing a general algorithm and reducing approximation errors. 
+* Before attempting a question, make sure you understand the fundamental concept. Draw sketches where necessary. Make sure you #derive your equations# correctly, then substitute the values. This is useful in preparing a general algorithm and reducing approximation errors. 
 * Your answers should be in SI units and scientific notation. Use the following form #stem:[p.qrs \times 10^t] `units`#. Where stem:[p,q,r,s] is a number between stem:[0-9], stem:[t] is a signed integer, and `units` is the relevant SI units. This is useful in establishing a quick objective meaning of size/scale. 
 ==== 
 
-==== A bar with various cross-sections 
+=== icon:info-circle[set=fi] A bar with various cross-sections 
 [NOTE]
 ====
 A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. A square cross-section of dimension stem:[C_{s2} = 40 mm], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
@@ -235,7 +240,12 @@ image::sectionalBar.png[sectionalBar,width=100%,float="left",align="left"]
 // <<EJ-Hearn>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
+
 [%hardbreaks]
 icon:key[set=fi] _stress in each section_
 stem:[\sigma = \frac{F}{A}]
@@ -256,9 +266,11 @@ stem:[\epsilon = \frac{\sigma}{E}]
 stem:[\epsilon = \frac{\Delta L}{L}]
 stem:[\Delta L = \Delta L_{s1} + \Delta L_{s2} + \Delta L_{s3}]
 stem:[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]
+
+|===
 ====
 
-==== A bored circular cross-section 
+=== icon:info-circle[set=fi] A bored circular cross-section 
 [NOTE]
 ====
 * A stem:[30 mm] diameter bar is subjected to an axial tensile load of stem:[115 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.15 \times 10^{-3} mm]. Determine the modulus of elasticity for the bar material. 
@@ -267,10 +279,15 @@ stem:[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]
 // <<EJ-Hearn>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
+
 [%hardbreaks]
 icon:key[set=fi] _modulus of elasticity_
-stem:[\frac{\sigma}{\epsilon} = E]
+stem:[\frac{\sigma}{\epsilon} = E] 
 stem:[\epsilon = \frac{\Delta L}{L}]
 stem:[E = \sigma \frac{L}{\Delta L}]
 stem:[E = \frac{F}{A} \times \frac{L}{\Delta L}]
@@ -289,9 +306,11 @@ icon:key[set=fi] _change in the outside diameter_
 stem:[\epsilon = v \times \frac{\sigma}{E}]
 stem:[\frac{\Delta d}{d} = v \times \frac{\sigma}{E}]
 stem:[\Delta d = v \times \frac{\sigma}{E} \times d]
+
+|===
 ====
 
-==== A stressed coupling 
+=== icon:info-circle[set=fi] A stressed coupling 
 [NOTE]
 ====
 The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50 kN]. If the bolt is of stem:[14.5 mm] diameter calculate:
@@ -314,7 +333,12 @@ image::coupling.png[coupling,width=100%,float="left",align="left"]
 // <<EJ-Hearn>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
+
 [%hardbreaks]
 icon:key[set=fi] _shear stress in the bolt_
 stem:[\tau = \frac{\F}{A}]
@@ -328,9 +352,11 @@ stem:[\sigma = \frac{\F}{A}]
 [%hardbreaks]
 icon:key[set=fi] _direct stress in the forked end_
 stem:[\sigma = \frac{\F}{A}]
+
+|===
 ====
 
-==== Extension of tapered bar 
+=== icon:info-circle[set=fi] Extension of tapered bar 
 [NOTE]
 ====
 Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load stem:[W].
@@ -342,8 +368,14 @@ image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 // <<EJ-Hearn>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
 
+
+|===
 ====
 
 // ==== Elongation under self-weight 
@@ -354,7 +386,7 @@ image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 // length of 1 m. The unit weight of steel is 78.5 kN/m3 and E = 200 GPa.
 // ====
 
-==== Load-extension graph (icon:flag[set=fi] #ASSIGNMENT#)
+=== icon:exclamation-triangle[set=fi] Load-extension graph #ASSIGNMENT#
 [WARNING]
 ====
 During a tensile test on a specimen the following results were obtained:
@@ -385,6 +417,17 @@ Plot the complete load extension graph and the straight line portion to an enlar
 // <<EJ-Hearn>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
+
 // ==== Stress due to bending (icon:flag[set=fi] #ASSIGNMENT#)
 // [WARNING]
 // ====
@@ -400,22 +443,23 @@ Plot the complete load extension graph and the straight line portion to an enlar
 
 == Compound Bars
 
-=== Theory 
-
 * A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy *equilibrium condition*, stem:[F_{s} + F_{c} = F_{total}]. 
 * These different materials are constrained to deform together such that they satisfy *compatibility condition*, stem:[\epsilon_{material1} = \epsilon_{material2}].
 * *Modular ratio*, stem:[m], is given by stem:[\frac{E_{material1}}{E_{material2}}].
 
-=== Examples 
-
-==== A concrete column with steel reinforcement 
+=== icon:info-circle[set=fi] A concrete column with steel reinforcement 
 [NOTE]
 ====
 A reinforced cement concrete column of dimension stem:[625\ mm \times 625\ mm] has eight steel rods of diameter stem:[30\ mm] as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if stem:[E =\ 200,000\ N/mm^2] for steel and stem:[10,000\ N/mm^2] for concrete. Load on column stem:[=\ 3000\ kN] and length stem:[=\ 4\ m].
 // <<RSubramanian>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
+
 [%hardbreaks]
 icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and concrete (stem:[\sigma_{c}])_
 icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{c} = F]
@@ -440,9 +484,11 @@ stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
 stem:[\Delta L_c = L_c \times \frac{\sigma_c}{E_c}]
 stem:[L_s = L_c = L] and stem:[\epsilon_{s} = \epsilon_{c}]
 stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}] (compression)
+
+|===
 ====
 
-==== Encased composite bar 
+=== icon:info-circle[set=fi] Encased composite bar 
 [NOTE]
 ====
 A steel rod of diameter stem:[65\ mm] and length stem:[1\ m] is encased by a cast iron (CI) sleeve stem:[9\ mm] thick and of
@@ -450,7 +496,12 @@ internal diameter stem:[65\ mm]. The assembly is subjected to a load of stem:[45
 // <<RSubramanian>>
 ====
 
+._Click to reveal/hide the solution._
+[%collapsible]
 ====
+|===
+a|
+
 [%hardbreaks]
 icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and cast iron (stem:[\sigma_{I}])_
 icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{I} = F]
@@ -465,7 +516,7 @@ stem:[F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}]
 stem:[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}]
 stem:[A_s = \pi \big(\frac{d}{2} \big)^2]
 stem:[A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)]
-stem:[D = d + 2 \times thickness]
+stem:[D = d + (2 \times thickness)]
 stem:[\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}]
 
 [%hardbreaks]
@@ -476,6 +527,8 @@ stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
 stem:[\Delta L_I = L_I \times \frac{\sigma_I}{E_I}]
 stem:[L_s = L_I = L] and stem:[\epsilon_{s} = \epsilon_{I}]
 stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] (extension)
+
+|===
 ====
 
 // ==== Tension and compression in a composite section 

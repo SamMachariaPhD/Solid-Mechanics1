@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="description" content="Engineering, Computing, Science, and Philosophy">
+<meta name="keywords" content="Mechanics of Solids, Mechanics of Materials, Strength of Materials,">
+<meta name="author" content="Dr. Sam Macharia">
+<link rel="icon" type="image/png" href="favicon.png">
+<title>Solid Mechanics: Theory and Examples</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre>code{display:block}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
+<!-- Google Ads. -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6590816372910687"
+     crossorigin="anonymous"></script>
+
+<!-- We could also include Javascript
+     for example in this document. -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+     (function(){
+     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+     s1.async=true;
+     s1.src='https://embed.tawk.to/633f134c37898912e96d3fbe/1gen66p79';
+     s1.charset='UTF-8';
+     s1.setAttribute('crossorigin','*');
+     s0.parentNode.insertBefore(s1,s0);
+     })();
+     </script>
+<!--End of Tawk.to Script-->
+
+<!--Start of MailChimp Subscribe Pop Up by exit Script-->
+<script id="mcjs">!
+     function(c,h,i,m,p){
+          m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)
+     }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/71dd098dcbd6c5501a0a533d3/876294ece12132fcfb943798d.js");
+     </script>
+<!--End of MailChimp Subscribe Pop Up Script-->
+
+  <!-- add the applause button style & script (head) -->
+  <!-- <link rel="stylesheet" href="applause-button.css" />
+  <script src="applause-button.js"></script> -->
+
+<!--Start commentics comments-->
+<!-- <script src="http://siliconwit.com/comments/embed.js"></script> -->
+
+<!-- Change some CSS for TOC -->
+<style>
+/* Change CSS overflow for table of contents. */
+#toc.toc2, #toc { overflow: scroll; }
+
+/* Change styling for footer text. */
+/* .footer-text { color: rgba(255,255,255,.8); background: rgba(0,0,0,.8); text-align: center;} */
+
+.footer-text {
+    background: rgba(0,0,0,.8);
+    color: rgba(255,255,255,.8);
+    padding: 1.25em;
+    margin: 0;
+    font-family: "Noto Serif","DejaVu Serif",serif;
+    font-size: 100%;
+    text-align: center;
+    line-height: 1;
+    position: relative;
+    cursor: auto;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    word-wrap: anywhere;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Subscribe button CSS */
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  margin:5px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+</style>
+
+<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
+                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
+             .nav-footer{text-align: center; margin-top: auto;}
+             .nav-footer > p > a {white-space: nowrap;}</style>
+</head>
+<body id="_simple_stress_and_strain" class="book toc2 toc-left">
+<div id="header">
+<h1>Solid Mechanics: Theory and Examples</h1>
+<div class="details">
+<span id="author" class="author">Dr. Sam Macharia</span><br>
+<span id="email" class="email"><a href="https://orcid.org/0000-0002-7326-7502" class="bare">https://orcid.org/0000-0002-7326-7502</a></span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<p><span class="toc-root"><a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></span></p><ul class="sectlevel1">
+<li><a href="_simple_stress_and_strain.html"><span class="toc-current">1. Simple Stress and Strain</span></a>
+<ul class="sectlevel2">
+<li><a href="_simple_stress_and_strain.html#_loading">1.1. Loading</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_direct_or_normal_stress_sigma">1.2. Direct or Normal Stress (<span class="image"><img src="solid-mechanics-figs/stem-8cda31ed38c6d59d14ebefa440099572.png" alt="stem 8cda31ed38c6d59d14ebefa440099572" width="9" height="6"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_direct_or_normal_strain_epsilon">1.3. Direct or Normal Strain (<span class="image"><img src="solid-mechanics-figs/stem-7ccca27b5ccc533a2dd72dc6fa28ed84.png" alt="stem 7ccca27b5ccc533a2dd72dc6fa28ed84" width="7" height="6"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_elastic_materials_hookes_law_f_ke">1.4. Elastic Materials (Hooke&#8217;s Law, <span class="image"><img src="solid-mechanics-figs/stem-70c4c93805acba0184bf5214cfb63260.png" alt="stem 70c4c93805acba0184bf5214cfb63260" width="40" height="9"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_modulus_of_elasticity_youngs_modulus_e">1.5. Modulus of Elasticity (Young&#8217;s Modulus, <span class="image"><img src="solid-mechanics-figs/stem-84df98c65d88c6adf15d4645ffa25e47.png" alt="stem 84df98c65d88c6adf15d4645ffa25e47" width="10" height="8"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_tensile_test">1.6. Tensile Test</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_poissons_ratio_v">1.7. Poisson&#8217;s Ratio (<span class="image"><img src="solid-mechanics-figs/stem-6c4adbc36120d62b98deef2a20d5d303.png" alt="stem 6c4adbc36120d62b98deef2a20d5d303" width="7" height="6"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_modulus_of_rigidity_g">1.8. Modulus of Rigidity (<span class="image"><img src="solid-mechanics-figs/stem-5201385589993766eea584cd3aa6fa13.png" alt="stem 5201385589993766eea584cd3aa6fa13" width="10" height="9"></span>)</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_a_bar_with_various_cross_sections">1.9. <span class="icon"><i class="fa fa-info-circle"></i></span> A bar with various cross-sections</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_a_bored_circular_cross_section">1.10. <span class="icon"><i class="fa fa-info-circle"></i></span> A bored circular cross-section</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_a_stressed_coupling">1.11. <span class="icon"><i class="fa fa-info-circle"></i></span> A stressed coupling</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_extension_of_tapered_bar">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</a>
+</li>
+<li><a href="_simple_stress_and_strain.html#_load_extension_graph_assignment">1.13. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></a>
+</li>
+</ul>
+</li>
+<li><a href="_compound_bars.html">2. Compound Bars</a>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_simple_stress_and_strain">1. Simple Stress and Strain</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This section covers idealized simple stress and strain. In more complex cases, some of these simplifications may not apply.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_loading">1.1. Loading</h3>
+<div class="paragraph">
+<p>Components of engineering structures or mechanisms experience various forces. For example, the cylindrical bar below is used in a lifting mechanism and so it is subjected to <strong>tension</strong> force along the axis.</p>
+</div>
+<div class="paragraph">
+<p>A member of a mechanism may experience loading in one of the following ways.</p>
+</div>
+<div class="paragraph">
+<p>(a) Static, dead, or non-fluctuating loads e.g. force due to gravity<br>
+(b) Live loads e.g. train on the railway<br>
+(c) Impact or shock loads e.g. hammering<br>
+(d) Fatigue, fluctuating, or altering loads e.g. repeated loaded swivel, crack propagation</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_direct_or_normal_stress_sigma">1.2. Direct or Normal Stress (<span class="image"><img src="solid-mechanics-figs/stem-8cda31ed38c6d59d14ebefa440099572.png" alt="stem 8cda31ed38c6d59d14ebefa440099572" width="9" height="6"></span>)</h3>
+<div class="paragraph">
+<p>This is when a uniform-structured member or a bar is subjected to <mark><strong>uniform</strong> tension or compression</mark>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-ac903a6bfed09f870de3b80c6227dc72.png" alt="$$\sigma\ (\text{stress}) = \frac{F\ (\text{load})}{A\ (\text{area})}\ \frac{N}{m^2}$$" width="141" height="30">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_direct_or_normal_strain_epsilon">1.3. Direct or Normal Strain (<span class="image"><img src="solid-mechanics-figs/stem-7ccca27b5ccc533a2dd72dc6fa28ed84.png" alt="stem 7ccca27b5ccc533a2dd72dc6fa28ed84" width="7" height="6"></span>)</h3>
+<div class="paragraph">
+<p>This is a dimensionless measure of a change in length of a member, after it has been subjected to tension or compression.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-453f474f9581c959c8047ab56788712d.png" alt="$$\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}$$" width="215" height="38">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Strain may be expressed as a percentage, <span class="image"><img src="solid-mechanics-figs/stem-4844a3e4412c18a30b4be29173823257.png" alt="stem 4844a3e4412c18a30b4be29173823257" width="86" height="18"></span>.
+Tensile stress and strain are considered positive, while compressive ones are considered negative.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_elastic_materials_hookes_law_f_ke">1.4. Elastic Materials (Hooke&#8217;s Law, <span class="image"><img src="solid-mechanics-figs/stem-70c4c93805acba0184bf5214cfb63260.png" alt="stem 70c4c93805acba0184bf5214cfb63260" width="40" height="9"></span>)</h3>
+<div class="paragraph">
+<p>A member is said to be elastic or obey Hooke&#8217;s law if it returns to its original length when the load is withdrawn. In this case, the stress is proportional to strain.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-804431e0c9ffbb659dd6b2b58d3594b6.png" alt="$$\frac{\sigma}{\epsilon} = constant$$" width="82" height="24">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Common classification of materials:</p>
+</div>
+<div class="paragraph">
+<p>Homogeneous material&#8201;&#8212;&#8201;uniform structure without any flaws or discontinuities e.g. steel<br>
+Inhomogeneous material&#8201;&#8212;&#8201;the structure varies from point to point e.g. concrete, some cast iron<br>
+Isotropic&#8201;&#8212;&#8201;uniform properties throughout in all directions<br>
+Anisotropic&#8201;&#8212;&#8201;varying properties<br>
+Othotropic&#8201;&#8212;&#8201;different properties in different planes e.g. wood, some composites</p>
+</div>
+<div class="paragraph">
+<p>Here, we assume homogeneous materials with isotropic properties.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modulus_of_elasticity_youngs_modulus_e">1.5. Modulus of Elasticity (Young&#8217;s Modulus, <span class="image"><img src="solid-mechanics-figs/stem-84df98c65d88c6adf15d4645ffa25e47.png" alt="stem 84df98c65d88c6adf15d4645ffa25e47" width="10" height="8"></span>)</h3>
+<div class="paragraph">
+<p>The constant derived above, within which Hooke&#8217;s law applies, is referred to as the <em>modulus of elasticity</em> or the <em>Young&#8217;s modulus</em>, <strong>E</strong>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-629fdeb3017cab1242781981f70ebb54.png" alt="$$\frac{\sigma}{\epsilon} = E$$" width="37" height="24">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-88782fc7c8dfc4436eb7d15abfd887db.png" alt="$$E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}$$" width="114" height="27">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The modulus of elasticity is assumed to be the same, both in tension or in compression. Since its value is large for most engineering materials, <span class="image"><img src="solid-mechanics-figs/stem-d84e4fd42e792650acb08694b666e6b1.png" alt="stem d84e4fd42e792650acb08694b666e6b1" width="81" height="11"></span>, the strain will be small, <span class="image"><img src="solid-mechanics-figs/stem-b0b13d24283972a547809b5101728dd7.png" alt="stem b0b13d24283972a547809b5101728dd7" width="38" height="9"></span>. Usually, the deformations are typically small with respect to the original dimension.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tensile_test">1.6. Tensile Test</h3>
+<div class="paragraph">
+<p>The modulus of elasticity is determined by carrying out a standard test as shown in the figure below. In this test, a circular bar of a uniform cross-section is subjected to a gradually increasing tensile load until failure occurs. The <mark>change in the <strong>gauge length</strong></mark> is recorded as the loading operation continues.</p>
+</div>
+<div id="img-tensileTest" class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="solid-mechanics-figs/tensileTest.png" alt="tensileTest" width="100%"></a>
+</div>
+<div class="title">Figure 1. Tensile test.</div>
+</div>
+<div class="paragraph">
+<p><mark>Origin to point <strong>A</strong>:</mark> <em>Hooke&#8217;s law</em> is obeyed. Stress is proportional to strain.<br>
+<mark>At point <strong>A</strong>:</mark> <em>limit of proportionality</em><br>
+<mark>Between points <strong>A</strong> and <strong>B</strong>:</mark> the material may still be elastic but Hooke&#8217;s law is not obeyed.<br>
+<mark>At point <strong>B</strong>:</mark> <em>elastic limit</em><br>
+In most practical cases, points <strong>A</strong> and <strong>B</strong> are coincident.<br>
+<mark>Beyond point <strong>B</strong>:</mark> <em>plastic deformation</em><br>
+Strains are not totally recoverable and permanent deformations are recorded when load is removed.<br>
+<mark>At point <strong>C</strong>:</mark> <em>upper yield point</em><br>
+<mark>At point <strong>D</strong>:</mark> <em>lower yield point</em><br>
+A rapid increase in strain occurs without a corresponding increase in stress.<br>
+<mark>Between points <strong>E</strong> and <strong>F</strong>:</mark> <em>necking</em> occurs<br>
+The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br>
+<mark>At point <strong>F</strong>:</mark> the specimen breaks</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>ductility</strong> is the capacity of a material to allow large plastic deformations.</p>
+</li>
+<li>
+<p>For some materials, say, non-ferrous and high-carbon steel, the difference between points C and D cannot be detected. In such cases, a <strong>proof stress</strong> is used to show the onset of plastic strain.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_poissons_ratio_v">1.7. Poisson&#8217;s Ratio (<span class="image"><img src="solid-mechanics-figs/stem-6c4adbc36120d62b98deef2a20d5d303.png" alt="stem 6c4adbc36120d62b98deef2a20d5d303" width="7" height="6"></span>)</h3>
+<div class="paragraph">
+<p>When a bar is subjected to a tension load, it experiences an increase in length, <span class="image"><img src="solid-mechanics-figs/stem-05928d182026fcac092718e010f7259d.png" alt="stem 05928d182026fcac092718e010f7259d" width="17" height="8"></span>, giving a longitudinal strain in the bar, <span class="image"><img src="solid-mechanics-figs/stem-f7d9dbac73e25915b67e0efc19d40a1f.png" alt="stem f7d9dbac73e25915b67e0efc19d40a1f" width="30" height="11"></span>.</p>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-7585edfa0b339cb5082a03c81016208a.png" alt="$$\epsilon_{Long} = \frac{\Delta L}{L}$$" width="66" height="27">
+</div>
+</div>
+<div class="paragraph">
+<p>The breath, <span class="image"><img src="solid-mechanics-figs/stem-4bdc8d9bcfb35e1c9bfb51fc69687dfc.png" alt="stem 4bdc8d9bcfb35e1c9bfb51fc69687dfc" width="7" height="9"></span>, and the depth, <span class="image"><img src="solid-mechanics-figs/stem-2103f85b8b1477f430fc407cad462224.png" alt="stem 2103f85b8b1477f430fc407cad462224" width="8" height="9"></span>, of the bar will also reduce, thereby altering the lateral dimensions of the bar. The lateral strain, <span class="image"><img src="solid-mechanics-figs/stem-2223ce82a2a88c4c1d579b5d55a7b097.png" alt="stem 2223ce82a2a88c4c1d579b5d55a7b097" width="23" height="9"></span>, can be given by the following equation.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-20a1185b4869eeeddf984fe88ce87a2f.png" alt="$$\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}$$" width="122" height="27">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-e071145f8c57574b02ef5427d41f8c40.png" alt="$$v (\text{Poisson&#8217;s ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}$$" width="237" height="32">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-e4f778bc87e17ef69d566190a44a4834.png" alt="$$\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}$$" width="110" height="26">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-89b9fd5e09e7a17b2f6dfd1e9a87e5c7.png" alt="$$\epsilon_{Lat} = v \times \frac{\sigma}{E}$$" width="73" height="24">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_modulus_of_rigidity_g">1.8. Modulus of Rigidity (<span class="image"><img src="solid-mechanics-figs/stem-5201385589993766eea584cd3aa6fa13.png" alt="stem 5201385589993766eea584cd3aa6fa13" width="10" height="9"></span>)</h3>
+<div class="sect3">
+<h4 id="_shear_stress_tau">1.8.1. Shear Stress (<span class="image"><img src="solid-mechanics-figs/stem-0fe1677705e987cac4f589ed600aa6b3.png" alt="stem 0fe1677705e987cac4f589ed600aa6b3" width="7" height="6"></span>)</h4>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-6144ee4381fd18d2cbfb0b276a10d546.png" alt="$$\tau (\text{shear stress}) = \frac{F (\text{shear load})}{A (\text{area resisting shear})}$$" width="248" height="31">
+</div>
+</div>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-6353c27943439415ca4b9608aced8968.png" alt="$$\tau (\text{in double shear stress}) = \frac{F}{2 \times A }$$" width="200" height="27">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_shear_strain_gamma">1.8.2. Shear Strain (<span class="image"><img src="solid-mechanics-figs/stem-11c596de17c342edeed29f489aa4b274.png" alt="stem 11c596de17c342edeed29f489aa4b274" width="7" height="8"></span>)</h4>
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-1efc27b74a2f01b8756dbea70f3cd249.png" alt="$$\gamma = \frac{\Delta L}{L}$$" width="43" height="27">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <strong>modulus of rigidity</strong>, <span class="image"><img src="solid-mechanics-figs/stem-5201385589993766eea584cd3aa6fa13.png" alt="stem 5201385589993766eea584cd3aa6fa13" width="10" height="9"></span>, or <strong>shear modulus</strong> is comparable to modulus of elasticity and it is calculated as follows.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="imageblock text-center">
+<div class="content">
+<img src="solid-mechanics-figs/stem-e9b7885bd35a1d52c6032064806afe64.png" alt="$$G = \frac{\tau}{\gamma} = \text{constant}$$" width="104" height="27">
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Before attempting a question, make sure you understand the fundamental concept. Draw sketches where necessary. Make sure you <mark>derive your equations</mark> correctly, then substitute the values. This is useful in preparing a general algorithm and reducing approximation errors.</p>
+</li>
+<li>
+<p>Your answers should be in SI units and scientific notation. Use the following form <mark><span class="image"><img src="solid-mechanics-figs/stem-3d8117ec463eb523728d2a32aef5d0e6.png" alt="stem 3d8117ec463eb523728d2a32aef5d0e6" width="65" height="12"></span> <code>units</code></mark>. Where <span class="image"><img src="solid-mechanics-figs/stem-7c444485ee94f641cd5a22f5b1b0400b.png" alt="stem 7c444485ee94f641cd5a22f5b1b0400b" width="52" height="8"></span> is a number between <span class="image"><img src="solid-mechanics-figs/stem-221be2a28ca6d15bef99bb7cc3d9676f.png" alt="stem 221be2a28ca6d15bef99bb7cc3d9676f" width="28" height="9"></span>, <span class="image"><img src="solid-mechanics-figs/stem-4f4f4e395762a3af4575de74c019ebb5.png" alt="stem 4f4f4e395762a3af4575de74c019ebb5" width="5" height="8"></span> is a signed integer, and <code>units</code> is the relevant SI units. This is useful in establishing a quick objective meaning of size/scale.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_a_bar_with_various_cross_sections">1.9. <span class="icon"><i class="fa fa-info-circle"></i></span> A bar with various cross-sections</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A sectional bar of <span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.png" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-59fb5042d465d8370d18b7cf76becba7.png" alt="stem 59fb5042d465d8370d18b7cf76becba7" width="95" height="12"></span>. The circular section <span class="image"><img src="solid-mechanics-figs/stem-76c152e03325f00f61d4e3df8b8a460a.png" alt="stem 76c152e03325f00f61d4e3df8b8a460a" width="19" height="11"></span> has a diameter of <span class="image"><img src="solid-mechanics-figs/stem-4810985eab670c2d74fa654e96876c77.png" alt="stem 4810985eab670c2d74fa654e96876c77" width="36" height="9"></span>. A square cross-section of dimension <span class="image"><img src="solid-mechanics-figs/stem-3ea115f1f32b99ae8cbe17b052a3c270.png" alt="stem 3ea115f1f32b99ae8cbe17b052a3c270" width="73" height="11"></span>, and circular section <span class="image"><img src="solid-mechanics-figs/stem-e5fb024d54aa6515c0793b553e71a61b.png" alt="stem e5fb024d54aa6515c0793b553e71a61b" width="72" height="11"></span> in diameter. <span class="image"><img src="solid-mechanics-figs/stem-b9349a3d95784b8a031c8002bc8f257e.png" alt="stem b9349a3d95784b8a031c8002bc8f257e" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-d8f599cddd9d84ba34765e283e7ae1ee.png" alt="stem d8f599cddd9d84ba34765e283e7ae1ee" width="73" height="11"></span>, <span class="image"><img src="solid-mechanics-figs/stem-05b3f8453654a6e824f4f0ab2c629257.png" alt="stem 05b3f8453654a6e824f4f0ab2c629257" width="74" height="11"></span></p>
+</div>
+<div class="paragraph">
+<p>What is <strong>the stress</strong> in each section and <strong>the total extension</strong> of the sectional bar?</p>
+</div>
+<div id="img-sectionalBar" class="imageblock left text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="solid-mechanics-figs/sectionalBar.png" alt="sectionalBar" width="100%"></a>
+</div>
+<div class="title">Figure 2. Sectional bar.</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">Click to reveal/hide the solution.</summary>
+<div class="content">
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>stress in each section</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-e52280395b52ddcdd10710905d8de0c6.png" alt="stem e52280395b52ddcdd10710905d8de0c6" width="35" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-459e28bae6e25b43fae065530b50d279.png" alt="stem 459e28bae6e25b43fae065530b50d279" width="84" height="35"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="solid-mechanics-figs/stem-a4c7ddeaa9e3a95d49ae02a843167eb4.png" alt="stem a4c7ddeaa9e3a95d49ae02a843167eb4" width="49" height="24"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="solid-mechanics-figs/stem-f22ea1d74f244698382f0e1d4a8c919e.png" alt="stem f22ea1d74f244698382f0e1d4a8c919e" width="86" height="35"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>total extension (<span class="image"><img src="solid-mechanics-figs/stem-05928d182026fcac092718e010f7259d.png" alt="stem 05928d182026fcac092718e010f7259d" width="17" height="8"></span>)</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-30f25e9361b242997da25daa7efe2f58.png" alt="stem 30f25e9361b242997da25daa7efe2f58" width="33" height="16"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-08ce0d7fc2e91210a1bca9dca8a52771.png" alt="stem 08ce0d7fc2e91210a1bca9dca8a52771" width="38" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-287327400c81422d8bfd55e0c7b3399b.png" alt="stem 287327400c81422d8bfd55e0c7b3399b" width="145" height="11"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-19b1a167842371aa875f91c2cda86e59.png" alt="stem 19b1a167842371aa875f91c2cda86e59" width="140" height="20"></span></p>
+</div>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_a_bored_circular_cross_section">1.10. <span class="icon"><i class="fa fa-info-circle"></i></span> A bored circular cross-section</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>A <span class="image"><img src="solid-mechanics-figs/stem-b91cfc75ad3cc6a1b62bf118d5e7fcbe.png" alt="stem b91cfc75ad3cc6a1b62bf118d5e7fcbe" width="36" height="9"></span> diameter bar is subjected to an axial tensile load of <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.png" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>. Under the action of this load a <span class="image"><img src="solid-mechanics-figs/stem-54b37d7d7e230b953fa99fb7e75fde13.png" alt="stem 54b37d7d7e230b953fa99fb7e75fde13" width="44" height="9"></span> gauge length is found to extend <span class="image"><img src="solid-mechanics-figs/stem-cffc713cfdd501b68d9568dc0d1c33cc.png" alt="stem cffc713cfdd501b68d9568dc0d1c33cc" width="90" height="10"></span>. Determine the modulus of elasticity for the bar material.</p>
+</li>
+<li>
+<p>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is <span class="image"><img src="solid-mechanics-figs/stem-6d16fd26522f1ea6da277addf741f0ce.png" alt="stem 6d16fd26522f1ea6da277addf741f0ce" width="74" height="11"></span>? The load can be assumed to remain constant at <span class="image"><img src="solid-mechanics-figs/stem-e05d0c73ba752d13c413cc2d9b4d224f.png" alt="stem e05d0c73ba752d13c413cc2d9b4d224f" width="41" height="9"></span>.</p>
+</li>
+<li>
+<p>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (<span class="image"><img src="solid-mechanics-figs/stem-6a14f500f31a0af532f0a0da5a455e49.png" alt="stem 6a14f500f31a0af532f0a0da5a455e49" width="96" height="11"></span> and <span class="image"><img src="solid-mechanics-figs/stem-0282f5dd4f52901083b8db23b80b4664.png" alt="stem 0282f5dd4f52901083b8db23b80b4664" width="41" height="9"></span>)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">Click to reveal/hide the solution.</summary>
+<div class="content">
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>modulus of elasticity</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-b057c4febb21a490b74ddd35c6fce1d0.png" alt="stem b057c4febb21a490b74ddd35c6fce1d0" width="35" height="16"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-08ce0d7fc2e91210a1bca9dca8a52771.png" alt="stem 08ce0d7fc2e91210a1bca9dca8a52771" width="38" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-470f72e937610c3eaa2fac22f2ed1a4d.png" alt="stem 470f72e937610c3eaa2fac22f2ed1a4d" width="50" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-1089d3b5173d2e20a53b028f9ae8aae4.png" alt="stem 1089d3b5173d2e20a53b028f9ae8aae4" width="66" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-bb46a2f7b434231975b3a09096c85593.png" alt="stem bb46a2f7b434231975b3a09096c85593" width="102" height="30"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>maximum diameter of bore</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-e52280395b52ddcdd10710905d8de0c6.png" alt="stem e52280395b52ddcdd10710905d8de0c6" width="35" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-413deaecf249f0cbf8f188e40bd598ee.png" alt="stem 413deaecf249f0cbf8f188e40bd598ee" width="142" height="22"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-d14318692af499ef7801ce722058bf51.png" alt="stem d14318692af499ef7801ce722058bf51" width="102" height="16"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-9f17fda6ba2395ddc5970d663a8a6835.png" alt="stem 9f17fda6ba2395ddc5970d663a8a6835" width="102" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-5075cf4f2bc1ef721c73d877153be2e4.png" alt="stem 5075cf4f2bc1ef721c73d877153be2e4" width="111" height="26"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>change in the outside diameter</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-7b24b522825725e9d99a13eea438e5e0.png" alt="stem 7b24b522825725e9d99a13eea438e5e0" width="55" height="16"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-3c5e2dd6c157315d820092399f7149af.png" alt="stem 3c5e2dd6c157315d820092399f7149af" width="63" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-d70c3826abd4666e18236d9e3123c62e.png" alt="stem d70c3826abd4666e18236d9e3123c62e" width="88" height="16"></span></p>
+</div>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_a_stressed_coupling">1.11. <span class="icon"><i class="fa fa-info-circle"></i></span> A stressed coupling</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of <span class="image"><img src="solid-mechanics-figs/stem-bcbbdfad1f95a3ad6c928e282da0f198.png" alt="stem bcbbdfad1f95a3ad6c928e282da0f198" width="34" height="9"></span>. If the bolt is of <span class="image"><img src="solid-mechanics-figs/stem-8699e9feeb2244045365900524173527.png" alt="stem 8699e9feeb2244045365900524173527" width="47" height="9"></span> diameter calculate:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="solid-mechanics-figs/stem-882b4a62d739f9b1ff05a76769ba80c3.png" alt="stem 882b4a62d739f9b1ff05a76769ba80c3" width="121" height="12"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-4da5b8e4bdf9bfe8e1d84e289aa10b2b.png" alt="stem 4da5b8e4bdf9bfe8e1d84e289aa10b2b" width="97" height="12"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-2d86fd9d7999694adb91ac88536d25dd.png" alt="stem 2d86fd9d7999694adb91ac88536d25dd" width="70" height="11"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-a9c1ba0cee72f6fa9715e492f0d0f361.png" alt="stem a9c1ba0cee72f6fa9715e492f0d0f361" width="119" height="11"></span></p>
+</div>
+<div class="paragraph">
+<p>(a) the shear stress in the bolt;<br>
+(b) the direct stress in the plate;<br>
+(c) the direct stress in the forked end of the coupling.</p>
+</div>
+<div id="img-coupling" class="imageblock left text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="solid-mechanics-figs/coupling.png" alt="coupling" width="100%"></a>
+</div>
+<div class="title">Figure 3. Coupling plate.</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">Click to reveal/hide the solution.</summary>
+<div class="content">
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>shear stress in the bolt</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-f4b64564fd5fb7c39b62112023b3710d.png" alt="stem f4b64564fd5fb7c39b62112023b3710d" width="35" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-270ece3c47d71729eb1c34bea45d3ee9.png" alt="stem 270ece3c47d71729eb1c34bea45d3ee9" width="53" height="18"></span><br>
+<span class="image"><img src="solid-mechanics-figs/stem-973e2e860ab01c73566623ff71ad77d1.png" alt="stem 973e2e860ab01c73566623ff71ad77d1" width="63" height="20"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>direct stress in the plate</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-095f439ed4d74faf2ff6d51b1ec58308.png" alt="stem 095f439ed4d74faf2ff6d51b1ec58308" width="37" height="18"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>direct stress in the forked end</em><br>
+<span class="image"><img src="solid-mechanics-figs/stem-095f439ed4d74faf2ff6d51b1ec58308.png" alt="stem 095f439ed4d74faf2ff6d51b1ec58308" width="37" height="18"></span></p>
+</div>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_extension_of_tapered_bar">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load <span class="image"><img src="solid-mechanics-figs/stem-84c95f91a742c9ceb460a83f9b5090bf.png" alt="stem 84c95f91a742c9ceb460a83f9b5090bf" width="13" height="8"></span>.</p>
+</div>
+<div id="img-taperedBar" class="imageblock left text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="solid-mechanics-figs/taperedBar.png" alt="taperedBar" width="100%"></a>
+</div>
+<div class="title">Figure 4. Tapered bar.</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">Click to reveal/hide the solution.</summary>
+<div class="content">
+
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_load_extension_graph_assignment">1.13. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>During a tensile test on a specimen the following results were obtained:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Load (kN)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">15</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">30</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">40</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">50</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">55</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">60</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extension (mm)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.05</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.094</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.127</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.157</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.778</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.79</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.81</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Load (kN)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">70</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">75</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">82</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">80</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">70</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extension (mm)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">5.08</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">7.62</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.7</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">19.05</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">22.9</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Diameter of gauge length = 19 mm<br>
+Gauge length = 100mm<br>
+Diameter at fracture = 16.49 mm<br>
+Gauge length at fracture = 121 mm</p>
+</div>
+<div class="paragraph">
+<p>Plot the complete load extension graph and the straight line portion to an enlarged scale. Hence determine:</p>
+</div>
+<div class="paragraph">
+<p>(a) the modulus of elasticity;<br>
+(b) the percentage elongation;<br>
+(c) the percentage reduction in the area;<br>
+(d) the nominal stress at fracture;<br>
+(e) the actual stress at fracture;<br>
+(f) the tensile strength.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title">Click to reveal/hide the solution.</summary>
+<div class="content">
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="paragraph nav-footer">
+<p>↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_compound_bars.html">Compound Bars</a> →</p>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
+<script>
+if (!hljs.initHighlighting.called) {
+  hljs.initHighlighting.called = true
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+}
+</script>
+<p class="footer-text">
+<!-- footer -->
+
+<!-- Copyright text  -->
+SiliconWit.com &copy; 2021-<script>document.write(new Date().getFullYear())</script> <!-- &#9997; Sam Macharia, PhD -->
+&emsp;
+<!-- Subscribe button -->
+<button class="button-3" onclick="location.href='http://eepurl.com/iaPhnT';"> Subscribe</button>
+
+</p>
+</body>
+</html>
