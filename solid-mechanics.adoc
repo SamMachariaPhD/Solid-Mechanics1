@@ -20,6 +20,11 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Home <https://SiliconW
 :eqnums: all
 :imagesdir: solid-mechanics-figs
 :experimental:
+
+++++
+include::subscribe.html[]
+++++
+
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=svg solid-mechanics.adoc
 // asciidoctor --backend html5 -a data-uri my_input_file.adoc //embede images directly to the html document 
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=png --backend html5 -a data-uri solid-mechanics.adoc // png and embede png as part of html is better 
@@ -33,10 +38,6 @@ Dr. Sam Macharia <https://orcid.org/0000-0002-7326-7502>; Home <https://SiliconW
 
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=png -r asciidoctor-multipage -b multipage_html5 -D test/out solid-mechanics.adoc // https://github.com/owenh000/asciidoctor-multipage 
 
-
-// ++++
-// include::subscribe.html[]
-// ++++
 
 Mechanics of solids may also go by the names mechanics of materials or strength of materials.
 
