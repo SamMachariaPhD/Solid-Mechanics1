@@ -376,8 +376,27 @@ image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 a|
 
 
+
 |===
 ====
+
+=== icon:info-circle[set=fi] Error of using mean diameter 
+[NOTE]
+====
+The mean diameter is used in calculating the modulus of elasticity, stem:[E], of a bar tapered from stem:[(D + a)] diameter to stem:[(D-a)] diameter. Show that the error involved in calculating stem:[E] is stem:[\big( \frac{10a}{D} \big)^2 \%].
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+
+
+|===
+====
+
 
 // ==== Elongation under self-weight 
 // [NOTE]
@@ -432,7 +451,7 @@ icon:flag[set=fi] Please attempt this assignment.
 // ==== Stress due to bending (icon:flag[set=fi] #ASSIGNMENT#)
 // [WARNING]
 // ====
-// Figure 1.24 shows a special spanner used to tighten screwedcomponents. A torque is applied at the tommybar and is transmitted to the pins which engage into holes located into the end of a screwed component.
+// Figure 1.24 shows a special spanner used to tighten screwed components. A torque is applied at the tommybar and is transmitted to the pins which engage into holes located into the end of a screwed component.
 
 // [%hardbreaks]
 // (a) Using the data given in Fig. 1.24calculate:
@@ -539,7 +558,116 @@ stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] 
 // given quarter of a turn. The bolt is single-threaded with 2 mm pitch. Find the stress in the bolt and the tube. What is the tensile force that must be applied to the assembly so that the stress in the tube is zero? E for aluminium = 70 GPa and E for brass = 100GPa.
 // ====
 
-// == Stress Due to Change in Temperature 
+== Thermal Stresses and Strains 
+
+* Whenever there is an increase or decrease in the temperature of a bar, it expands or contracts. 
+* If the bar is allowed to expand or contract freely, no stresses are induced in the bar.
+* If free expansion or contraction of the bar is prevented, *thermal stresses* are induced in the bar. The corresponding strain is called *thermal strain*.
+
+[TIP]
+====
+[%hardbreaks]
+Consider a bar subjected to an increase in temperature.
+stem:[L = \text{Original length}] 
+stem:[t = \text{Temperature increase}] 
+stem:[\alpha = \text{Coefficient of linear expansion}] 
+The increase in length due to the increase in temperature, 
+stem:[\Delta L = L \times \alpha \times t] 
+If the expansion is prevented, 
+stem:[\sigma = \epsilon \times E = \alpha t \times E] 
+If the supports yield by an amount of, say, stem:[\Delta],
+stem:[\Delta L = L \alpha t - \Delta]
+stem:[\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E] 
+====
+
+[grid=cols]
+|===
+|S. No. |Material |Coefficient of linear expansion stem:[\/^oC (\alpha)]
+
+|1.
+|Steel
+|stem:[11.5 \times 10^{-6} - 13 \times 10^{-6}]
+
+|2.
+|Wrought iron, Cast iron
+|stem:[11 \times 10^{-6} - 12 \times 10^{-6}]
+
+|3.
+|Aluminium
+|stem:[23 \times 10^{-6} - 24 \times 10^{-6}]
+
+|4.
+|Copper, Brass, Bronze 
+|stem:[17 \times 10^{-6} - 18 \times 10^{-6}]
+|===
+
+=== icon:info-circle[set=fi] Stress not to be exceeded 
+[NOTE]
+====
+A brass rod stem:[2.5 m] long is fixed at both ends. If the thermal stress is not to exceed stem:[77 MPa], calculate the temperature through which the rod should be heated. Take the values of stem:[\alpha] and stem:[E] as stem:[17 \times 10^{-6}\/K] and stem:[90 GPa] respectively.
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+
+
+|===
+====
+
+=== icon:info-circle[set=fi] Stress when temperature falls 
+[NOTE]
+====
+Two parallel walls stem:[6.5 m] apart are held together by a steel rod stem:[26 mm] diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of stem:[98^oC]. Determine the stress in the rod, when the temperature falls to stem:[60.5^oC], if
+[%hardbreaks]
+(a) the ends do not yield, and
+(b) the ends yield by stem:[1.5 mm]
+Take stem:[E = 200 GPa] and stem:[\alpha = 12 \times 10^{-6}\/^oC]
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+
+
+|===
+====
+
+=== icon:info-circle[set=fi] Thermal stress of a tapered bar
+[NOTE]
+====
+A rigidly fixed circular bar stem:[1.5 m] long uniformly tapers from stem:[124 mm] diameter at one end to stem:[95 mm] diameter at the other. If the maximum stress in the bar is not to exceed stem:[108 MPa], find the temperature through which it can be heated. Take stem:[E] and stem:[\alpha] for the bar material as stem:[100 GPa] and stem:[18 \times 10^{-6}\/ K] respectively.
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+
+
+|===
+====
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // === Theory 
 
