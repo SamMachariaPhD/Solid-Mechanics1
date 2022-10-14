@@ -442,8 +442,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/styles/github.min.css">
 <!-- Google Ads. -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6590816372910687"
-     crossorigin="anonymous"></script>
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6590816372910687"
+     crossorigin="anonymous"></script> -->
 
 <!-- We could also include Javascript
      for example in this document. -->
@@ -462,12 +462,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
      </script>
 <!--End of Tawk.to Script-->
 
-<!--Start of MailChimp Subscribe Pop Up by exit Script-->
-<script id="mcjs">!
+<!--Start of MailChimp Subscribe Pop Up Script-->
+<!-- <script id="mcjs">!
      function(c,h,i,m,p){
           m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)
      }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/71dd098dcbd6c5501a0a533d3/876294ece12132fcfb943798d.js");
-     </script>
+     </script> -->
 <!--End of MailChimp Subscribe Pop Up Script-->
 
   <!-- add the applause button style & script (head) -->
@@ -584,6 +584,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
+<li><a href="_thermal_stresses_and_strains.html">3. Thermal Stresses and Strains</a>
+</li>
 </ul>
 </div>
 </div>
@@ -594,13 +596,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy <strong>equilibrium condition</strong>, <span class="image"><img src="solid-mechanics-figs/stem-93b808ccd16737b25622105e012dc46c.png" alt="stem 93b808ccd16737b25622105e012dc46c" width="93" height="11"></span>.</p>
+<p>A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy <strong>equilibrium condition</strong>, \(F_{s} + F_{c} = F_{total}\).</p>
 </li>
 <li>
-<p>These different materials are constrained to deform together such that they satisfy <strong>compatibility condition</strong>, <span class="image"><img src="solid-mechanics-figs/stem-2a50305b4b80dab1760b1687299332aa.png" alt="stem 2a50305b4b80dab1760b1687299332aa" width="119" height="9"></span>.</p>
+<p>These different materials are constrained to deform together such that they satisfy <strong>compatibility condition</strong>, \(\epsilon_{material1} = \epsilon_{material2}\).</p>
 </li>
 <li>
-<p><strong>Modular ratio</strong>, <span class="image"><img src="solid-mechanics-figs/stem-0e51a2dede42189d77627c4d742822c3.png" alt="stem 0e51a2dede42189d77627c4d742822c3" width="11" height="6"></span>, is given by <span class="image"><img src="solid-mechanics-figs/stem-b50dc2dc0677cab91bb0597a44fdedf8.png" alt="stem b50dc2dc0677cab91bb0597a44fdedf8" width="50" height="24"></span>.</p>
+<p><strong>Modular ratio</strong>, \(m\), is given by \(\frac{E_{material1}}{E_{material2}}\).</p>
 </li>
 </ul>
 </div>
@@ -614,40 +616,56 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A reinforced cement concrete column of dimension <span class="image"><img src="solid-mechanics-figs/stem-b8a75b164d75338f85902fcf9cbaedd4.png" alt="stem b8a75b164d75338f85902fcf9cbaedd4" width="106" height="9"></span> has eight steel rods of diameter <span class="image"><img src="solid-mechanics-figs/stem-5f3401e81c441e3c05aa74bd2fc6917b.png" alt="stem 5f3401e81c441e3c05aa74bd2fc6917b" width="38" height="9"></span> as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if <span class="image"><img src="solid-mechanics-figs/stem-2ab6be10ced585a17d7d644bd2b563b4.png" alt="stem 2ab6be10ced585a17d7d644bd2b563b4" width="126" height="12"></span> for steel and <span class="image"><img src="solid-mechanics-figs/stem-d11f9f85fd2967a7f91b5a6b05d7f346.png" alt="stem d11f9f85fd2967a7f91b5a6b05d7f346" width="91" height="12"></span> for concrete. Load on column <span class="image"><img src="solid-mechanics-figs/stem-830a3a211d7db6825626ed9036ddc05c.png" alt="stem 830a3a211d7db6825626ed9036ddc05c" width="68" height="9"></span> and length <span class="image"><img src="solid-mechanics-figs/stem-dabbeb164ce4d758bc82816197ea4eba.png" alt="stem dabbeb164ce4d758bc82816197ea4eba" width="37" height="8"></span>.</p>
+<p>A reinforced cement concrete column of dimension \(625\ mm \times 625\ mm\) has eight steel rods of diameter \(30\ mm\) as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if \(E =\ 200,000\ N/mm^2\) for steel and \(10,000\ N/mm^2\) for concrete. Load on column \(=\ 3000\ kN\) and length \(=\ 4\ m\).</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <details>
-<summary class="title">Click to reveal/hide the solution.</summary>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
 <div class="content">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (<span class="image"><img src="solid-mechanics-figs/stem-b965b681180fd6e9e3a075c74d19b378.png" alt="stem b965b681180fd6e9e3a075c74d19b378" width="14" height="7"></span>) and concrete (<span class="image"><img src="solid-mechanics-figs/stem-263ad75f553f450b266f4e55bc78840c.png" alt="stem 263ad75f553f450b266f4e55bc78840c" width="14" height="7"></span>)</em><br>
-<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: <span class="image"><img src="solid-mechanics-figs/stem-3dca409230e37340e8675d3b5d13e378.png" alt="stem 3dca409230e37340e8675d3b5d13e378" width="70" height="10"></span><br>
-<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: <span class="image"><img src="solid-mechanics-figs/stem-a483b0fe5fb14c088396ffe6f3c395ab.png" alt="stem a483b0fe5fb14c088396ffe6f3c395ab" width="40" height="7"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-964009e9c60a78ec9a4aee31e1c8c56e.png" alt="stem 964009e9c60a78ec9a4aee31e1c8c56e" width="45" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-78b23b1d54f58d35765b8dd2e7cf2818.png" alt="stem 78b23b1d54f58d35765b8dd2e7cf2818" width="70" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-85794e73921865f59b1628cf424e684e.png" alt="stem 85794e73921865f59b1628cf424e684e" width="88" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-d09ad991c1dc405ee94359cf6862868d.png" alt="stem d09ad991c1dc405ee94359cf6862868d" width="121" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-e515913a32d56a31a705f0f4f7f58bfd.png" alt="stem e515913a32d56a31a705f0f4f7f58bfd" width="77" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-5b56742b41ba7978163bcd7b5ea5674a.png" alt="stem 5b56742b41ba7978163bcd7b5ea5674a" width="75" height="29"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-36d8998f0977c616cb8bacb4f7205499.png" alt="stem 36d8998f0977c616cb8bacb4f7205499" width="119" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-dfa0c1a5c138fcb4b6c1125d81a8086c.png" alt="stem dfa0c1a5c138fcb4b6c1125d81a8086c" width="124" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-18009c898a773977431cfa1a91861b63.png" alt="stem 18009c898a773977431cfa1a91861b63" width="138" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-8fe147cb7f171a6513c2f9d630b3ecbf.png" alt="stem 8fe147cb7f171a6513c2f9d630b3ecbf" width="228" height="12"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-51998b04f81884889a40303bf0f9f118.png" alt="stem 51998b04f81884889a40303bf0f9f118" width="163" height="20"></span></p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and concrete (\(\sigma_{c}\))</em><br>
+<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{c} = F\)<br>
+<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{c}\)<br>
+\(\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}\)<br>
+\(\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}\)<br>
+\(F_s = F_c \times \frac{A_sE_s}{A_cE_c}\)<br>
+\(F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}\)<br>
+\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}\)<br>
+\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}\)<br>
+\(F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}\)<br>
+\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}\)<br>
+\(A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2\)<br>
+\(A_c = (dimension \times dimension) - 2\pi D^2\)<br>
+\(\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}\)</p>
 </div>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>elastic shortening (<span class="image"><img src="solid-mechanics-figs/stem-05928d182026fcac092718e010f7259d.png" alt="stem 05928d182026fcac092718e010f7259d" width="17" height="8"></span>)</em><br>
-<span class="image"><img src="solid-mechanics-figs/stem-181cef5f18c322e5e7174ca288fdc876.png" alt="stem 181cef5f18c322e5e7174ca288fdc876" width="48" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-7d54c83efb3b0ba05a4d71a2bc438000.png" alt="stem 7d54c83efb3b0ba05a4d71a2bc438000" width="42" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-9e526a3ed07dedd9ae22f29034296481.png" alt="stem 9e526a3ed07dedd9ae22f29034296481" width="81" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-a201933d4f4121db4ab2df588e91c5a4.png" alt="stem a201933d4f4121db4ab2df588e91c5a4" width="82" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-e7624226889f2cde4ea7003c9de37cfc.png" alt="stem e7624226889f2cde4ea7003c9de37cfc" width="67" height="10"></span> and <span class="image"><img src="solid-mechanics-figs/stem-a483b0fe5fb14c088396ffe6f3c395ab.png" alt="stem a483b0fe5fb14c088396ffe6f3c395ab" width="40" height="7"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-26c277adc9b6394f5140b81204b530a9.png" alt="stem 26c277adc9b6394f5140b81204b530a9" width="125" height="18"></span> (compression)</p>
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>elastic shortening (\(\Delta L\))</em><br>
+\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
+\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_c = L_c \times \frac{\sigma_c}{E_c}\)<br>
+\(L_s = L_c = L\) and \(\epsilon_{s} = \epsilon_{c}\)<br>
+\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}\) (compression)</p>
 </div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </details>
 </div>
@@ -661,76 +679,65 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A steel rod of diameter <span class="image"><img src="solid-mechanics-figs/stem-ee5d69271629259e63848cc3e6c9224a.png" alt="stem ee5d69271629259e63848cc3e6c9224a" width="38" height="9"></span> and length <span class="image"><img src="solid-mechanics-figs/stem-50b4f148e1d73faa63a4afc04994d148.png" alt="stem 50b4f148e1d73faa63a4afc04994d148" width="18" height="8"></span> is encased by a cast iron (CI) sleeve <span class="image"><img src="solid-mechanics-figs/stem-7db78aa269b8afd17af55ff78245019f.png" alt="stem 7db78aa269b8afd17af55ff78245019f" width="30" height="9"></span> thick and of
-internal diameter <span class="image"><img src="solid-mechanics-figs/stem-ee5d69271629259e63848cc3e6c9224a.png" alt="stem ee5d69271629259e63848cc3e6c9224a" width="38" height="9"></span>. The assembly is subjected to a load of <span class="image"><img src="solid-mechanics-figs/stem-3d2ab488d9589498f5e279662a29db12.png" alt="stem 3d2ab488d9589498f5e279662a29db12" width="36" height="9"></span>. Find the stresses in the two materials and the elongation of the assembly. <span class="image"><img src="solid-mechanics-figs/stem-84df98c65d88c6adf15d4645ffa25e47.png" alt="stem 84df98c65d88c6adf15d4645ffa25e47" width="10" height="8"></span> for steel <span class="image"><img src="solid-mechanics-figs/stem-5803ae776fb571f49d1d99c5c23f96ee.png" alt="stem 5803ae776fb571f49d1d99c5c23f96ee" width="67" height="9"></span> and <span class="image"><img src="solid-mechanics-figs/stem-84df98c65d88c6adf15d4645ffa25e47.png" alt="stem 84df98c65d88c6adf15d4645ffa25e47" width="10" height="8"></span> for cast iron <span class="image"><img src="solid-mechanics-figs/stem-d2a093610943bd77e07fdf537afc9904.png" alt="stem d2a093610943bd77e07fdf537afc9904" width="67" height="9"></span>.</p>
+<p>A steel rod of diameter \(65\ mm\) and length \(1\ m\) is encased by a cast iron (CI) sleeve \(9\ mm\) thick and of
+internal diameter \(65\ mm\). The assembly is subjected to a load of \(45\ kN\). Find the stresses in the two materials and the elongation of the assembly. \(E\) for steel \(=\ 200\ GPa\) and \(E\) for cast iron \(=\ 100\ GPa\).</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
 <details>
-<summary class="title">Click to reveal/hide the solution.</summary>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
 <div class="content">
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (<span class="image"><img src="solid-mechanics-figs/stem-b965b681180fd6e9e3a075c74d19b378.png" alt="stem b965b681180fd6e9e3a075c74d19b378" width="14" height="7"></span>) and cast iron (<span class="image"><img src="solid-mechanics-figs/stem-7518000b8c249e577a328eb2bdf3fdd4.png" alt="stem 7518000b8c249e577a328eb2bdf3fdd4" width="14" height="9"></span>)</em><br>
-<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: <span class="image"><img src="solid-mechanics-figs/stem-9ac774eb1ea7c0cf9a5a8853ae7a8f6e.png" alt="stem 9ac774eb1ea7c0cf9a5a8853ae7a8f6e" width="70" height="11"></span><br>
-<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: <span class="image"><img src="solid-mechanics-figs/stem-6004e80194c232f67fa579f008fdf30c.png" alt="stem 6004e80194c232f67fa579f008fdf30c" width="40" height="9"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-9ed12d6e398573d05a116879c4edef07.png" alt="stem 9ed12d6e398573d05a116879c4edef07" width="44" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-39e2ca6e131205cf0aab9ae4c023d94d.png" alt="stem 39e2ca6e131205cf0aab9ae4c023d94d" width="69" height="23"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-9b0a2cd0cd419c39697e34df38597fc3.png" alt="stem 9b0a2cd0cd419c39697e34df38597fc3" width="87" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-a539b294fc0653eeeeb2c024a5c721e9.png" alt="stem a539b294fc0653eeeeb2c024a5c721e9" width="120" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-bac794720534a0eb24ee7ac84ded927a.png" alt="stem bac794720534a0eb24ee7ac84ded927a" width="76" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-9a94ad214de98753be2854fc3453ec78.png" alt="stem 9a94ad214de98753be2854fc3453ec78" width="74" height="29"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-d0a236f87ee8766d2fb278454a4c5407.png" alt="stem d0a236f87ee8766d2fb278454a4c5407" width="118" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-33b8b6374adf8616a11c09e0c52fd690.png" alt="stem 33b8b6374adf8616a11c09e0c52fd690" width="123" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-407c9a7831127dbdae2d389fafb1af80.png" alt="stem 407c9a7831127dbdae2d389fafb1af80" width="66" height="22"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-1dc75d35e5fea1b620dae6bb4f82cc28.png" alt="stem 1dc75d35e5fea1b620dae6bb4f82cc28" width="165" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-756524ed60a8424e0a27a52fcfaaedba.png" alt="stem 756524ed60a8424e0a27a52fcfaaedba" width="135" height="12"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-e44d9d9f7675cc4c7904143033832a58.png" alt="stem e44d9d9f7675cc4c7904143033832a58" width="162" height="23"></span></p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and cast iron (\(\sigma_{I}\))</em><br>
+<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{I} = F\)<br>
+<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{I}\)<br>
+\(\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}\)<br>
+\(\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}\)<br>
+\(F_s = F_I \times \frac{A_sE_s}{A_IE_I}\)<br>
+\(F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}\)<br>
+\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}\)<br>
+\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}\)<br>
+\(F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}\)<br>
+\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}\)<br>
+\(A_s = \pi \big(\frac{d}{2} \big)^2\)<br>
+\(A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)\)<br>
+\(D = d + (2 \times thickness)\)<br>
+\(\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}\)</p>
 </div>
 <div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>elongation of the assembly (<span class="image"><img src="solid-mechanics-figs/stem-05928d182026fcac092718e010f7259d.png" alt="stem 05928d182026fcac092718e010f7259d" width="17" height="8"></span>)</em><br>
-<span class="image"><img src="solid-mechanics-figs/stem-181cef5f18c322e5e7174ca288fdc876.png" alt="stem 181cef5f18c322e5e7174ca288fdc876" width="48" height="20"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-7d54c83efb3b0ba05a4d71a2bc438000.png" alt="stem 7d54c83efb3b0ba05a4d71a2bc438000" width="42" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-9e526a3ed07dedd9ae22f29034296481.png" alt="stem 9e526a3ed07dedd9ae22f29034296481" width="81" height="18"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-086b3c29137f7bce6f15e38770688949.png" alt="stem 086b3c29137f7bce6f15e38770688949" width="80" height="21"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-6759de9c390cd2685e52b8d1782a01cb.png" alt="stem 6759de9c390cd2685e52b8d1782a01cb" width="67" height="11"></span> and <span class="image"><img src="solid-mechanics-figs/stem-6004e80194c232f67fa579f008fdf30c.png" alt="stem 6004e80194c232f67fa579f008fdf30c" width="40" height="9"></span><br>
-<span class="image"><img src="solid-mechanics-figs/stem-058f7ce72299eda14ccb4bea6966ebd5.png" alt="stem 058f7ce72299eda14ccb4bea6966ebd5" width="125" height="21"></span> (extension)</p>
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>elongation of the assembly (\(\Delta L\))</em><br>
+\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
+\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_I = L_I \times \frac{\sigma_I}{E_I}\)<br>
+\(L_s = L_I = L\) and \(\epsilon_{s} = \epsilon_{I}\)<br>
+\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}\) (extension)</p>
 </div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </details>
-<!-- Step 1: Include the JavaScript SDK on your page once, ideally right after the opening body tag. -->
-<!-- <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=787925512262196&autoLogAppEvents=1" nonce="hUpr0zj0"></script> -->
-
-<!-- add the button! (body) -->
-<!-- <applause-button style="width: 58px; height: 58px;"/> -->
-
-<!-- Start facebook comment section -->
-<!-- Step 2: Place this code wherever you want the plugin to appear on your page. -->
-<!-- <hr>
-
-<div class="fb-comments" data-href="https://siliconwit.com/solid-mechanics" data-width="" data-numposts="20"></div>
-
-<hr> -->
-
-<!-- End facebook comment section -->
-
-<!-- Start commentics comment section -->
-
-<!-- <div id="commentics"></div> -->
-
-<?php
-$cmtx_identifier = '1';
-$cmtx_reference  = 'Comments';
-$cmtx_folder     = '/comments/';
-require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
-?>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_simple_stress_and_strain.html">Simple Stress and Strain</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></p>
+<p>← Previous: <a href="_simple_stress_and_strain.html">Simple Stress and Strain</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_thermal_stresses_and_strains.html">Thermal Stresses and Strains</a> →</p>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
@@ -740,6 +747,30 @@ if (!hljs.initHighlighting.called) {
   ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  messageStyle: "none",
+  tex2jax: {
+    inlineMath: [["\\(", "\\)"]],
+    displayMath: [["\\[", "\\]"]],
+    ignoreClass: "nostem|nolatexmath"
+  },
+  asciimath2jax: {
+    delimiters: [["\\$", "\\$"]],
+    ignoreClass: "nostem|noasciimath"
+  },
+  TeX: { equationNumbers: { autoNumber: "all" } }
+})
+MathJax.Hub.Register.StartupHook("AsciiMath Jax Ready", function () {
+  MathJax.InputJax.AsciiMath.postfilterHooks.Add(function (data, node) {
+    if ((node = data.script.parentNode) && (node = node.parentNode) && node.classList.contains("stemblock")) {
+      data.math.root.display = "block"
+    }
+    return data
+  })
+})
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
 <p class="footer-text">
 <!-- footer -->
 
@@ -747,7 +778,7 @@ if (!hljs.initHighlighting.called) {
 SiliconWit.com &copy; 2021-<script>document.write(new Date().getFullYear())</script> <!-- &#9997; Sam Macharia, PhD -->
 &emsp;
 <!-- Subscribe button -->
-<button class="button-3" onclick="location.href='http://eepurl.com/iaPhnT';"> Subscribe</button>
+<button class="button-3" onclick="location.href='https://50312631.sibforms.com/serve/MUIEAMNpGV92xSPcDr_46NegYWAVvHPghmb-X7Mk-vXlVoMCv9HHTuNuahdOqK57NP8x4zxM22qPmxUgAdBtg4XOOcWwqQzEDR3BrSfpzO2nagCGGlV1WXEBTOvf90PUd6UUMxZ1PmgLpZ4w0pXK0Iqg5brcEwooD91t2lP1hZd7LUtYh4SVBBKHJ2il_RHD5zB4dhSVuMbiVVSb';"> Subscribe</button>
 
 </p>
 </body>

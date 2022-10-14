@@ -37,6 +37,8 @@ include::subscribe.html[]
 // https://fontawesome.com/v4/icons/ 
 
 // asciidoctor -r asciidoctor-mathematical -a mathematical-format=png -r asciidoctor-multipage -b multipage_html5 -D test/out solid-mechanics.adoc // https://github.com/owenh000/asciidoctor-multipage 
+// asciidoctor -r asciidoctor-multipage -b multipage_html5 -D test/out --backend multipage_html5 -a data-uri solid-mechanics.adoc
+// asciidoctor --backend html5 -a data-uri solid-mechanics.adoc
 
 
 Mechanics of solids may also go by the names mechanics of materials or strength of materials.
@@ -77,7 +79,7 @@ This is a dimensionless measure of a change in length of a member, after it has 
 ====
 [stem]
 ++++
-\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}\ \frac{\cancel{m}}{\cancel{m}}
+\epsilon\ (\text{strain}) = \frac{\Delta L\ (\text{change in length})}{L\ (\text{original length})}
 ++++
 ====
 
@@ -117,10 +119,7 @@ The constant derived above, within which Hooke's law applies, is referred to as 
 \frac{\sigma}{\epsilon} = E
 ++++
 
-[stem]
-++++
-E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}
-++++
+stem:[E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}]
 ====
 
 The modulus of elasticity is assumed to be the same, both in tension or in compression. Since its value is large for most engineering materials, stem:[~ \times 10^9 N/m^2], the strain will be small, stem:[~ 0.3\%]. Usually, the deformations are typically small with respect to the original dimension. 
@@ -157,29 +156,20 @@ The stress reaches the maximum value, the _ultimate tensile strength_.
 
 When a bar is subjected to a tension load, it experiences an increase in length, stem:[\Delta L], giving a longitudinal strain in the bar, stem:[\epsilon_{Long}].
 
-[stem]
-++++
-\epsilon_{Long} = \frac{\Delta L}{L}
-++++
+stem:[\epsilon_{Long} = \frac{\Delta L}{L}]
 
 The breath, stem:[b], and the depth, stem:[d], of the bar will also reduce, thereby altering the lateral dimensions of the bar. The lateral strain, stem:[\epsilon_{Lat}], can be given by the following equation. 
 
 [TIP]
 ====
-[stem]
-++++
-\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}
-++++
+stem:[\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}]
 
 [stem]
 ++++
-v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}
+v\ (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}
 ++++
 
-[stem]
-++++
-\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}
-++++
+stem:[\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}]
 
 [stem]
 ++++
@@ -195,12 +185,12 @@ v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\D
 ====
 [stem]
 ++++
-\tau (\text{shear stress}) = \frac{F (\text{shear load})}{A (\text{area resisting shear})}
+\tau\ (\text{shear stress}) = \frac{F\ (\text{shear load})}{A\ (\text{area resisting shear})}
 ++++
 
 [stem]
 ++++
-\tau (\text{in double shear stress}) = \frac{F}{2 \times A }
+\tau\ (\text{in double shear stress}) = \frac{F}{2 \times A }
 ++++
 ====
 
@@ -230,7 +220,7 @@ G = \frac{\tau}{\gamma} = \text{constant}
 === icon:info-circle[set=fi] A bar with various cross-sections 
 [NOTE]
 ====
-A sectional bar of stem:[E = 210 GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25 mm]. A square cross-section of dimension stem:[C_{s2} = 40 mm], and circular section stem:[C_{s3} = 20 mm] in diameter. stem:[L_{1} = 200 mm], stem:[L_{2} = 110 mm], stem:[L_{3} = 450 mm]
+A sectional bar of stem:[E = 210\ GN/m^2] is subjected to an axial tensile load of stem:[F_1 = F_2 = 25\ kN]. The circular section stem:[C_{s1}] has a diameter of stem:[25\ mm]. A square cross-section of dimension stem:[C_{s2} = 40\ mm], and circular section stem:[C_{s3} = 20\ mm] in diameter. stem:[L_{1} = 200\ mm], stem:[L_{2} = 110\ mm], stem:[L_{3} = 450\ mm]
 
 What is *the stress* in each section and *the total extension* of the sectional bar?
 
@@ -274,9 +264,9 @@ stem:[\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}]
 === icon:info-circle[set=fi] A bored circular cross-section 
 [NOTE]
 ====
-* A stem:[30 mm] diameter bar is subjected to an axial tensile load of stem:[115 kN]. Under the action of this load a stem:[200 mm] gauge length is found to extend stem:[0.15 \times 10^{-3} mm]. Determine the modulus of elasticity for the bar material. 
-* To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[245 MN/m^2]? The load can be assumed to remain constant at stem:[115 kN]. 
-* What will be the change in the outside diameter of the bar under the limiting stress quoted above? (stem:[E = 210 GN/m^2] and stem:[v = 0.3])
+* A stem:[30\ mm] diameter bar is subjected to an axial tensile load of stem:[115\ kN]. Under the action of this load a stem:[200\ mm] gauge length is found to extend stem:[0.15 \times 10^{-3}\ mm]. Determine the modulus of elasticity for the bar material. 
+* To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is stem:[245\ MN/m^2]? The load can be assumed to remain constant at stem:[115\ kN]. 
+* What will be the change in the outside diameter of the bar under the limiting stress quoted above? (stem:[E = 210\ GN/m^2] and stem:[v =\ 0.3])
 // <<EJ-Hearn>>
 ====
 
@@ -314,7 +304,7 @@ stem:[\Delta d = v \times \frac{\sigma}{E} \times d]
 === icon:info-circle[set=fi] A stressed coupling 
 [NOTE]
 ====
-The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50 kN]. If the bolt is of stem:[14.5 mm] diameter calculate:
+The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of stem:[50\ kN]. If the bolt is of stem:[14.5\ mm] diameter calculate:
 
 [%hardbreaks]
 stem:[F = F_1 = F_2 = 50 kN]
@@ -342,22 +332,22 @@ a|
 
 [%hardbreaks]
 icon:key[set=fi] _shear stress in the bolt_
-stem:[\tau = \frac{\F}{A}]
-stem:[\tau = \frac{\F}{2 \times A}]
-stem:[\tau = \frac{4 \times \F}{2 \times \pi D^2}]
+stem:[\tau = \frac{F}{A}]
+stem:[\tau = \frac{F}{2 \times A}]
+stem:[\tau = \frac{4 \times F}{2 \times \pi D^2}]
 
 [%hardbreaks]
 icon:key[set=fi] _direct stress in the plate_
-stem:[\sigma = \frac{\F}{A}]
+stem:[\sigma = \frac{F}{A}]
 
 [%hardbreaks]
 icon:key[set=fi] _direct stress in the forked end_
-stem:[\sigma = \frac{\F}{A}]
+stem:[\sigma = \frac{F}{A}]
 
 |===
 ====
 
-=== icon:info-circle[set=fi] Extension of tapered bar 
+=== icon:info-circle[set=fi] Extension of tapered bar [[circular-taper]]
 [NOTE]
 ====
 Derive an expression for the total extension of the tapered bar of the circular cross-section shown below when it is subjected to an axial tensile load stem:[W].
@@ -375,7 +365,47 @@ image::taperedBar.png[taperedBar,width=100%,float="left",align="left"]
 |===
 a|
 
+icon:key[set=fi] Consider a very small length stem:[dx] with diameter stem:[P], experiencing the tensile force of stem:[W], and then integrate over the whole length, stem:[L].
+[%hardbreaks]
+stem:[\Delta L = \frac{\sigma}{E} \times L]
+stem:[\Delta L = \frac{\sigma}{E} \times dx]
+stem:[\Delta L = \frac{W}{AE} \times dx]
+stem:[\Delta L = \frac{W}{\frac{\pi}{4} \times P^2 \times E} \times dx]
 
+[#img-taperedBarSec] 
+.Tapered bar section.
+[link=https://siliconwit.com/solid-mechanics] 
+image::taperedBarSec.png[taperedBarSec,width=100%,float="left",align="left"]
+
+[%hardbreaks]
+stem:[P = (2 q)+d]
+stem:[\frac{q}{x} = \frac{D-d}{2}/L]
+stem:[q = \frac{(D-d)}{2L} \times x]
+stem:[P = \frac{(D-d)}{L} x + d]
+Letting stem:[k = \frac{(D-d)}{L}], stem:[P = d + kx]
+stem:[\Delta L = \frac{W}{\frac{\pi}{4} \times (d + kx)^2 \times E} dx]
+stem:[\Delta L = \int_{0}^{L} \frac{4W}{\pi \times (d + kx)^2 \times E} \,dx] 
+stem:[\Delta L = \frac{4W}{\pi E} \int_{0}^{L} (d + kx)^{-2} \,dx] 
+Let stem:[u = d + kx]; stem:[\frac{du}{dx} = k]; stem:[dx = \frac{du}{k}]
+stem:[\Delta L = \frac{4W}{k \pi E} \int_{0}^{L} (u)^{-2} \,du] 
+// stem:[\Delta L = \frac{4W}{k \pi E} \biggr( -(u)^{-1} \biggr)_{0}^{L} ] 
+stem:[\Delta L = \frac{4W}{k \pi E} \begin{bmatrix}
+-(u)^{-1}
+\end{bmatrix} _{0}^{L}]
+// stem:[\Delta L = \frac{4W}{k \pi E} \biggr( -(d + kx)^{-1} \biggr)_{0}^{L} ] 
+stem:[\Delta L = \frac{4W}{k \pi E} \begin{bmatrix}
+-(d + kx)^{-1} 
+\end{bmatrix} _{0}^{L}] 
+stem:[\Delta L = \frac{4W}{k \pi E} \biggr( (\frac{-1}{d + kL}) - (\frac{-1}{d})\biggr)] 
+stem:[\Delta L = \frac{4W}{k \pi E} \biggr( \frac{1}{d} - \frac{1}{d + kL} \biggr)] 
+stem:[\Delta L = \frac{4W}{k \pi E} \biggr( \frac{kL}{d(d + kL)} \biggr)] 
+// stem:[\Delta L = \frac{4W}{\pi E} \times \frac{L}{d(d + kL)}] 
+stem:[\Delta L = \frac{4W}{\pi E} \times \frac{L}{d(d + \Big( \frac{(D-d)}{L} \Big) \times L)}] 
+stem:[\Delta L = \frac{4WL}{\pi E d D}] 
+// stem:[
+// \begin{bmatrix}
+// -(d + kx)^{-1} 
+// \end{bmatrix} _{0}^{L} ]
 
 |===
 ====
@@ -392,7 +422,22 @@ The mean diameter is used in calculating the modulus of elasticity, stem:[E], of
 |===
 a|
 
+icon:key[set=fi] stem:[E] for a tapered circular bar should be derived similar to <<circular-taper>> :
 
+[%hardbreaks]
+stem:[\Delta L = \frac{4WL}{\pi E d D}] 
+stem:[E = \frac{4WL}{\pi \Delta L d D}] 
+stem:[E = \frac{4WL}{\pi \Delta L (D-a) (D+a)}] 
+stem:[E = \frac{4WL}{\pi \Delta L (D^2-a^2)}] 
+But when mean diameter, stem:[D_m = \frac{(D-a)+(D+a)}{2} = D], is used instead,
+stem:[\Delta L = \frac{WL}{AE_m}] 
+stem:[\Delta L = \frac{WL}{(\frac{\pi}{4}D^2)E_m}] 
+stem:[E_m = \frac{4WL}{\pi \Delta L (D^2)}] 
+stem:[\% error = \frac{E-E_m}{E} \times 100]
+stem:[\frac{\big( \frac{4WL}{\pi \Delta L (D^2-a^2)} \big) - \big( \frac{4WL}{\pi \Delta L (D^2)} \big)} {\frac{4WL}{\pi \Delta L (D^2-a^2)}} \times 100]
+stem:[\frac{\big( \frac{1}{ (D^2-a^2)} \big) - \big( \frac{1}{D^2} \big)} {\frac{1}{(D^2-a^2)}} \times 100]
+stem:[\frac{\big( \frac{D^2 - (D^2 - a^2)}{ D^2(D^2-a^2)} \times (D^2-a^2) \big) \times 100]
+stem:[\Big( \frac{10 a}{D} \Big)^2 \%]
 
 |===
 ====
@@ -466,6 +511,18 @@ icon:flag[set=fi] Please attempt this assignment.
 * A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy *equilibrium condition*, stem:[F_{s} + F_{c} = F_{total}]. 
 * These different materials are constrained to deform together such that they satisfy *compatibility condition*, stem:[\epsilon_{material1} = \epsilon_{material2}].
 * *Modular ratio*, stem:[m], is given by stem:[\frac{E_{material1}}{E_{material2}}].
+
+[TIP]
+====
+[stem]
+++++
+F_{s} + F_{c} = F_{total}
+++++
+[stem]
+++++
+\epsilon_{material1} = \epsilon_{material2}
+++++
+====
 
 === icon:info-circle[set=fi] A concrete column with steel reinforcement 
 [NOTE]
@@ -551,6 +608,25 @@ stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] 
 |===
 ====
 
+
+=== icon:exclamation-triangle[set=fi] A steel rod and brass bush #ASSIGNMENT#
+[NOTE]
+====
+A stem:[75\ mm] diameter compound bar is constructed by shrinking a circular brass bush onto the outside of a stem:[50\ mm] diameter solid steel rod. If the compound bar is then subjected to an axial compressive load of stem:[160\ kN] determine the load carried by the steel rod and the brass bush and the compressive stress set up in each material. For steel, stem:[E = 210\ GN/m^2]; for brass, stem:[E = 100\ GN/m^2]. 
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
+
 // ==== Tension and compression in a composite section 
 // [NOTE]
 // ====
@@ -572,39 +648,51 @@ stem:[L = \text{Original length}]
 stem:[t = \text{Temperature increase}] 
 stem:[\alpha = \text{Coefficient of linear expansion}] 
 The increase in length due to the increase in temperature, 
-stem:[\Delta L = L \times \alpha \times t] 
+
+[stem]
+++++
+\Delta L = L \times \alpha \times t
+++++
+
+[%hardbreaks]
 If the expansion is prevented, 
 stem:[\sigma = \epsilon \times E = \alpha t \times E] 
 If the supports yield by an amount of, say, stem:[\Delta],
-stem:[\Delta L = L \alpha t - \Delta]
+
+[stem]
+++++
+\Delta L = L \alpha t - \Delta
+++++
+
 stem:[\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E] 
 ====
 
 [grid=cols]
 |===
-|S. No. |Material |Coefficient of linear expansion stem:[\/^oC (\alpha)]
+|S. No. |Material |Coefficient of linear expansion stem:[/^oC (\alpha)]
 
 |1.
 |Steel
-|stem:[11.5 \times 10^{-6} - 13 \times 10^{-6}]
+|stem:[11.5 \times 10^{-6}\ to\ 13 \times 10^{-6}]
 
 |2.
 |Wrought iron, Cast iron
-|stem:[11 \times 10^{-6} - 12 \times 10^{-6}]
+|stem:[11 \times 10^{-6}\ to\ 12 \times 10^{-6}]
 
 |3.
 |Aluminium
-|stem:[23 \times 10^{-6} - 24 \times 10^{-6}]
+|stem:[23 \times 10^{-6}\ to\ 24 \times 10^{-6}]
 
 |4.
 |Copper, Brass, Bronze 
-|stem:[17 \times 10^{-6} - 18 \times 10^{-6}]
+|stem:[17 \times 10^{-6}\ to\ 18 \times 10^{-6}]
 |===
 
 === icon:info-circle[set=fi] Stress not to be exceeded 
 [NOTE]
 ====
-A brass rod stem:[2.5 m] long is fixed at both ends. If the thermal stress is not to exceed stem:[77 MPa], calculate the temperature through which the rod should be heated. Take the values of stem:[\alpha] and stem:[E] as stem:[17 \times 10^{-6}\/K] and stem:[90 GPa] respectively.
+A brass rod stem:[2.5\ m] long is fixed at both ends. If the thermal stress is not to exceed stem:[77\ MPa], calculate the temperature through which the rod should be heated. Take the values of stem:[\alpha] and stem:[E] as stem:[17 \times 10^{-6}/K] and stem:[90\ GPa] respectively.
+// <<RSKhurmi>>
 ====
 
 ._Click to reveal/hide the solution._
@@ -621,11 +709,12 @@ a|
 === icon:info-circle[set=fi] Stress when temperature falls 
 [NOTE]
 ====
-Two parallel walls stem:[6.5 m] apart are held together by a steel rod stem:[26 mm] diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of stem:[98^oC]. Determine the stress in the rod, when the temperature falls to stem:[60.5^oC], if
+Two parallel walls stem:[6.5\ m] apart are held together by a steel rod stem:[26\ mm] diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of stem:[98^oC]. Determine the stress in the rod, when the temperature falls to stem:[60.5^oC], if
 [%hardbreaks]
 (a) the ends do not yield, and
-(b) the ends yield by stem:[1.5 mm]
-Take stem:[E = 200 GPa] and stem:[\alpha = 12 \times 10^{-6}\/^oC]
+(b) the ends yield by stem:[1.5\ mm]
+Take stem:[E = 200\ GPa] and stem:[\alpha = 12 \times 10^{-6}/^oC]
+// <<RSKhurmi>>
 ====
 
 ._Click to reveal/hide the solution._
@@ -642,7 +731,8 @@ a|
 === icon:info-circle[set=fi] Thermal stress of a tapered bar
 [NOTE]
 ====
-A rigidly fixed circular bar stem:[1.5 m] long uniformly tapers from stem:[124 mm] diameter at one end to stem:[95 mm] diameter at the other. If the maximum stress in the bar is not to exceed stem:[108 MPa], find the temperature through which it can be heated. Take stem:[E] and stem:[\alpha] for the bar material as stem:[100 GPa] and stem:[18 \times 10^{-6}\/ K] respectively.
+A rigidly fixed circular bar stem:[1.5\ m] long uniformly tapers from stem:[124\ mm] diameter at one end to stem:[95\ mm] diameter at the other. If the maximum stress in the bar is not to exceed stem:[108\ MPa], find the temperature through which it can be heated. Take stem:[E] and stem:[\alpha] for the bar material as stem:[100\ GPa] and stem:[18 \times 10^{-6}/ K] respectively.
+// <<RSKhurmi>>
 ====
 
 ._Click to reveal/hide the solution._
@@ -658,106 +748,96 @@ a|
 
 
 
+=== icon:exclamation-triangle[set=fi] Stress, strain, and modulus of elasticity #ASSIGNMENT#
+[NOTE]
+====
+(a) A test piece is cut from a brass bar and subjected to a tensile test. With a load of stem:[6.4\ kN] the test piece, of diameter stem:[11.28\ mm], extends by stem:[0.04\ mm] over a gauge length of stem:[50\ mm]. Determine:
+
+[%hardbreaks]
+(i) the stress, 
+(ii)the strain, 
+(iii) the modulus of elasticity.
+
+(b) A spacer is turned from the same bar. The spacer has a diameter of stem:[28\ mm] and a length of stem:[250\ mm]. both measurements being made at stem:[20\ ^oC].The temperature of the spaceris then increased to stem:[100\ ^oC],the natural expansion being entirely prevented. Taking the coefficientof linear expansion to be stem:[18 \times 10^{-6}/^oC] determine:
+
+[%hardbreaks]
+(i) the stress in the spacer, 
+(ii) the compressive load on the spacer.
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
 
 
+=== icon:exclamation-triangle[set=fi] Stress, strain, and modulus of elasticity #ASSIGNMENT#
+[NOTE]
+====
+A steel rod of cross-sectional area stem:[600\ mm^2] and a coaxial copper tube of cross-sectional area stem:[1000\ mm^2] are firmly attached at their ends to form a compound bar. Determine the stress in the steel and in the copper when the temperature of the bar is raised by stem:[80\ ^oC] and an axial tensile force of stem:[60\ kN] is applied.
+[%hardbreaks]
+For steel, stem:[E = 200\ GN/m^2] with stem:[\alpha = 11 \times 10^{-6}/^oC]
+For copper, stem:[E = 100\ GN/m^2] with stem:[\alpha = 16.5 \times 10^{-6}/^oC]. 
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
 
 
+=== icon:exclamation-triangle[set=fi] Buttwelded stanchion #ASSIGNMENT#
+[NOTE]
+====
+A stanchion is formed by buttwelding together four plates of steel to form a square tube of outside cross-section stem:[200\ mm \times 200\ mm]. The constant metal thickness is stem:[10\ mm]. The inside is then filled with concrete.
 
+[%hardbreaks]
+(a) Determine the cross-sectional area of the steel and concrete
+(b) If stem:[E] for steel is stem:[200\ GN/m^2] and this value is twenty times that for the concrete, find when the stanchion carries a load of stem:[368.8\ kN],
 
+[%hardbreaks]
+(i) The stress in the concrete
+(ii) The stress in the steel
+(iii) The amount the stanchion shortens over a length of stem:[2\ m].
+// <<EJ-Hearn>>
+====
 
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
 
+icon:flag[set=fi] Please attempt this assignment. 
 
-
-
-// === Theory 
-
-// ==== Bars of Single Material 
-
-// ==== Composite Bars 
-
-// === Examples 
-
-// ==== A bar between rigid supports 
-// [NOTE]
-// ====
-// A steel bar 2 m long is fixed between two supports.If the temperature of the bar is raised by 18"C, find the stress in the bar if the supports are rigid.
-// ====
-
-// ==== Rigid and yielding supports 
-// [NOTE]
-// ====
-// A steel rod, 20 mm Q and 1.5 m long, is constrained between supportsA and B as shown in Fig. 3.29. The material is stress-free at 27 "C. Determine the stress in the material when the
-// temperature increases to 50 "C (a) if the supports are unyielding and (b) if the support at B yields by 0.1 mm. E for steel = 200 GPa and afor steel = 12 x 10-6/"C.
-// ====
-
-// ==== Composite rod 
-// [NOTE]
-// ====
-// A copper rod, 12mm Q and 400mm long, fits into an aluminium tube of external diameter 20mm and thickness 4 mm of equal length. If the assembly is held together by a rigid plate at the end and is stress-free at 20"C,find the stresses in the two materials when it is heated to 60"C.For copper, E = 120GPa and a=18x 10-6/"C. For aluminium, E =70GPa and a =23x C.
-// ====
-
-// ==== Tapering bar 
-// [NOTE]
-// ====
-// A brass bar tapers from a diameter of 180mm at one end to one of 90 mm at the other over a length of 900 mm. The bar is stress-free at a temperature of 27 "C. If the temperature drops to 0 "C, find the maximum normal stress on the bar if the ends are attached to rigid
-// supports. E = 100GPa and a=18 x 10-6/"C.
-// ====
-
-// ==== Tightening nuts (icon:flag[set=fi] #ASSIGNMENT#)
-// [WARNING]
-// ====
-// A 25 mm diameter steel rod passes concentrically through a bronze tube 400 mm long, 50 mm external diameterand40mm internal diameter. The endsof the steelrod are threaded and provided with nuts and washerswhichare adjusted initiallysothat thereisno end play at
-// 20°C.
-
-// [%hardbreaks]
-// (a) Assuming that there is no change in the thickness of the washers, find the stress
-// produced in the steel and bronze when one of the nuts is tightened by giving it onetenth of a turn, the pitch of the thread being 2.5 mm.
-// (b) If the temperature of the steel and bronze is then raised to 50°Cfind the changes that will occur in the stresses in both materials.
-// The coefficient of linear expansion per "Cis 11 x for bronze.
-// E for steel = 200 GN/m2.E for bronze = 100 GN/m2.
-// ====
-
-// ==== Composite bar, shear stress 
-// [NOTE]
-// ====
-// A composite bar is constructed from a steelrod of 25 mm diameter surrounded by a copper tube of 50 mm outside diameter and 25 mm inside diameter. The rod and tube are joined by two 20 mm diameter pins as shown in Fig. 2.6. Find the shear stress set up in the pins if,after pinning, the temperature is raised by 50°C.
-// ====
-
-// ==== Thermal stress of composite bars (icon:flag[set=fi] #ASSIGNMENT#)
-// [WARNING]
-// ====
-// (a) An aluminium rod of 20 mm diameter is completely enclosed in a steel tube of 30 mm external
-// diameter and both the ends of the assembly are rigidly connected. If the composite bar is heated
-// through 50°C, find the stresses developed in the aluminium rod and steel tube. Take:
-// [%hardbreaks]
-// Modulus of elasticity for steel = 200 GPa
-// Modulus of elasticity for aluminium = 80 GPa
-// Coefficient of expansion for steel = 12 × 10–6/°C
-// Coefficient of expansion for aluminium = 18 × 10–6/°C
-
-// (b) A steel rod of 10 mm diameter passes centrally through a copper tube of external diameter 40
-// mm and internal diameter 30 mm. The assembly is tightened with the help of washers and nuts.
-// If the whole assembly is heated through 60°C, then find the stresses developed in the steel rod
-// and copper tube. Assume :
-// [%hardbreaks]
-// Young’s modulus for steel = 200 GPa
-// Young’s modulus for copper = 100 GPa
-// Coefficient of expansion for steel = 11.5 × 10–6 /°C
-// Coefficient of expansion for copper = 17 × 10–6 /°C
-// ====
-
+|===
+====
 
 
 
 // <<EJ-Hearn>>
-// [bibliography]
-// == References
+[bibliography]
+== References
 
-// * [[[EJ-Hearn]]] E.J. Hearn. _Mechanics Of Materials: An Introduction to the Mechanics of Elastic and Plastic Deformation of Solids and Structural Materials_ Oxford University Press, 2010. ISBN 0080523994, 9780080523996 https://www.google.com/books?id=7eKu5Kh0dHcC[books.google]
+* [[[EJ-Hearn]]] E.J. Hearn. _Mechanics Of Materials: An Introduction to the Mechanics of Elastic and Plastic Deformation of Solids and Structural Materials_ Oxford University Press, 2010. ISBN 0080523994, 9780080523996 https://www.google.com/books?id=7eKu5Kh0dHcC[books.google]
 
-// * [[[RSKhurmi]]] RS Khurmi | N Khurmi. _A Textbook of Strength of Materials_ S. Chand Publishing, 2019. ISBN 935283397X, 9789352833979 https://www.google.com/books?id=FqEbEAAAQBAJ[books.google]
+* [[[RSKhurmi]]] RS Khurmi | N Khurmi. _A Textbook of Strength of Materials_ S. Chand Publishing, 2019. ISBN 935283397X, 9789352833979 https://www.google.com/books?id=FqEbEAAAQBAJ[books.google]
 
-// * [[[RSubramanian]]] R. Subramanian. _Strength Of Materials_ Elsevier, 1997. ISBN 0198061102, 9780198061106 https://www.google.com/books?id=7lCnSQAACAAJ[books.google]
+* [[[RSubramanian]]] R. Subramanian. _Strength Of Materials_ Elsevier, 1997. ISBN 0198061102, 9780198061106 https://www.google.com/books?id=7lCnSQAACAAJ[books.google]
 
 
 ++++

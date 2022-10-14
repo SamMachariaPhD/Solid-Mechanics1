@@ -7,7 +7,7 @@
 <meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="description" content="Engineering, Computing, Science, and Philosophy">
 <meta name="keywords" content="Mechanics of Solids, Mechanics of Materials, Strength of Materials,">
-<meta name="author" content="Dr. Sam Macharia, Home">
+<meta name="author" content="Dr. Sam Macharia">
 <link rel="icon" type="image/png" href="favicon.png">
 <title>Solid Mechanics: Theory and Examples</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -564,74 +564,250 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="solid-mechanics" class="book toc2 toc-left">
+<body id="_thermal_stresses_and_strains" class="book toc2 toc-left">
 <div id="header">
 <h1>Solid Mechanics: Theory and Examples</h1>
 <div class="details">
 <span id="author" class="author">Dr. Sam Macharia</span><br>
 <span id="email" class="email"><a href="https://orcid.org/0000-0002-7326-7502" class="bare">https://orcid.org/0000-0002-7326-7502</a></span><br>
-<span id="author2" class="author">Home</span><br>
-<span id="email2" class="email"><a href="https://SiliconWit.com" class="bare">https://SiliconWit.com</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<p><span class="toc-root toc-current"><a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></span></p><ul class="sectlevel1">
+<p><span class="toc-root"><a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></span></p><ul class="sectlevel1">
 <li><a href="_simple_stress_and_strain.html">1. Simple Stress and Strain</a>
 </li>
 <li><a href="_compound_bars.html">2. Compound Bars</a>
 </li>
-<li><a href="_thermal_stresses_and_strains.html">3. Thermal Stresses and Strains</a>
+<li><a href="_thermal_stresses_and_strains.html"><span class="toc-current">3. Thermal Stresses and Strains</span></a>
+<ul class="sectlevel2">
+<li><a href="_thermal_stresses_and_strains.html#_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</a>
+</li>
+<li><a href="_thermal_stresses_and_strains.html#_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</a>
+</li>
+<li><a href="_thermal_stresses_and_strains.html#_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</a>
+</li>
+</ul>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div id="preamble">
+<div class="sect1">
+<h2 id="_thermal_stresses_and_strains">3. Thermal Stresses and Strains</h2>
 <div class="sectionbody">
-<!-- Website logo and Subscribe button -->
-
-<div style="display: flex; justify-content: flex-end">
-    <div>
-<!-- cellspacing="0" cellpadding="0"  -->
-<table border="1" frame="void" rules="all">
-    <tr>
-      <td class="first">
-        <a href="https://siliconwit.com/">
-            <img alt="SiliconWit" src="SiWit.png" width="50" height="50">
-        </a>
-      </td>
-      <td class="second">
-        <button class="button-3" onclick="location.href='https://50312631.sibforms.com/serve/MUIEAMNpGV92xSPcDr_46NegYWAVvHPghmb-X7Mk-vXlVoMCv9HHTuNuahdOqK57NP8x4zxM22qPmxUgAdBtg4XOOcWwqQzEDR3BrSfpzO2nagCGGlV1WXEBTOvf90PUd6UUMxZ1PmgLpZ4w0pXK0Iqg5brcEwooD91t2lP1hZd7LUtYh4SVBBKHJ2il_RHD5zB4dhSVuMbiVVSb';"> 
-            Subscribe to SiliconWit.com</button>
-      </td>
-    </tr>
-  </table>
-    </div>
-</div>  
-
-  <!-- <div style="display: flex; justify-content: flex-end">
-    <div>I'm on the right</div>
-  </div> -->
-<div class="paragraph">
-<p>Mechanics of solids may also go by the names mechanics of materials or strength of materials.</p>
-</div>
-</div>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="_simple_stress_and_strain.html">Simple Stress and Strain</a></p>
+<p>Whenever there is an increase or decrease in the temperature of a bar, it expands or contracts.</p>
 </li>
 <li>
-<p><a href="_compound_bars.html">Compound Bars</a></p>
+<p>If the bar is allowed to expand or contract freely, no stresses are induced in the bar.</p>
 </li>
 <li>
-<p><a href="_thermal_stresses_and_strains.html">Thermal Stresses and Strains</a></p>
+<p>If free expansion or contraction of the bar is prevented, <strong>thermal stresses</strong> are induced in the bar. The corresponding strain is called <strong>thermal strain</strong>.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Consider a bar subjected to an increase in temperature.<br>
+\(L = \text{Original length}\)<br>
+\(t = \text{Temperature increase}\)<br>
+\(\alpha = \text{Coefficient of linear expansion}\)<br>
+The increase in length due to the increase in temperature,<br>
+\(\Delta L = L \times \alpha \times t\)<br>
+If the expansion is prevented,<br>
+\(\sigma = \epsilon \times E = \alpha t \times E\)<br>
+If the supports yield by an amount of, say, \(\Delta\),<br>
+\(\Delta L = L \alpha t - \Delta\)<br>
+\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-cols stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">S. No.</th>
+<th class="tableblock halign-left valign-top">Material</th>
+<th class="tableblock halign-left valign-top">Coefficient of linear expansion \(/^oC (\alpha)\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(11.5 \times 10^{-6}\ to\ 13 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wrought iron, Cast iron</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(11 \times 10^{-6}\ to\ 12 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aluminium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(23 \times 10^{-6}\ to\ 24 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copper, Brass, Bronze</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(17 \times 10^{-6}\ to\ 18 \times 10^{-6}\)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A brass rod \(2.5 m\) long is fixed at both ends. If the thermal stress is not to exceed \(77 MPa\), calculate the temperature through which the rod should be heated. Take the values of \(\alpha\) and \(E\) as \(17 \times 10^{-6}/K\) and \(90 GPa\) respectively.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Two parallel walls \(6.5 m\) apart are held together by a steel rod \(26 mm\) diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of \(98^oC\). Determine the stress in the rod, when the temperature falls to \(60.5^oC\), if</p>
+</div>
+<div class="paragraph">
+<p>(a) the ends do not yield, and<br>
+(b) the ends yield by \(1.5 mm\)<br>
+Take \(E = 200 GPa\) and \(\alpha = 12 \times 10^{-6}\/^oC\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A rigidly fixed circular bar \(1.5 m\) long uniformly tapers from \(124 mm\) diameter at one end to \(95 mm\) diameter at the other. If the maximum stress in the bar is not to exceed \(108 MPa\), find the temperature through which it can be heated. Take \(E\) and \(\alpha\) for the bar material as \(100 GPa\) and \(18 \times 10^{-6}\/ K\) respectively.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+</table>
+</div>
+</details>
+<?php
+$cmtx_identifier = '1';
+$cmtx_reference  = 'Comments';
+$cmtx_folder     = '/comments/';
+require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
+?>
+<!-- Step 1: Include the JavaScript SDK on your page once, ideally right after the opening body tag. -->
+<!-- <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=787925512262196&autoLogAppEvents=1" nonce="hUpr0zj0"></script> -->
+
+<!-- add the button! (body) -->
+<!-- <applause-button style="width: 58px; height: 58px;"/> -->
+
+<!-- Start facebook comment section -->
+<!-- Step 2: Place this code wherever you want the plugin to appear on your page. -->
+<!-- <hr>
+
+<div class="fb-comments" data-href="https://siliconwit.com/solid-mechanics" data-width="" data-numposts="20"></div>
+
+<hr> -->
+
+<!-- End facebook comment section -->
+
+<!-- Start commentics comment section -->
+
+<!-- <div id="commentics"></div> -->
+
+<!-- Start commentics php comment section -->
+
+<?php
+$cmtx_identifier = '1';
+$cmtx_reference  = 'Comments';
+$cmtx_folder     = '/comments/';
+require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
+?>
+</div>
+</div>
+</div>
 <div class="paragraph nav-footer">
-<p>Next: <a href="_simple_stress_and_strain.html">Simple Stress and Strain</a> →</p>
+<p>← Previous: <a href="_compound_bars.html">Compound Bars</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></p>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
