@@ -1,0 +1,72 @@
+:author: SiliconWit.com
+:url-repo: https://siliconwit.com/
+:data-uri:
+:icons: font
+:favicon: favicon.png
+:docinfo1:
+:nofooter:
+:description: Engineering, Computing, Science, and Philosophy
+:keywords: Engineering, Computing, Science, Philosophy, Applied Mathematics, Modelling and Simulation,
+// = https://siliconwit.com/[SiliconWit.com] image:favicon.png[role="related thumb right", alt=SiliconWit,width=60]
+
+++++
+include::idxSubscribe.html[]
+++++
+
+// TIP: Engineering, Computing, Science, and Philosophy
+
+
+[grid=cols]
+|===
+|No. |Lecture Notes |Class
+
+|1.
+|https://siliconwit.com/applied-mathematics[Applied Mathematics]
+|M.Sc. Advanced Manufacturing and Automation
+
+|2.
+|https://siliconwit.com/modelling-and-simulation[Modelling and Simulation]
+|M.Sc. Advanced Manufacturing and Automation
+
+|3.
+|https://siliconwit.com/solid-mechanics[Solid Mechanics]
+|B.Sc. Mechatronics
+
+|4.
+|https://siliconwit.com/spatial-mechanics[Spatial Mechanics]
+|B.Sc. Mechatronics
+|===
+
+[NOTE]
+====
+"When the student is ready, the teacher will appear."
+-- By ~ Tibetan Buddhism Tradation
+====
+
+***
+
+// ====
+[cols="2*"]
+|===
+|icon:user-circle[] https://orcid.org/0000-0002-7326-7502[About Dr. Sam]
+|icon:sitemap[] https://linktr.ee/sammachariaphd[Follow Dr. Sam]
+
+|icon:handshake-o[] https://www.paypal.com/donate/?hosted_button_id=KBCEXG586JLVN[Support SiliconWit.com]
+|icon:comments[] https://tr.ee/POw0XRMkc_[Contact Dr. Sam]
+|===
+
+// ++++
+
+//   <!-- add the button style & script -->
+//   <link rel="stylesheet" href="applause-button.css" />
+//   <script src="applause-button.js"></script>
+
+
+//   <!-- add the button! -->
+//   <applause-button style="width: 58px; height: 58px;"/>
+
+// ++++
+
+
+
+// ====

@@ -1,0 +1,63 @@
+
+== Tortion of Circular Shafts 
+
+Torsion is the twisting of an object caused by a moment acting about the object's longitudinal axis. **Torque** is the moment that causes the twisting. 
+
+Consider a shaft transmitting power. 
+
+[#img-twist] 
+.Tortion of a circular shaft.
+[link=https://siliconwit.com/solid-mechanics] 
+image::twist.png[twist,width=100%,align="left"]
+
+[TIP]
+====
+
+[stem]
+++++
+\text{The angel of twist, } \theta = \frac{TL}{GJ} 
+++++
+
+Where stem:[T] is the applied torque, stem:[L] is the length of the bar, stem:[G] is the **shear modulus**, and stem:[J] is the **polar moment of inertia**. The value of stem:[G] can be obtained using an experiment.
+
+* The polar moment of inertia describes a cross-section's resistance to torsion due to its shape. The polar moment of inertia for a hollow bar shown below can be calculated as follows.
+
+[#img-polarMom] 
+.Polar moment.
+[link=https://siliconwit.com/solid-mechanics] 
+image::polarMom.png[polarMom,width=70%,align="left"]
+
+[stem]
+++++
+\text{The polar moment of inertia, } J = \frac{\pi}{2} \big( r_o^4 - r_i^4 \big)
+++++
+
+For a solid circular bar, stem:[J = \frac{\pi}{2} \big( r^4 \big)]
+
+====
+
+=== icon:info-circle[set=fi] Twisting solid cylinder
+[NOTE]
+====
+A moment of stem:[1500\ Nm] is acting on a solid cylinder shaft with diameter stem:[150\ mm] and length stem:[2\ m]. The shaft is made in steel with modulus of rigidity stem:[79\ GPa]. 
+[%hardbreaks]
+(a) Calculate the angular deflection of the shaft. 
+(b) Assuming the shaft is hollow with an inner diameter of stem:[50\ mm], calculate the angular deflection of the shaft.
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+
+
+|===
+====
+
+
+
+
+// Tortion generates stresses and trains in the bar. 
+

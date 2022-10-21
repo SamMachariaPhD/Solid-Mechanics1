@@ -1,0 +1,148 @@
+
+== Compound Bars
+
+* A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy *equilibrium condition*, stem:[F_{s} + F_{c} = F_{total}]. 
+* These different materials are constrained to deform together such that they satisfy *compatibility condition*, stem:[\epsilon_{material1} = \epsilon_{material2}].
+* *Modular ratio*, stem:[m], is given by stem:[\frac{E_{material1}}{E_{material2}}].
+
+[TIP]
+====
+[stem]
+++++
+F_{s} + F_{c} = F_{total}
+++++
+[stem]
+++++
+\epsilon_{material1} = \epsilon_{material2}
+++++
+====
+
+=== icon:info-circle[set=fi] A concrete column with steel reinforcement 
+[NOTE]
+====
+A reinforced cement concrete column of dimension stem:[625\ mm \times 625\ mm] has eight steel rods of diameter stem:[30\ mm] as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if stem:[E =\ 200,000\ N/mm^2] for steel and stem:[10,000\ N/mm^2] for concrete. Load on column stem:[=\ 3000\ kN] and length stem:[=\ 4\ m].
+// <<RSubramanian>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+[%hardbreaks]
+icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and concrete (stem:[\sigma_{c}])_
+icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{c} = F]
+icon:check[set=fi] Compatibility condition: stem:[\epsilon_{s} = \epsilon_{c}]
+stem:[\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}]
+stem:[\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}]
+stem:[F_s = F_c \times \frac{A_sE_s}{A_cE_c}]
+stem:[F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}]
+stem:[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}]
+stem:[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}]
+stem:[F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}]
+stem:[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}]
+stem:[A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2]
+stem:[A_c = (dimension \times dimension) - 2\pi D^2]
+stem:[\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}]
+
+[%hardbreaks]
+icon:key[set=fi] _elastic shortening (stem:[\Delta L])_
+stem:[\epsilon_s = \frac{\Delta L_s}{L_s}]
+stem:[\epsilon_s = \frac{\sigma_s}{E_s}]
+stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
+stem:[\Delta L_c = L_c \times \frac{\sigma_c}{E_c}]
+stem:[L_s = L_c = L] and stem:[\epsilon_{s} = \epsilon_{c}]
+stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}] (compression)
+
+|===
+====
+
+=== icon:info-circle[set=fi] Encased composite bar 
+[NOTE]
+====
+A steel rod of diameter stem:[65\ mm] and length stem:[1\ m] is encased by a cast iron (CI) sleeve stem:[9\ mm] thick and of
+internal diameter stem:[65\ mm]. The assembly is subjected to a load of stem:[45\ kN]. Find the stresses in the two materials and the elongation of the assembly. stem:[E] for steel stem:[=\ 200\ GPa] and stem:[E] for cast iron stem:[=\ 100\ GPa].
+// <<RSubramanian>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+[%hardbreaks]
+icon:key[set=fi] _stresses in steel (stem:[\sigma_{s}]) and cast iron (stem:[\sigma_{I}])_
+icon:check[set=fi] Equilibrium condition: stem:[F_{s} + F_{I} = F]
+icon:check[set=fi] Compatibility condition: stem:[\epsilon_{s} = \epsilon_{I}]
+stem:[\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}]
+stem:[\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}]
+stem:[F_s = F_I \times \frac{A_sE_s}{A_IE_I}]
+stem:[F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}]
+stem:[\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}]
+stem:[\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}]
+stem:[F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}]
+stem:[\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}]
+stem:[A_s = \pi \big(\frac{d}{2} \big)^2]
+stem:[A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)]
+stem:[D = d + (2 \times thickness)]
+stem:[\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}]
+
+[%hardbreaks]
+icon:key[set=fi] _elongation of the assembly (stem:[\Delta L])_
+stem:[\epsilon_s = \frac{\Delta L_s}{L_s}]
+stem:[\epsilon_s = \frac{\sigma_s}{E_s}]
+stem:[\Delta L_s = L_s \times \frac{\sigma_s}{E_s}]
+stem:[\Delta L_I = L_I \times \frac{\sigma_I}{E_I}]
+stem:[L_s = L_I = L] and stem:[\epsilon_{s} = \epsilon_{I}]
+stem:[\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}] (extension)
+
+|===
+====
+
+
+=== icon:exclamation-triangle[set=fi] A steel rod and brass bush #ASSIGNMENT#
+[NOTE]
+====
+A stem:[75\ mm] diameter compound bar is constructed by shrinking a circular brass bush onto the outside of a stem:[50\ mm] diameter solid steel rod. If the compound bar is then subjected to an axial compressive load of stem:[160\ kN] determine the load carried by the steel rod and the brass bush and the compressive stress set up in each material. For steel, stem:[E = 210\ GN/m^2]; for brass, stem:[E = 100\ GN/m^2]. 
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
+
+=== icon:exclamation-triangle[set=fi] Buttwelded stanchion #ASSIGNMENT#
+[NOTE]
+====
+A stanchion is formed by buttwelding together four plates of steel to form a square tube of outside cross-section stem:[200\ mm \times 200\ mm]. The constant metal thickness is stem:[10\ mm]. The inside is then filled with concrete.
+
+[%hardbreaks]
+(a) Determine the cross-sectional area of the steel and concrete
+(b) If stem:[E] for steel is stem:[200\ GN/m^2] and this value is twenty times that for the concrete, find when the stanchion carries a load of stem:[368.8\ kN],
+
+[%hardbreaks]
+(i) The stress in the concrete
+(ii) The stress in the steel
+(iii) The amount the stanchion shortens over a length of stem:[2\ m].
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====

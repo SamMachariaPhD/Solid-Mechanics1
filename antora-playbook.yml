@@ -1,0 +1,4 @@
+site:
+  title: SiliconWit
+  url: https://siliconwit.com
+  start_page: component-b::index.adoc
