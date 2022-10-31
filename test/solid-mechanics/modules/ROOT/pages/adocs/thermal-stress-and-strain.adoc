@@ -1,0 +1,179 @@
+
+== Thermal Stresses and Strains 
+
+* Whenever there is an increase or decrease in the temperature of a bar, it expands or contracts. 
+* If the bar is allowed to expand or contract freely, no stresses are induced in the bar.
+* If free expansion or contraction of the bar is prevented, *thermal stresses* are induced in the bar. The corresponding strain is called *thermal strain*.
+
+[TIP]
+====
+[%hardbreaks]
+Consider a bar subjected to an increase in temperature.
+stem:[L = \text{Original length}] 
+stem:[t = \text{Temperature increase}] 
+stem:[\alpha = \text{Coefficient of linear expansion}] 
+The increase in length due to the increase in temperature, 
+
+[stem]
+++++
+\Delta L = L \times \alpha \times t
+++++
+
+[%hardbreaks]
+If the expansion is prevented, 
+stem:[\sigma = \epsilon \times E = \alpha t \times E] 
+If the supports yield by an amount of, say, stem:[\Delta],
+
+[stem]
+++++
+\Delta L = L \alpha t - \Delta
+++++
+
+stem:[\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E] 
+====
+
+[grid=cols]
+|===
+|S. No. |Material |Coefficient of linear expansion stem:[/^oC (\alpha)]
+
+|1.
+|Steel
+|stem:[11.5 \times 10^{-6}\ to\ 13 \times 10^{-6}]
+
+|2.
+|Wrought iron, Cast iron
+|stem:[11 \times 10^{-6}\ to\ 12 \times 10^{-6}]
+
+|3.
+|Aluminium
+|stem:[23 \times 10^{-6}\ to\ 24 \times 10^{-6}]
+
+|4.
+|Copper, Brass, Bronze 
+|stem:[17 \times 10^{-6}\ to\ 18 \times 10^{-6}]
+|===
+
+=== icon:target-two[set=fi] Stress not to be exceeded 
+[NOTE]
+====
+A brass rod stem:[2.5\ m] long is fixed at both ends. If the thermal stress is not to exceed stem:[77\ MPa], calculate the temperature through which the rod should be heated. Take the values of stem:[\alpha] and stem:[E] as stem:[17 \times 10^{-6}/K] and stem:[90\ GPa] respectively.
+// <<RSKhurmi>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+[%hardbreaks]
+stem:[\sigma = \epsilon \times E = \alpha t \times E] 
+stem:[t = \frac{\sigma}{\alpha \times E}]
+
+|===
+====
+
+=== icon:target-two[set=fi] Stress when temperature falls 
+[NOTE]
+====
+Two parallel walls stem:[6.5\ m] apart are held together by a steel rod stem:[26\ mm] diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of stem:[98^oC]. Determine the stress in the rod, when the temperature falls to stem:[60.5^oC], if
+[%hardbreaks]
+(a) the ends do not yield, and
+(b) the ends yield by stem:[1.5\ mm]
+Take stem:[E = 200\ GPa] and stem:[\alpha = 12 \times 10^{-6}/^oC]
+// <<RSKhurmi>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+[%hardbreaks]
+(a) stem:[\sigma = \alpha t \times E] 
+(b) stem:[\Delta L = L \alpha t - \Delta]
+stem:[\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E] 
+
+|===
+====
+
+=== icon:target-two[set=fi] Thermal stress of a tapered bar
+[NOTE]
+====
+A rigidly fixed circular bar stem:[1.5\ m] long uniformly tapers from stem:[124\ mm] diameter at one end to stem:[95\ mm] diameter at the other. If the maximum stress in the bar is not to exceed stem:[108\ MPa], find the temperature through which it can be heated. Take stem:[E] and stem:[\alpha] for the bar material as stem:[100\ GPa] and stem:[18 \times 10^{-6}/ K] respectively.
+// <<RSKhurmi>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+[%hardbreaks]
+stem:[\Delta L = L \alpha t]
+stem:[\Delta L = \frac{4FL}{\pi E d D}]
+stem:[L \alpha t = \frac{4FL}{\pi E d D}]
+stem:[F = \alpha t \times \frac{\pi E d D}{4}]
+stem:[\sigma = \frac{F}{A}]
+stem:[\sigma = \frac{F}{(\frac{\pi}{4}D^2)}]
+stem:[\sigma = \frac{ \alpha t \times \frac{\pi E d D}{4}}{(\frac{\pi}{4}D^2)}]
+stem:[\sigma = \frac{ \alpha t E \times d}{D}]
+stem:[t = \frac{\sigma D}{ \alpha E \times d}]
+
+|===
+====
+
+
+
+=== icon:alert[set=fi] Stress, strain, and modulus of elasticity #ASSIGNMENT#
+[NOTE]
+====
+(a) A test piece is cut from a brass bar and subjected to a tensile test. With a load of stem:[6.4\ kN] the test piece, of diameter stem:[11.28\ mm], extends by stem:[0.04\ mm] over a gauge length of stem:[50\ mm]. Determine:
+
+[%hardbreaks]
+(i) the stress, 
+(ii)the strain, 
+(iii) the modulus of elasticity.
+
+(b) A spacer is turned from the same bar. The spacer has a diameter of stem:[28\ mm] and a length of stem:[250\ mm]. both measurements being made at stem:[20\ ^oC].The temperature of the spaceris then increased to stem:[100\ ^oC],the natural expansion being entirely prevented. Taking the coefficientof linear expansion to be stem:[18 \times 10^{-6}/^oC] determine:
+
+[%hardbreaks]
+(i) the stress in the spacer, 
+(ii) the compressive load on the spacer.
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====
+
+
+=== icon:alert[set=fi] Stress when temperature rises #ASSIGNMENT#
+[NOTE]
+====
+A steel rod of cross-sectional area stem:[600\ mm^2] and a coaxial copper tube of cross-sectional area stem:[1000\ mm^2] are firmly attached at their ends to form a compound bar. Determine the stress in the steel and the copper when the temperature of the bar is raised by stem:[80\ ^oC] and an axial tensile force of stem:[60\ kN] is applied.
+[%hardbreaks]
+For steel, stem:[E = 200\ GN/m^2] with stem:[\alpha = 11 \times 10^{-6}/^oC]
+For copper, stem:[E = 100\ GN/m^2] with stem:[\alpha = 16.5 \times 10^{-6}/^oC]. 
+// <<EJ-Hearn>>
+====
+
+._Click to reveal/hide the solution._
+[%collapsible]
+====
+|===
+a|
+
+icon:flag[set=fi] Please attempt this assignment. 
+
+|===
+====

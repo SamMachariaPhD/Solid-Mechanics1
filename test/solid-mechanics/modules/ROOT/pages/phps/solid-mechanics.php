@@ -1,13 +1,14 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="description" content="Engineering, Computing, Science, and Philosophy">
 <meta name="keywords" content="Mechanics of Solids, Mechanics of Materials, Strength of Materials,">
-<meta name="author" content="Dr. Sam Macharia">
+<meta name="author" content="Dr. Sam Macharia, Home">
 <link rel="icon" type="image/png" href="favicon.png">
 <title>Solid Mechanics: Theory and Examples</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -88,10 +89,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -559,61 +560,96 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 
-<style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
-                       font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
-             .nav-footer{text-align: center; margin-top: auto;}
-             .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_simple_stress_and_strain" class="book toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Solid Mechanics: Theory and Examples</h1>
 <div class="details">
 <span id="author" class="author">Dr. Sam Macharia</span><br>
 <span id="email" class="email"><a href="https://orcid.org/0000-0002-7326-7502" class="bare">https://orcid.org/0000-0002-7326-7502</a></span><br>
+<span id="author2" class="author">Home</span><br>
+<span id="email2" class="email"><a href="https://SiliconWit.com" class="bare">https://SiliconWit.com</a></span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
-<p><span class="toc-root"><a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></span></p><ul class="sectlevel1">
-<li><a href="_simple_stress_and_strain.html"><span class="toc-current">1. Simple Stress and Strain</span></a>
+<ul class="sectlevel1">
+<li><a href="#_simple_stress_and_strain">1. Simple Stress and Strain</a>
 <ul class="sectlevel2">
-<li><a href="_simple_stress_and_strain.html#_loading">1.1. Loading</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_direct_or_normal_stress_sigma">1.2. Direct or Normal Stress (\(\sigma\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_direct_or_normal_strain_epsilon">1.3. Direct or Normal Strain (\(\epsilon\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_elastic_materials_hookes_law_f_ke">1.4. Elastic Materials (Hooke&#8217;s Law, \(F = ke\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_modulus_of_elasticity_youngs_modulus_e">1.5. Modulus of Elasticity (Young&#8217;s Modulus, \(E\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_tensile_test">1.6. Tensile Test</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_poissons_ratio_v">1.7. Poisson&#8217;s Ratio (\(v\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_modulus_of_rigidity_g">1.8. Modulus of Rigidity (\(G\))</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_a_bar_with_various_cross_sections">1.9. <span class="icon"><i class="fa fa-info-circle"></i></span> A bar with various cross-sections</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_a_bored_circular_cross_section">1.10. <span class="icon"><i class="fa fa-info-circle"></i></span> A bored circular cross-section</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_a_stressed_coupling">1.11. <span class="icon"><i class="fa fa-info-circle"></i></span> A stressed coupling</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_extension_of_tapered_bar">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_error_of_using_mean_diameter">1.13. <span class="icon"><i class="fa fa-info-circle"></i></span> Error of using mean diameter</a>
-</li>
-<li><a href="_simple_stress_and_strain.html#_load_extension_graph_assignment">1.14. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></a>
-</li>
+<li><a href="#_loading">1.1. Loading</a></li>
+<li><a href="#_direct_or_normal_stress_sigma">1.2. Direct or Normal Stress (\(\sigma\))</a></li>
+<li><a href="#_direct_or_normal_strain_epsilon">1.3. Direct or Normal Strain (\(\epsilon\))</a></li>
+<li><a href="#_elastic_materials_hookes_law_f_ke">1.4. Elastic Materials (Hooke&#8217;s Law, \(F = ke\))</a></li>
+<li><a href="#_modulus_of_elasticity_youngs_modulus_e">1.5. Modulus of Elasticity (Young&#8217;s Modulus, \(E\))</a></li>
+<li><a href="#_tensile_test">1.6. Tensile Test</a></li>
+<li><a href="#_poissons_ratio_v">1.7. Poisson&#8217;s Ratio (\(v\))</a></li>
+<li><a href="#_modulus_of_rigidity_g">1.8. Modulus of Rigidity (\(G\))</a></li>
+<li><a href="#_a_bar_with_various_cross_sections">1.9. <span class="icon"><i class="fa fa-info-circle"></i></span> A bar with various cross-sections</a></li>
+<li><a href="#_a_bored_circular_cross_section">1.10. <span class="icon"><i class="fa fa-info-circle"></i></span> A bored circular cross-section</a></li>
+<li><a href="#_a_stressed_coupling">1.11. <span class="icon"><i class="fa fa-info-circle"></i></span> A stressed coupling</a></li>
+<li><a href="#circular-taper">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</a></li>
+<li><a href="#_error_of_using_mean_diameter">1.13. <span class="icon"><i class="fa fa-info-circle"></i></span> Error of using mean diameter</a></li>
+<li><a href="#_rectangular_tapered_bar_assignment">1.14. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Rectangular tapered bar <mark>ASSIGNMENT</mark></a></li>
+<li><a href="#_load_extension_graph_assignment">1.15. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></a></li>
 </ul>
 </li>
-<li><a href="_compound_bars.html">2. Compound Bars</a>
+<li><a href="#_compound_bars">2. Compound Bars</a>
+<ul class="sectlevel2">
+<li><a href="#_a_concrete_column_with_steel_reinforcement">2.1. <span class="icon"><i class="fa fa-info-circle"></i></span> A concrete column with steel reinforcement</a></li>
+<li><a href="#_encased_composite_bar">2.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Encased composite bar</a></li>
+<li><a href="#_a_steel_rod_and_brass_bush_assignment">2.3. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> A steel rod and brass bush <mark>ASSIGNMENT</mark></a></li>
+<li><a href="#_buttwelded_stanchion_assignment">2.4. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Buttwelded stanchion <mark>ASSIGNMENT</mark></a></li>
+</ul>
 </li>
-<li><a href="_thermal_stresses_and_strains.html">3. Thermal Stresses and Strains</a>
+<li><a href="#_thermal_stresses_and_strains">3. Thermal Stresses and Strains</a>
+<ul class="sectlevel2">
+<li><a href="#_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</a></li>
+<li><a href="#_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</a></li>
+<li><a href="#_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</a></li>
+<li><a href="#_stress_strain_and_modulus_of_elasticity_assignment">3.4. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Stress, strain, and modulus of elasticity <mark>ASSIGNMENT</mark></a></li>
+<li><a href="#_stress_when_temperature_rises_assignment">3.5. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Stress when temperature rises <mark>ASSIGNMENT</mark></a></li>
+</ul>
 </li>
+<li><a href="#_tortion_of_circular_shafts">4. Tortion of Circular Shafts</a>
+<ul class="sectlevel2">
+<li><a href="#_twisting_solid_cylinder">4.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Twisting solid cylinder</a></li>
+</ul>
+</li>
+<li><a href="#_references">References</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<!-- Website logo and Subscribe button -->
+
+<div style="display: flex; justify-content: flex-end">
+    <div>
+<!-- cellspacing="0" cellpadding="0"  -->
+<table border="1" frame="void" rules="all">
+    <tr>
+      <td class="first">
+        <a href="https://siliconwit.com/">
+            <img alt="SiliconWit" src="SiWit.png" width="50" height="50">
+        </a>
+      </td>
+      <td class="second">
+        <button class="button-3" onclick="location.href='https://50312631.sibforms.com/serve/MUIEAMNpGV92xSPcDr_46NegYWAVvHPghmb-X7Mk-vXlVoMCv9HHTuNuahdOqK57NP8x4zxM22qPmxUgAdBtg4XOOcWwqQzEDR3BrSfpzO2nagCGGlV1WXEBTOvf90PUd6UUMxZ1PmgLpZ4w0pXK0Iqg5brcEwooD91t2lP1hZd7LUtYh4SVBBKHJ2il_RHD5zB4dhSVuMbiVVSb';"> 
+            Subscribe to SiliconWit.com</button>
+      </td>
+    </tr>
+  </table>
+    </div>
+</div>  
+
+  <!-- <div style="display: flex; justify-content: flex-end">
+    <div>I'm on the right</div>
+  </div> -->
+<div class="paragraph">
+<p>Mechanics of solids may also go by the names mechanics of materials or strength of materials.</p>
+</div>
+</div>
+</div>
 <div class="sect1">
 <h2 id="_simple_stress_and_strain">1. Simple Stress and Strain</h2>
 <div class="sectionbody">
@@ -744,10 +780,8 @@ Othotropic&#8201;&#8212;&#8201;different properties in different planes e.g. woo
 \[\frac{\sigma}{\epsilon} = E\]
 </div>
 </div>
-<div class="stemblock">
-<div class="content">
-\[E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}\]
-</div>
+<div class="paragraph">
+<p>\(E = \frac{F}{A}/ \frac{\Delta L}{L} = \frac{FL}{A \Delta L}\)</p>
 </div>
 </td>
 </tr>
@@ -764,7 +798,7 @@ Othotropic&#8201;&#8212;&#8201;different properties in different planes e.g. woo
 </div>
 <div id="img-tensileTest" class="imageblock text-left">
 <div class="content">
-<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64,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" alt="tensileTest" width="100%"></a>
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="tensileTest" width="100%"></a>
 </div>
 <div class="title">Figure 1. Tensile test.</div>
 </div>
@@ -799,10 +833,8 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <div class="paragraph">
 <p>When a bar is subjected to a tension load, it experiences an increase in length, \(\Delta L\), giving a longitudinal strain in the bar, \(\epsilon_{Long}\).</p>
 </div>
-<div class="stemblock">
-<div class="content">
-\[\epsilon_{Long} = \frac{\Delta L}{L}\]
-</div>
+<div class="paragraph">
+<p>\(\epsilon_{Long} = \frac{\Delta L}{L}\)</p>
 </div>
 <div class="paragraph">
 <p>The breath, \(b\), and the depth, \(d\), of the bar will also reduce, thereby altering the lateral dimensions of the bar. The lateral strain, \(\epsilon_{Lat}\), can be given by the following equation.</p>
@@ -814,20 +846,16 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="stemblock">
-<div class="content">
-\[\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}\]
-</div>
+<div class="paragraph">
+<p>\(\epsilon_{Lat} = - \frac{\Delta b}{b} = - \frac{\Delta d}{d}\)</p>
 </div>
 <div class="stemblock">
 <div class="content">
-\[v (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}\]
+\[v\ (\text{Poisson's ratio}) = \frac{\epsilon_{Lat}}{\epsilon_{Long}} = - \frac{\Delta d}{d} \times \frac{L}{\Delta L}\]
 </div>
 </div>
-<div class="stemblock">
-<div class="content">
-\[\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}\]
-</div>
+<div class="paragraph">
+<p>\(\epsilon_{Long} = \frac{\sigma_{Long}}{E} = \frac{\sigma}{E}\)</p>
 </div>
 <div class="stemblock">
 <div class="content">
@@ -852,12 +880,12 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <td class="content">
 <div class="stemblock">
 <div class="content">
-\[\tau (\text{shear stress}) = \frac{F (\text{shear load})}{A (\text{area resisting shear})}\]
+\[\tau\ (\text{shear stress}) = \frac{F\ (\text{shear load})}{A\ (\text{area resisting shear})}\]
 </div>
 </div>
 <div class="stemblock">
 <div class="content">
-\[\tau (\text{in double shear stress}) = \frac{F}{2 \times A }\]
+\[\tau\ (\text{in double shear stress}) = \frac{F}{2 \times A }\]
 </div>
 </div>
 </td>
@@ -928,7 +956,7 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A sectional bar of \(E = 210 GN/m^2\) is subjected to an axial tensile load of \(F_1 = F_2 = 25kN\). The circular section \(C_{s1}\) has a diameter of \(25 mm\). A square cross-section of dimension \(C_{s2} = 40 mm\), and circular section \(C_{s3} = 20 mm\) in diameter. \(L_{1} = 200 mm\), \(L_{2} = 110 mm\), \(L_{3} = 450 mm\)</p>
+<p>A sectional bar of \(E = 210\ GN/m^2\) is subjected to an axial tensile load of \(F_1 = F_2 = 25\ kN\). The circular section \(C_{s1}\) has a diameter of \(25\ mm\). A square cross-section of dimension \(C_{s2} = 40\ mm\), and circular section \(C_{s3} = 20\ mm\) in diameter. \(L_{1} = 200\ mm\), \(L_{2} = 110\ mm\), \(L_{3} = 450\ mm\)</p>
 </div>
 <div class="paragraph">
 <p>What is <strong>the stress</strong> in each section and <strong>the total extension</strong> of the sectional bar?</p>
@@ -969,13 +997,6 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 \(\epsilon = \frac{\Delta L}{L}\)<br>
 \(\Delta L = \Delta L_{s1} + \Delta L_{s2} + \Delta L_{s3}\)<br>
 \(\Delta L = \frac{ \sigma_{s1} L_1 + \sigma_{s2} L_2 + \sigma_{s3} L_3}{E}\)</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -995,13 +1016,13 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <div class="ulist">
 <ul>
 <li>
-<p>A \(30 mm\) diameter bar is subjected to an axial tensile load of \(115 kN\). Under the action of this load a \(200 mm\) gauge length is found to extend \(0.15 \times 10^{-3} mm\). Determine the modulus of elasticity for the bar material.</p>
+<p>A \(30\ mm\) diameter bar is subjected to an axial tensile load of \(115\ kN\). Under the action of this load a \(200\ mm\) gauge length is found to extend \(0.15 \times 10^{-3}\ mm\). Determine the modulus of elasticity for the bar material.</p>
 </li>
 <li>
-<p>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is \(245 MN/m^2\)? The load can be assumed to remain constant at \(115 kN\).</p>
+<p>To reduce weight whilst keeping the external diameter constant, the bar is bored axially to produce a cylinder of uniform thickness, what is the maximum diameter of bore possible given that the maximum allowable stress is \(245\ MN/m^2\)? The load can be assumed to remain constant at \(115\ kN\).</p>
 </li>
 <li>
-<p>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (\(E = 210 GN/m^2\) and \(v = 0.3\))</p>
+<p>What will be the change in the outside diameter of the bar under the limiting stress quoted above? (\(E = 210\ GN/m^2\) and \(v =\ 0.3\))</p>
 </li>
 </ul>
 </div>
@@ -1039,13 +1060,6 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 \(\epsilon = v \times \frac{\sigma}{E}\)<br>
 \(\frac{\Delta d}{d} = v \times \frac{\sigma}{E}\)<br>
 \(\Delta d = v \times \frac{\sigma}{E} \times d\)</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1063,7 +1077,7 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of \(50 kN\). If the bolt is of \(14.5 mm\) diameter calculate:</p>
+<p>The coupling shown below is constructed from steel of a rectangular cross-section and is designed to transmit a tensile force of \(50\ kN\). If the bolt is of \(14.5\ mm\) diameter calculate:</p>
 </div>
 <div class="paragraph">
 <p>\(F = F_1 = F_2 = 50 kN\)<br>
@@ -1108,13 +1122,6 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <div class="paragraph">
 <p><span class="icon"><i class="fa fa-key"></i></span> <em>direct stress in the forked end</em><br>
 \(\sigma = \frac{F}{A}\)</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1123,7 +1130,7 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 </details>
 </div>
 <div class="sect2">
-<h3 id="_extension_of_tapered_bar">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</h3>
+<h3 id="circular-taper">1.12. <span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1151,11 +1158,48 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> Consider a very small length \(dx\) with diameter \(P\), experiencing the tensile force of \(W\), and then integrate over the whole length, \(L\).</p>
+</div>
+<div class="paragraph">
+<p>\(\Delta L = \frac{\sigma}{E} \times L\)<br>
+\(\Delta L = \frac{\sigma}{E} \times dx\)<br>
+\(\Delta L = \frac{W}{AE} \times dx\)<br>
+\(\Delta L = \frac{W}{\frac{\pi}{4} \times P^2 \times E} \times dx\)</p>
+</div>
+<div id="img-taperedBarSec" class="imageblock left text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="taperedBarSec" width="100%"></a>
+</div>
+<div class="title">Figure 5. Tapered bar section.</div>
+</div>
+<div class="paragraph">
+<p>\(P = (2 q)+d\)<br>
+\(\frac{q}{x} = \frac{D-d}{2}/L\)<br>
+\(q = \frac{(D-d)}{2L} \times x\)<br>
+\(P = \frac{(D-d)}{L} x + d\)<br>
+Letting \(k = \frac{(D-d)}{L}\), \(P = d + kx\)<br>
+\(\Delta L = \frac{W}{\frac{\pi}{4} \times (d + kx)^2 \times E} dx\)<br>
+\(\Delta L = \int_{0}^{L} \frac{4W}{\pi \times (d + kx)^2 \times E} \,dx\)<br>
+\(\Delta L = \frac{4W}{\pi E} \int_{0}^{L} (d + kx)^{-2} \,dx\)<br>
+Let \(u = d + kx\); \(\frac{du}{dx} = k\); \(dx = \frac{du}{k}\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \int_{0}^{L} (u)^{-2} \,du\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \begin{bmatrix}
+-(u)^{-1}
+\end{bmatrix} _{0}^{L}\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \begin{bmatrix}
+-(d + kx)^{-1}
+\end{bmatrix} _{0}^{L}\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \biggr( (\frac{-1}{d + kL}) - (\frac{-1}{d})\biggr)\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \biggr( \frac{1}{d} - \frac{1}{d + kL} \biggr)\)<br>
+\(\Delta L = \frac{4W}{k \pi E} \biggr( \frac{kL}{d(d + kL)} \biggr)\)<br>
+\(\Delta L = \frac{4W}{\pi E} \times \frac{L}{d(d + \Big( \frac{(D-d)}{L} \Big) \times L)}\)<br>
+\(\Delta L = \frac{4WL}{\pi E d D}\)</p>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 </details>
@@ -1183,17 +1227,68 @@ The stress reaches the maximum value, the <em>ultimate tensile strength</em>.<br
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> \(E\) for a tapered circular bar should be derived similar to <a href="#circular-taper"><span class="icon"><i class="fa fa-info-circle"></i></span> Extension of tapered bar</a> :</p>
+</div>
+<div class="paragraph">
+<p>\(\Delta L = \frac{4WL}{\pi E d D}\)<br>
+\(E = \frac{4WL}{\pi \Delta L d D}\)<br>
+\(E = \frac{4WL}{\pi \Delta L (D-a) (D+a)}\)<br>
+\(E = \frac{4WL}{\pi \Delta L (D^2-a^2)}\)<br>
+But when mean diameter, \(D_m = \frac{(D-a)+(D+a)}{2} = D\), is used instead,<br>
+\(\Delta L = \frac{WL}{AE_m}\)<br>
+\(\Delta L = \frac{WL}{(\frac{\pi}{4}D^2)E_m}\)<br>
+\(E_m = \frac{4WL}{\pi \Delta L (D^2)}\)<br>
+\(\% error = \frac{E-E_m}{E} \times 100\)<br>
+\(\% error = \frac{\big( \frac{4WL}{\pi \Delta L (D^2-a^2)} \big) - \big( \frac{4WL}{\pi \Delta L (D^2)} \big)} {\frac{4WL}{\pi \Delta L (D^2-a^2)}} \times 100\)<br>
+\(\% error = \frac{\big( \frac{1}{ (D^2-a^2)} \big) - \big( \frac{1}{D^2} \big)} {\frac{1}{(D^2-a^2)}} \times 100\)<br>
+\(\% error = \big( \frac{D^2 - (D^2 - a^2)}{ D^2(D^2-a^2)} \times (D^2-a^2) \big) \times 100\)<br>
+\(\% error = \Big( \frac{10 a}{D} \Big)^2 \%\)</p>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 </details>
 </div>
 <div class="sect2">
-<h3 id="_load_extension_graph_assignment">1.14. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></h3>
+<h3 id="_rectangular_tapered_bar_assignment">1.14. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Rectangular tapered bar <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A brass plate of uniform thickness \(7\ mm\) and length \(550\ mm\), varies in width from \(100\ mm\) to \(185\ mm\) and is subjected to a tension load of \(5\ kN\). Find the elongation of the bar. \(E\) for brass \(= 82\ GPa\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_load_extension_graph_assignment">1.15. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Load-extension graph <mark>ASSIGNMENT</mark></h3>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -1290,13 +1385,237 @@ Gauge length at fracture = 121 mm</p>
 <tr>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
 <p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
 </div>
+</details>
+Unresolved directive in solid-mechanics.adoc - include::../../partial-pages/nxtbtn.html[]
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compound_bars">2. Compound Bars</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
+<li>
+<p>A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy <strong>equilibrium condition</strong>, \(F_{s} + F_{c} = F_{total}\).</p>
+</li>
+<li>
+<p>These different materials are constrained to deform together such that they satisfy <strong>compatibility condition</strong>, \(\epsilon_{material1} = \epsilon_{material2}\).</p>
+</li>
+<li>
+<p><strong>Modular ratio</strong>, \(m\), is given by \(\frac{E_{material1}}{E_{material2}}\).</p>
+</li>
 </ul>
 </div>
-<div class="paragraph nav-footer">
-<p></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="stemblock">
+<div class="content">
+\[F_{s} + F_{c} = F_{total}\]
+</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\epsilon_{material1} = \epsilon_{material2}\]
+</div>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_a_concrete_column_with_steel_reinforcement">2.1. <span class="icon"><i class="fa fa-info-circle"></i></span> A concrete column with steel reinforcement</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A reinforced cement concrete column of dimension \(625\ mm \times 625\ mm\) has eight steel rods of diameter \(30\ mm\) as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if \(E =\ 200,000\ N/mm^2\) for steel and \(10,000\ N/mm^2\) for concrete. Load on column \(=\ 3000\ kN\) and length \(=\ 4\ m\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and concrete (\(\sigma_{c}\))</em><br>
+<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{c} = F\)<br>
+<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{c}\)<br>
+\(\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}\)<br>
+\(\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}\)<br>
+\(F_s = F_c \times \frac{A_sE_s}{A_cE_c}\)<br>
+\(F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}\)<br>
+\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}\)<br>
+\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}\)<br>
+\(F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}\)<br>
+\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}\)<br>
+\(A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2\)<br>
+\(A_c = (dimension \times dimension) - 2\pi D^2\)<br>
+\(\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}\)</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>elastic shortening (\(\Delta L\))</em><br>
+\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
+\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_c = L_c \times \frac{\sigma_c}{E_c}\)<br>
+\(L_s = L_c = L\) and \(\epsilon_{s} = \epsilon_{c}\)<br>
+\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}\) (compression)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_encased_composite_bar">2.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Encased composite bar</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A steel rod of diameter \(65\ mm\) and length \(1\ m\) is encased by a cast iron (CI) sleeve \(9\ mm\) thick and of
+internal diameter \(65\ mm\). The assembly is subjected to a load of \(45\ kN\). Find the stresses in the two materials and the elongation of the assembly. \(E\) for steel \(=\ 200\ GPa\) and \(E\) for cast iron \(=\ 100\ GPa\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and cast iron (\(\sigma_{I}\))</em><br>
+<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{I} = F\)<br>
+<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{I}\)<br>
+\(\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}\)<br>
+\(\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}\)<br>
+\(F_s = F_I \times \frac{A_sE_s}{A_IE_I}\)<br>
+\(F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}\)<br>
+\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}\)<br>
+\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}\)<br>
+\(F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}\)<br>
+\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}\)<br>
+\(A_s = \pi \big(\frac{d}{2} \big)^2\)<br>
+\(A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)\)<br>
+\(D = d + (2 \times thickness)\)<br>
+\(\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}\)</p>
+</div>
+<div class="paragraph">
+<p><span class="icon"><i class="fa fa-key"></i></span> <em>elongation of the assembly (\(\Delta L\))</em><br>
+\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
+\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
+\(\Delta L_I = L_I \times \frac{\sigma_I}{E_I}\)<br>
+\(L_s = L_I = L\) and \(\epsilon_{s} = \epsilon_{I}\)<br>
+\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}\) (extension)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_a_steel_rod_and_brass_bush_assignment">2.3. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> A steel rod and brass bush <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A \(75\ mm\) diameter compound bar is constructed by shrinking a circular brass bush onto the outside of a \(50\ mm\) diameter solid steel rod. If the compound bar is then subjected to an axial compressive load of \(160\ kN\) determine the load carried by the steel rod and the brass bush and the compressive stress set up in each material. For steel, \(E = 210\ GN/m^2\); for brass, \(E = 100\ GN/m^2\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_buttwelded_stanchion_assignment">2.4. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Buttwelded stanchion <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A stanchion is formed by buttwelding together four plates of steel to form a square tube of outside cross-section \(200\ mm \times 200\ mm\). The constant metal thickness is \(10\ mm\). The inside is then filled with concrete.</p>
+</div>
+<div class="paragraph">
+<p>(a) Determine the cross-sectional area of the steel and concrete<br>
+(b) If \(E\) for steel is \(200\ GN/m^2\) and this value is twenty times that for the concrete, find when the stanchion carries a load of \(368.8\ kN\),</p>
+</div>
+<div class="paragraph">
+<p>(i) The stress in the concrete<br>
+(ii) The stress in the steel<br>
+(iii) The amount the stanchion shortens over a length of \(2\ m\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
 </div></div></td>
 </tr>
 </tbody>
@@ -1306,15 +1625,444 @@ Gauge length at fracture = 121 mm</p>
 </div>
 </div>
 </div>
-<div class="paragraph nav-footer">
-<p>↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_compound_bars.html">Compound Bars</a> →</p>
+<div class="sect1">
+<h2 id="_thermal_stresses_and_strains">3. Thermal Stresses and Strains</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Whenever there is an increase or decrease in the temperature of a bar, it expands or contracts.</p>
+</li>
+<li>
+<p>If the bar is allowed to expand or contract freely, no stresses are induced in the bar.</p>
+</li>
+<li>
+<p>If free expansion or contraction of the bar is prevented, <strong>thermal stresses</strong> are induced in the bar. The corresponding strain is called <strong>thermal strain</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Consider a bar subjected to an increase in temperature.<br>
+\(L = \text{Original length}\)<br>
+\(t = \text{Temperature increase}\)<br>
+\(\alpha = \text{Coefficient of linear expansion}\)<br>
+The increase in length due to the increase in temperature,</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta L = L \times \alpha \times t\]
+</div>
+</div>
+<div class="paragraph">
+<p>If the expansion is prevented,<br>
+\(\sigma = \epsilon \times E = \alpha t \times E\)<br>
+If the supports yield by an amount of, say, \(\Delta\),</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta L = L \alpha t - \Delta\]
+</div>
+</div>
+<div class="paragraph">
+<p>\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-cols stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">S. No.</th>
+<th class="tableblock halign-left valign-top">Material</th>
+<th class="tableblock halign-left valign-top">Coefficient of linear expansion \(/^oC (\alpha)\)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Steel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(11.5 \times 10^{-6}\ to\ 13 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wrought iron, Cast iron</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(11 \times 10^{-6}\ to\ 12 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aluminium</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(23 \times 10^{-6}\ to\ 24 \times 10^{-6}\)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copper, Brass, Bronze</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">\(17 \times 10^{-6}\ to\ 18 \times 10^{-6}\)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A brass rod \(2.5\ m\) long is fixed at both ends. If the thermal stress is not to exceed \(77\ MPa\), calculate the temperature through which the rod should be heated. Take the values of \(\alpha\) and \(E\) as \(17 \times 10^{-6}/K\) and \(90\ GPa\) respectively.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>\(\sigma = \epsilon \times E = \alpha t \times E\)<br>
+\(t = \frac{\sigma}{\alpha \times E}\)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Two parallel walls \(6.5\ m\) apart are held together by a steel rod \(26\ mm\) diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of \(98^oC\). Determine the stress in the rod, when the temperature falls to \(60.5^oC\), if</p>
+</div>
+<div class="paragraph">
+<p>(a) the ends do not yield, and<br>
+(b) the ends yield by \(1.5\ mm\)<br>
+Take \(E = 200\ GPa\) and \(\alpha = 12 \times 10^{-6}/^oC\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(a) \(\sigma = \alpha t \times E\)<br>
+(b) \(\Delta L = L \alpha t - \Delta\)<br>
+\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A rigidly fixed circular bar \(1.5\ m\) long uniformly tapers from \(124\ mm\) diameter at one end to \(95\ mm\) diameter at the other. If the maximum stress in the bar is not to exceed \(108\ MPa\), find the temperature through which it can be heated. Take \(E\) and \(\alpha\) for the bar material as \(100\ GPa\) and \(18 \times 10^{-6}/ K\) respectively.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>\(\Delta L = L \alpha t\)<br>
+\(\Delta L = \frac{4FL}{\pi E d D}\)<br>
+\(L \alpha t = \frac{4FL}{\pi E d D}\)<br>
+\(F = \alpha t \times \frac{\pi E d D}{4}\)<br>
+\(\sigma = \frac{F}{A}\)<br>
+\(\sigma = \frac{F}{(\frac{\pi}{4}D^2)}\)<br>
+\(\sigma = \frac{ \alpha t \times \frac{\pi E d D}{4}}{(\frac{\pi}{4}D^2)}\)<br>
+\(\sigma = \frac{ \alpha t E \times d}{D}\)<br>
+\(t = \frac{\sigma D}{ \alpha E \times d}\)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_stress_strain_and_modulus_of_elasticity_assignment">3.4. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Stress, strain, and modulus of elasticity <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>(a) A test piece is cut from a brass bar and subjected to a tensile test. With a load of \(6.4\ kN\) the test piece, of diameter \(11.28\ mm\), extends by \(0.04\ mm\) over a gauge length of \(50\ mm\). Determine:</p>
+</div>
+<div class="paragraph">
+<p>(i) the stress,<br>
+(ii)the strain,<br>
+(iii) the modulus of elasticity.</p>
+</div>
+<div class="paragraph">
+<p>(b) A spacer is turned from the same bar. The spacer has a diameter of \(28\ mm\) and a length of \(250\ mm\). both measurements being made at \(20\ ^oC\).The temperature of the spaceris then increased to \(100\ ^oC\),the natural expansion being entirely prevented. Taking the coefficientof linear expansion to be \(18 \times 10^{-6}/^oC\) determine:</p>
+</div>
+<div class="paragraph">
+<p>(i) the stress in the spacer,<br>
+(ii) the compressive load on the spacer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_stress_when_temperature_rises_assignment">3.5. <span class="icon"><i class="fa fa-exclamation-triangle"></i></span> Stress when temperature rises <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A steel rod of cross-sectional area \(600\ mm^2\) and a coaxial copper tube of cross-sectional area \(1000\ mm^2\) are firmly attached at their ends to form a compound bar. Determine the stress in the steel and the copper when the temperature of the bar is raised by \(80\ ^oC\) and an axial tensile force of \(60\ kN\) is applied.</p>
+</div>
+<div class="paragraph">
+<p>For steel, \(E = 200\ GN/m^2\) with \(\alpha = 11 \times 10^{-6}/^oC\)<br>
+For copper, \(E = 100\ GN/m^2\) with \(\alpha = 16.5 \times 10^{-6}/^oC\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_tortion_of_circular_shafts">4. Tortion of Circular Shafts</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Torsion is the twisting of an object caused by a moment acting about the object&#8217;s longitudinal axis. <strong>Torque</strong> is the moment that causes the twisting.</p>
+</div>
+<div class="paragraph">
+<p>Consider a shaft transmitting power.</p>
+</div>
+<div id="img-twist" class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="twist" width="100%"></a>
+</div>
+<div class="title">Figure 6. Tortion of a circular shaft.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="stemblock">
+<div class="content">
+\[\text{The angel of twist, } \theta = \frac{TL}{GJ}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Where \(T\) is the applied torque, \(L\) is the length of the bar, \(G\) is the <strong>shear modulus</strong>, and \(J\) is the <strong>polar moment of inertia</strong>. The value of \(G\) can be obtained using an experiment.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The polar moment of inertia describes a cross-section&#8217;s resistance to torsion due to its shape. The polar moment of inertia for a hollow bar shown below can be calculated as follows.</p>
+</li>
+</ul>
+</div>
+<div id="img-polarMom" class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="polarMom" width="70%"></a>
+</div>
+<div class="title">Figure 7. Polar moment.</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\text{The polar moment of inertia, } J = \frac{\pi}{2} \big( r_o^4 - r_i^4 \big)\]
+</div>
+</div>
+<div class="paragraph">
+<p>For a solid circular bar, \(J = \frac{\pi}{2} \big( r^4 \big)\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_twisting_solid_cylinder">4.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Twisting solid cylinder</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A moment of \(1500\ Nm\) is acting on a solid cylinder shaft with diameter \(150\ mm\) and length \(2\ m\). The shaft is made in steel with modulus of rigidity \(79\ GPa\).</p>
+</div>
+<div class="paragraph">
+<p>(a) Calculate the angular deflection of the shaft.<br>
+(b) Assuming the shaft is hollow with an inner diameter of \(50\ mm\), calculate the angular deflection of the shaft.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+</tr>
+</thead>
+</table>
+</div>
+</details>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_references">References</h2>
+<div class="sectionbody">
+<div class="ulist bibliography">
+<ul class="bibliography">
+<li>
+<p><a id="EJ-Hearn"></a>[EJ-Hearn] E.J. Hearn. <em>Mechanics Of Materials: An Introduction to the Mechanics of Elastic and Plastic Deformation of Solids and Structural Materials</em> Oxford University Press, 2010. ISBN 0080523994, 9780080523996 <a href="https://www.google.com/books?id=7eKu5Kh0dHcC">books.google</a></p>
+</li>
+<li>
+<p><a id="RSKhurmi"></a>[RSKhurmi] RS Khurmi | N Khurmi. <em>A Textbook of Strength of Materials</em> S. Chand Publishing, 2019. ISBN 935283397X, 9789352833979 <a href="https://www.google.com/books?id=FqEbEAAAQBAJ">books.google</a></p>
+</li>
+<li>
+<p><a id="RSubramanian"></a>[RSubramanian] R. Subramanian. <em>Strength Of Materials</em> Elsevier, 1997. ISBN 0198061102, 9780198061106 <a href="https://www.google.com/books?id=7lCnSQAACAAJ">books.google</a></p>
+</li>
+</ul>
+</div>
+<!-- Step 1: Include the JavaScript SDK on your page once, ideally right after the opening body tag. -->
+<!-- <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=787925512262196&autoLogAppEvents=1" nonce="hUpr0zj0"></script> -->
+
+<!-- add the button! (body) -->
+<!-- <applause-button style="width: 58px; height: 58px;"/> -->
+
+<!-- Start facebook comment section -->
+<!-- Step 2: Place this code wherever you want the plugin to appear on your page. -->
+<!-- <hr>
+
+<div class="fb-comments" data-href="https://siliconwit.com/solid-mechanics" data-width="" data-numposts="20"></div>
+
+<hr> -->
+
+<!-- End facebook comment section -->
+
+<!-- Start commentics comment section -->
+
+<!-- <div id="commentics"></div> -->
+
+<!-- Start commentics php comment section -->
+
+<?php
+$cmtx_identifier = 'solid-mechanics';
+$cmtx_reference  = 'solid-mechanics';
+$cmtx_folder     = '/comments/';
+require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
+?>
+</div>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
 <script>
 if (!hljs.initHighlighting.called) {
   hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
 <script type="text/x-mathjax-config">

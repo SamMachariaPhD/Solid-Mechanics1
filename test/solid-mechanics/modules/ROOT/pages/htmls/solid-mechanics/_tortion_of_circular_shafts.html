@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="description" content="Engineering, Computing, Science, and Philosophy">
 <meta name="keywords" content="Mechanics of Solids, Mechanics of Materials, Strength of Materials,">
 <meta name="author" content="Dr. Sam Macharia">
@@ -88,10 +88,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -559,12 +559,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 
+
+
+<!-- <style>
+  button.tocSwitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var target = document.querySelector('#header')
+    var button = document.createElement('button')
+    button.className = 'tocSwitch'
+    button.innerHTML = 'ToC'
+    button.addEventListener('click', function (e) {
+      e.stopPropagation()
+      var toc = document.querySelector('#toc')
+      var body = document.querySelector('body')
+      if (body.classList.contains('toc2')) {
+        body.classList.remove('toc2')
+        body.classList.remove('toc-left')
+        toc.style.display = 'none'
+      }
+      else {
+        body.classList.add('toc2')
+        body.classList.add('toc-left')
+        toc.style.display = 'block'
+      }
+    })
+    target.appendChild(button)
+  })
+  </script> -->
 <style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
                        font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
              .nav-footer{text-align: center; margin-top: auto;}
              .nav-footer > p > a {white-space: nowrap;}</style>
 </head>
-<body id="_compound_bars" class="book toc2 toc-left">
+<body id="_tortion_of_circular_shafts" class="book toc2 toc-left">
 <div id="header">
 <h1>Solid Mechanics: Theory and Examples</h1>
 <div class="details">
@@ -576,38 +610,79 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><span class="toc-root"><a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></span></p><ul class="sectlevel1">
 <li><a href="_simple_stress_and_strain.html">1. Simple Stress and Strain</a>
 </li>
-<li><a href="_compound_bars.html"><span class="toc-current">2. Compound Bars</span></a>
-<ul class="sectlevel2">
-<li><a href="_compound_bars.html#_a_concrete_column_with_steel_reinforcement">2.1. <span class="icon"><i class="fa fa-info-circle"></i></span> A concrete column with steel reinforcement</a>
+<li><a href="_compound_bars.html">2. Compound Bars</a>
 </li>
-<li><a href="_compound_bars.html#_encased_composite_bar">2.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Encased composite bar</a>
+<li><a href="_thermal_stresses_and_strains.html">3. Thermal Stresses and Strains</a>
+</li>
+<li><a href="_tortion_of_circular_shafts.html"><span class="toc-current">4. Tortion of Circular Shafts</span></a>
+<ul class="sectlevel2">
+<li><a href="_tortion_of_circular_shafts.html#_twisting_solid_cylinder">4.1. <span class="icon"><i class="fa fa-target-two"></i></span> Twisting solid cylinder</a>
 </li>
 </ul>
 </li>
-<li><a href="_thermal_stresses_and_strains.html">3. Thermal Stresses and Strains</a>
+<li><a href="_references.html">References</a>
 </li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_compound_bars">2. Compound Bars</h2>
+<h2 id="_tortion_of_circular_shafts">4. Tortion of Circular Shafts</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>Torsion is the twisting of an object caused by a moment acting about the object&#8217;s longitudinal axis. <strong>Torque</strong> is the moment that causes the twisting.</p>
+</div>
+<div class="paragraph">
+<p>Consider a shaft transmitting power.</p>
+</div>
+<div id="img-twist" class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="twist" width="100%"></a>
+</div>
+<div class="title">Figure 6. Tortion of a circular shaft.</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="stemblock">
+<div class="content">
+\[\text{The angel of twist, } \theta = \frac{TL}{GJ}\]
+</div>
+</div>
+<div class="paragraph">
+<p>Where \(T\) is the applied torque, \(L\) is the length of the bar, \(G\) is the <strong>shear modulus</strong>, and \(J\) is the <strong>polar moment of inertia</strong>. The value of \(G\) can be obtained using an experiment.</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>A compound or composite bar consists of one or more materials bonded together rigidly such that the straining action of the external load is shared by the materials such that they satisfy <strong>equilibrium condition</strong>, \(F_{s} + F_{c} = F_{total}\).</p>
-</li>
-<li>
-<p>These different materials are constrained to deform together such that they satisfy <strong>compatibility condition</strong>, \(\epsilon_{material1} = \epsilon_{material2}\).</p>
-</li>
-<li>
-<p><strong>Modular ratio</strong>, \(m\), is given by \(\frac{E_{material1}}{E_{material2}}\).</p>
+<p>The polar moment of inertia describes a cross-section&#8217;s resistance to torsion due to its shape. The polar moment of inertia for a hollow bar shown below can be calculated as follows.</p>
 </li>
 </ul>
 </div>
+<div id="img-polarMom" class="imageblock text-left">
+<div class="content">
+<a class="image" href="https://siliconwit.com/solid-mechanics"><img src="data:image/png;base64," alt="polarMom" width="70%"></a>
+</div>
+<div class="title">Figure 7. Polar moment.</div>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\text{The polar moment of inertia, } J = \frac{\pi}{2} \big( r_o^4 - r_i^4 \big)\]
+</div>
+</div>
+<div class="paragraph">
+<p>For a solid circular bar, \(J = \frac{\pi}{2} \big( r^4 \big)\)</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="sect2">
-<h3 id="_a_concrete_column_with_steel_reinforcement">2.1. <span class="icon"><i class="fa fa-info-circle"></i></span> A concrete column with steel reinforcement</h3>
+<h3 id="_twisting_solid_cylinder">4.1. <span class="icon"><i class="fa fa-target-two"></i></span> Twisting solid cylinder</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -616,7 +691,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A reinforced cement concrete column of dimension \(625\ mm \times 625\ mm\) has eight steel rods of diameter \(30\ mm\) as reinforcement. Find the stresses in steel and concrete, and the elastic shortening of the column if \(E =\ 200,000\ N/mm^2\) for steel and \(10,000\ N/mm^2\) for concrete. Load on column \(=\ 3000\ kN\) and length \(=\ 4\ m\).</p>
+<p>A moment of \(1500\ Nm\) is acting on a solid cylinder shaft with diameter \(150\ mm\) and length \(2\ m\). The shaft is made in steel with modulus of rigidity \(79\ GPa\).</p>
+</div>
+<div class="paragraph">
+<p>(a) Calculate the angular deflection of the shaft.<br>
+(b) Assuming the shaft is hollow with an inner diameter of \(50\ mm\), calculate the angular deflection of the shaft.</p>
 </div>
 </td>
 </tr>
@@ -629,107 +708,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<tbody>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and concrete (\(\sigma_{c}\))</em><br>
-<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{c} = F\)<br>
-<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{c}\)<br>
-\(\frac{\sigma_s}{E_s} = \frac{\sigma_c}{E_c}\)<br>
-\(\frac{F_s}{A_sE_s} = \frac{F_c}{A_cE_c}\)<br>
-\(F_s = F_c \times \frac{A_sE_s}{A_cE_c}\)<br>
-\(F_s = (F - F_s) \times \frac{A_sE_s}{A_cE_c}\)<br>
-\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_cE_c}\)<br>
-\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_cE_c}\)<br>
-\(F_s = F \times \frac{A_sE_s}{A_cE_c + A_sE_s}\)<br>
-\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_cE_c + A_sE_s}\)<br>
-\(A_s = 8 \times \pi \big(\frac{D}{2} \big)^2 = 2\pi D^2\)<br>
-\(A_c = (dimension \times dimension) - 2\pi D^2\)<br>
-\(\sigma_c = \frac{F_c}{A_c} = \frac{F-Fs}{A_c} = \frac{F-(\sigma_sA_s)}{A_c}\)</p>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>elastic shortening (\(\Delta L\))</em><br>
-\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
-\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
-\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
-\(\Delta L_c = L_c \times \frac{\sigma_c}{E_c}\)<br>
-\(L_s = L_c = L\) and \(\epsilon_{s} = \epsilon_{c}\)<br>
-\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_c}{E_c}\) (compression)</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
+<th class="tableblock halign-left valign-top"></th>
 </tr>
-</tbody>
-</table>
-</div>
-</details>
-</div>
-<div class="sect2">
-<h3 id="_encased_composite_bar">2.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Encased composite bar</h3>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>A steel rod of diameter \(65\ mm\) and length \(1\ m\) is encased by a cast iron (CI) sleeve \(9\ mm\) thick and of
-internal diameter \(65\ mm\). The assembly is subjected to a load of \(45\ kN\). Find the stresses in the two materials and the elongation of the assembly. \(E\) for steel \(=\ 200\ GPa\) and \(E\) for cast iron \(=\ 100\ GPa\).</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<details>
-<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
-<div class="content">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 100%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>stresses in steel (\(\sigma_{s}\)) and cast iron (\(\sigma_{I}\))</em><br>
-<span class="icon"><i class="fa fa-check"></i></span> Equilibrium condition: \(F_{s} + F_{I} = F\)<br>
-<span class="icon"><i class="fa fa-check"></i></span> Compatibility condition: \(\epsilon_{s} = \epsilon_{I}\)<br>
-\(\frac{\sigma_s}{E_s} = \frac{\sigma_I}{E_I}\)<br>
-\(\frac{F_s}{A_sE_s} = \frac{F_I}{A_IE_I}\)<br>
-\(F_s = F_I \times \frac{A_sE_s}{A_IE_I}\)<br>
-\(F_s = (F - F_s) \times \frac{A_sE_s}{A_IE_I}\)<br>
-\(\frac{F_s}{F - F_s} = \frac{A_sE_s}{A_IE_I}\)<br>
-\(\frac{1}{\frac{F}{F_s} - 1} = \frac{A_sE_s}{A_IE_I}\)<br>
-\(F_s = F \times \frac{A_sE_s}{A_IE_I + A_sE_s}\)<br>
-\(\sigma_s = \frac{F_s}{A_s} = \frac{FE_s}{A_IE_I + A_sE_s}\)<br>
-\(A_s = \pi \big(\frac{d}{2} \big)^2\)<br>
-\(A_I =  \frac{\pi D^2}{4} + \frac{\pi d^2}{4} = \frac{\pi}{4} (D^2 - d^2)\)<br>
-\(D = d + (2 \times thickness)\)<br>
-\(\sigma_I = \frac{F_I}{A_I} = \frac{F-Fs}{A_I} = \frac{F-(\sigma_sA_s)}{A_I}\)</p>
-</div>
-<div class="paragraph">
-<p><span class="icon"><i class="fa fa-key"></i></span> <em>elongation of the assembly (\(\Delta L\))</em><br>
-\(\epsilon_s = \frac{\Delta L_s}{L_s}\)<br>
-\(\epsilon_s = \frac{\sigma_s}{E_s}\)<br>
-\(\Delta L_s = L_s \times \frac{\sigma_s}{E_s}\)<br>
-\(\Delta L_I = L_I \times \frac{\sigma_I}{E_I}\)<br>
-\(L_s = L_I = L\) and \(\epsilon_{s} = \epsilon_{I}\)<br>
-\(\Delta L = L \times \frac{\sigma_s}{E_s} = L \times \frac{\sigma_I}{E_I}\) (extension)</p>
-</div>
-<div class="ulist">
-<ul>
-</ul>
-</div>
-<div class="paragraph nav-footer">
-<p></p>
-</div></div></td>
-</tr>
-</tbody>
+</thead>
 </table>
 </div>
 </details>
@@ -737,14 +720,14 @@ internal diameter \(65\ mm\). The assembly is subjected to a load of \(45\ kN\).
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_simple_stress_and_strain.html">Simple Stress and Strain</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_thermal_stresses_and_strains.html">Thermal Stresses and Strains</a> →</p>
+<p>← Previous: <a href="_thermal_stresses_and_strains.html">Thermal Stresses and Strains</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_references.html">References</a> →</p>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
 <script>
 if (!hljs.initHighlighting.called) {
   hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
 <script type="text/x-mathjax-config">

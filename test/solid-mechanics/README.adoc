@@ -1,0 +1,22 @@
+// Sam Macharia SiliconWit 
+
+= Install asciidoctor and multipage 
+
+----
+sudo apt-get remove -y asciidoctor
+sudo gem install asciidoctor-multipage
+----
+
+= Install asciidoctor-mathematical 
+
+----
+sudo gem install asciidoctor-pdf 
+sudo gem install rghost 
+sudo apt-get -qq -y install bison flex libffi-dev libxml2-dev libgdk-pixbuf2.0-dev libcairo2-dev libpango1.0-dev fonts-lyx cmake
+sudo apt-get install ruby-dev
+sudo MATHEMATICAL_SKIP_STRDUP=1 gem install mathematical (maybe not necessary)
+sudo apt-get update && sudo apt-get install build-essential
+sudo gem install asciidoctor-mathematical
+----
+
+

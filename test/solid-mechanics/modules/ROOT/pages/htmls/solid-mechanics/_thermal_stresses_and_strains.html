@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <meta name="description" content="Engineering, Computing, Science, and Philosophy">
 <meta name="keywords" content="Mechanics of Solids, Mechanics of Materials, Strength of Materials,">
 <meta name="author" content="Dr. Sam Macharia">
@@ -88,10 +88,10 @@ code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;
 ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
 ul,ol{margin-left:1.5em}
 ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
-ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
-ul.square{list-style-type:square}
 ul.circle{list-style-type:circle}
 ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
 ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
 dl dt{margin-bottom:.3125em;font-weight:bold}
 dl dd{margin-bottom:1.25em}
@@ -559,6 +559,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 
 </style>
 
+
+
+<!-- <style>
+  button.tocSwitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  </style>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var target = document.querySelector('#header')
+    var button = document.createElement('button')
+    button.className = 'tocSwitch'
+    button.innerHTML = 'ToC'
+    button.addEventListener('click', function (e) {
+      e.stopPropagation()
+      var toc = document.querySelector('#toc')
+      var body = document.querySelector('body')
+      if (body.classList.contains('toc2')) {
+        body.classList.remove('toc2')
+        body.classList.remove('toc-left')
+        toc.style.display = 'none'
+      }
+      else {
+        body.classList.add('toc2')
+        body.classList.add('toc-left')
+        toc.style.display = 'block'
+      }
+    })
+    target.appendChild(button)
+  })
+  </script> -->
 <style>.toc-current{font-weight: bold;} .toc-root{font-family: "Open Sans","DejaVu Sans",sans-serif;
                        font-size: 0.9em;} #content{display: flex; flex-direction: column; flex: 1 1 auto;}
              .nav-footer{text-align: center; margin-top: auto;}
@@ -580,13 +614,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="_thermal_stresses_and_strains.html"><span class="toc-current">3. Thermal Stresses and Strains</span></a>
 <ul class="sectlevel2">
-<li><a href="_thermal_stresses_and_strains.html#_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</a>
+<li><a href="_thermal_stresses_and_strains.html#_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-target-two"></i></span> Stress not to be exceeded</a>
 </li>
-<li><a href="_thermal_stresses_and_strains.html#_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</a>
+<li><a href="_thermal_stresses_and_strains.html#_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-target-two"></i></span> Stress when temperature falls</a>
 </li>
-<li><a href="_thermal_stresses_and_strains.html#_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</a>
+<li><a href="_thermal_stresses_and_strains.html#_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-target-two"></i></span> Thermal stress of a tapered bar</a>
+</li>
+<li><a href="_thermal_stresses_and_strains.html#_stress_strain_and_modulus_of_elasticity_assignment">3.4. <span class="icon"><i class="fa fa-alert"></i></span> Stress, strain, and modulus of elasticity <mark>ASSIGNMENT</mark></a>
+</li>
+<li><a href="_thermal_stresses_and_strains.html#_stress_when_temperature_rises_assignment">3.5. <span class="icon"><i class="fa fa-alert"></i></span> Stress when temperature rises <mark>ASSIGNMENT</mark></a>
 </li>
 </ul>
+</li>
+<li><a href="_tortion_of_circular_shafts.html">4. Tortion of Circular Shafts</a>
+</li>
+<li><a href="_references.html">References</a>
 </li>
 </ul>
 </div>
@@ -620,13 +662,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 \(L = \text{Original length}\)<br>
 \(t = \text{Temperature increase}\)<br>
 \(\alpha = \text{Coefficient of linear expansion}\)<br>
-The increase in length due to the increase in temperature,<br>
-\(\Delta L = L \times \alpha \times t\)<br>
-If the expansion is prevented,<br>
+The increase in length due to the increase in temperature,</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta L = L \times \alpha \times t\]
+</div>
+</div>
+<div class="paragraph">
+<p>If the expansion is prevented,<br>
 \(\sigma = \epsilon \times E = \alpha t \times E\)<br>
-If the supports yield by an amount of, say, \(\Delta\),<br>
-\(\Delta L = L \alpha t - \Delta\)<br>
-\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
+If the supports yield by an amount of, say, \(\Delta\),</p>
+</div>
+<div class="stemblock">
+<div class="content">
+\[\Delta L = L \alpha t - \Delta\]
+</div>
+</div>
+<div class="paragraph">
+<p>\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
 </div>
 </td>
 </tr>
@@ -669,7 +723,7 @@ If the supports yield by an amount of, say, \(\Delta\),<br>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress not to be exceeded</h3>
+<h3 id="_stress_not_to_be_exceeded">3.1. <span class="icon"><i class="fa fa-target-two"></i></span> Stress not to be exceeded</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -678,7 +732,7 @@ If the supports yield by an amount of, say, \(\Delta\),<br>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A brass rod \(2.5 m\) long is fixed at both ends. If the thermal stress is not to exceed \(77 MPa\), calculate the temperature through which the rod should be heated. Take the values of \(\alpha\) and \(E\) as \(17 \times 10^{-6}/K\) and \(90 GPa\) respectively.</p>
+<p>A brass rod \(2.5\ m\) long is fixed at both ends. If the thermal stress is not to exceed \(77\ MPa\), calculate the temperature through which the rod should be heated. Take the values of \(\alpha\) and \(E\) as \(17 \times 10^{-6}/K\) and \(90\ GPa\) respectively.</p>
 </div>
 </td>
 </tr>
@@ -691,17 +745,27 @@ If the supports yield by an amount of, say, \(\Delta\),<br>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>\(\sigma = \epsilon \times E = \alpha t \times E\)<br>
+\(t = \frac{\sigma}{\alpha \times E}\)</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 </details>
 </div>
 <div class="sect2">
-<h3 id="_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-info-circle"></i></span> Stress when temperature falls</h3>
+<h3 id="_stress_when_temperature_falls">3.2. <span class="icon"><i class="fa fa-target-two"></i></span> Stress when temperature falls</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -710,12 +774,12 @@ If the supports yield by an amount of, say, \(\Delta\),<br>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Two parallel walls \(6.5 m\) apart are held together by a steel rod \(26 mm\) diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of \(98^oC\). Determine the stress in the rod, when the temperature falls to \(60.5^oC\), if</p>
+<p>Two parallel walls \(6.5\ m\) apart are held together by a steel rod \(26\ mm\) diameter passing through metal plates and nuts at each end. The nuts are tightened when the rod is at a temperature of \(98^oC\). Determine the stress in the rod, when the temperature falls to \(60.5^oC\), if</p>
 </div>
 <div class="paragraph">
 <p>(a) the ends do not yield, and<br>
-(b) the ends yield by \(1.5 mm\)<br>
-Take \(E = 200 GPa\) and \(\alpha = 12 \times 10^{-6}\/^oC\)</p>
+(b) the ends yield by \(1.5\ mm\)<br>
+Take \(E = 200\ GPa\) and \(\alpha = 12 \times 10^{-6}/^oC\)</p>
 </div>
 </td>
 </tr>
@@ -728,17 +792,28 @@ Take \(E = 200 GPa\) and \(\alpha = 12 \times 10^{-6}\/^oC\)</p>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>(a) \(\sigma = \alpha t \times E\)<br>
+(b) \(\Delta L = L \alpha t - \Delta\)<br>
+\(\sigma = \epsilon \times E = \big( \alpha t - \frac{\Delta}{L} \big) \times E\)</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 </details>
 </div>
 <div class="sect2">
-<h3 id="_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-info-circle"></i></span> Thermal stress of a tapered bar</h3>
+<h3 id="_thermal_stress_of_a_tapered_bar">3.3. <span class="icon"><i class="fa fa-target-two"></i></span> Thermal stress of a tapered bar</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -747,7 +822,7 @@ Take \(E = 200 GPa\) and \(\alpha = 12 \times 10^{-6}\/^oC\)</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>A rigidly fixed circular bar \(1.5 m\) long uniformly tapers from \(124 mm\) diameter at one end to \(95 mm\) diameter at the other. If the maximum stress in the bar is not to exceed \(108 MPa\), find the temperature through which it can be heated. Take \(E\) and \(\alpha\) for the bar material as \(100 GPa\) and \(18 \times 10^{-6}\/ K\) respectively.</p>
+<p>A rigidly fixed circular bar \(1.5\ m\) long uniformly tapers from \(124\ mm\) diameter at one end to \(95\ mm\) diameter at the other. If the maximum stress in the bar is not to exceed \(108\ MPa\), find the temperature through which it can be heated. Take \(E\) and \(\alpha\) for the bar material as \(100\ GPa\) and \(18 \times 10^{-6}/ K\) respectively.</p>
 </div>
 </td>
 </tr>
@@ -760,61 +835,141 @@ Take \(E = 200 GPa\) and \(\alpha = 12 \times 10^{-6}\/^oC\)</p>
 <colgroup>
 <col style="width: 100%;">
 </colgroup>
-<thead>
+<tbody>
 <tr>
-<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>\(\Delta L = L \alpha t\)<br>
+\(\Delta L = \frac{4FL}{\pi E d D}\)<br>
+\(L \alpha t = \frac{4FL}{\pi E d D}\)<br>
+\(F = \alpha t \times \frac{\pi E d D}{4}\)<br>
+\(\sigma = \frac{F}{A}\)<br>
+\(\sigma = \frac{F}{(\frac{\pi}{4}D^2)}\)<br>
+\(\sigma = \frac{ \alpha t \times \frac{\pi E d D}{4}}{(\frac{\pi}{4}D^2)}\)<br>
+\(\sigma = \frac{ \alpha t E \times d}{D}\)<br>
+\(t = \frac{\sigma D}{ \alpha E \times d}\)</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
 </tr>
-</thead>
+</tbody>
 </table>
 </div>
 </details>
-<?php
-$cmtx_identifier = '1';
-$cmtx_reference  = 'Comments';
-$cmtx_folder     = '/comments/';
-require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
-?>
-<!-- Step 1: Include the JavaScript SDK on your page once, ideally right after the opening body tag. -->
-<!-- <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v15.0&appId=787925512262196&autoLogAppEvents=1" nonce="hUpr0zj0"></script> -->
-
-<!-- add the button! (body) -->
-<!-- <applause-button style="width: 58px; height: 58px;"/> -->
-
-<!-- Start facebook comment section -->
-<!-- Step 2: Place this code wherever you want the plugin to appear on your page. -->
-<!-- <hr>
-
-<div class="fb-comments" data-href="https://siliconwit.com/solid-mechanics" data-width="" data-numposts="20"></div>
-
-<hr> -->
-
-<!-- End facebook comment section -->
-
-<!-- Start commentics comment section -->
-
-<!-- <div id="commentics"></div> -->
-
-<!-- Start commentics php comment section -->
-
-<?php
-$cmtx_identifier = '1';
-$cmtx_reference  = 'Comments';
-$cmtx_folder     = '/comments/';
-require($_SERVER['DOCUMENT_ROOT'] . $cmtx_folder . 'frontend/index.php');
-?>
+</div>
+<div class="sect2">
+<h3 id="_stress_strain_and_modulus_of_elasticity_assignment">3.4. <span class="icon"><i class="fa fa-alert"></i></span> Stress, strain, and modulus of elasticity <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>(a) A test piece is cut from a brass bar and subjected to a tensile test. With a load of \(6.4\ kN\) the test piece, of diameter \(11.28\ mm\), extends by \(0.04\ mm\) over a gauge length of \(50\ mm\). Determine:</p>
+</div>
+<div class="paragraph">
+<p>(i) the stress,<br>
+(ii)the strain,<br>
+(iii) the modulus of elasticity.</p>
+</div>
+<div class="paragraph">
+<p>(b) A spacer is turned from the same bar. The spacer has a diameter of \(28\ mm\) and a length of \(250\ mm\). both measurements being made at \(20\ ^oC\).The temperature of the spaceris then increased to \(100\ ^oC\),the natural expansion being entirely prevented. Taking the coefficientof linear expansion to be \(18 \times 10^{-6}/^oC\) determine:</p>
+</div>
+<div class="paragraph">
+<p>(i) the stress in the spacer,<br>
+(ii) the compressive load on the spacer.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
+</div>
+<div class="sect2">
+<h3 id="_stress_when_temperature_rises_assignment">3.5. <span class="icon"><i class="fa fa-alert"></i></span> Stress when temperature rises <mark>ASSIGNMENT</mark></h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A steel rod of cross-sectional area \(600\ mm^2\) and a coaxial copper tube of cross-sectional area \(1000\ mm^2\) are firmly attached at their ends to form a compound bar. Determine the stress in the steel and the copper when the temperature of the bar is raised by \(80\ ^oC\) and an axial tensile force of \(60\ kN\) is applied.</p>
+</div>
+<div class="paragraph">
+<p>For steel, \(E = 200\ GN/m^2\) with \(\alpha = 11 \times 10^{-6}/^oC\)<br>
+For copper, \(E = 100\ GN/m^2\) with \(\alpha = 16.5 \times 10^{-6}/^oC\).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<details>
+<summary class="title"><em>Click to reveal/hide the solution.</em></summary>
+<div class="content">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p><span class="icon"><i class="fa fa-flag"></i></span> Please attempt this assignment.</p>
+</div>
+<div class="ulist">
+<ul>
+</ul>
+</div>
+<div class="paragraph nav-footer">
+<p></p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</details>
 </div>
 </div>
 </div>
 <div class="paragraph nav-footer">
-<p>← Previous: <a href="_compound_bars.html">Compound Bars</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a></p>
+<p>← Previous: <a href="_compound_bars.html">Compound Bars</a> | ↑ Up: <a href="solid-mechanics.html">Solid Mechanics: Theory and Examples</a> | Next: <a href="_tortion_of_circular_shafts.html">Tortion of Circular Shafts</a> →</p>
 </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.3/highlight.min.js"></script>
 <script>
 if (!hljs.initHighlighting.called) {
   hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
 <script type="text/x-mathjax-config">
